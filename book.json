@@ -1,0 +1,15 @@
+{
+    "plugins": ["expandable-chapters"],
+    "pluginsConfig": {
+        "fontsettings": {
+            "theme": "sepia",
+            "family": "sans",
+            "size": 2
+        }
+    },
+    "styles": {
+        "website": "website.css"
+    },
+    "author": "ActionTech",
+    "title": "dble manual"
+}

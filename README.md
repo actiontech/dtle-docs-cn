@@ -1,0 +1,21 @@
+# dtle 中文技术参考手册
+
+## 目录
+参考 gitbook 左侧目录区 或 [SUMMARY.md](https://github.com/actiontech/dtle-docs-cn/blob/master/SUMMARY.md)
+
+## PDF下载
+[PDF下载](https://github.com/actiontech/dtle-docs-cn/raw/master/dtle-manual.pdf)
+
+## 官方技术支持
+- 代码库 github: [github.com/actiontech/dtle](https://github.com/actiontech/dtle)
+- 文档库 github: [github.com/actiontech/dtle-docs-cn](https://github.com/actiontech/dtle-docs-cn)
+- 文档库 github pages: [actiontech.github.io/dtle-docs-cn](https://actiontech.github.io/dtle-docs-cn)
+- QQ group: 852990221
+
+## 联系我们
+如果想获得dble 的商业支持, 您可以联系我们:
+* 全国支持: 400-820-6580
+* 华北地区: 86-13718877200, 王先生
+* 华南地区: 86-18503063188, 曹先生
+* 华东地区: 86-18930110869, 梁先生
+* 西南地区: 86-18328335660, 雷先生

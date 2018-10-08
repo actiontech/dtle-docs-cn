@@ -21,7 +21,8 @@
 	* 4.0.安装步骤
 	* [4.1.配置说明](4/4.1_configuration.md)
 	* [4.2.命令说明](4/4.2_command.md)
-	* [4.3.MySQL 用户权限说明](4/4.3_mysql_user_privileges.md)
+	* [4.3.HTTP API说明](4/4.3_http_api.md)
+	* [4.4.MySQL 用户权限说明](4/4.4_mysql_user_privileges.md)
 * 5.架构说明
 * 6.如何贡献
 * 7.路线图

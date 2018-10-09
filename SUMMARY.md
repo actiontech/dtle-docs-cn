@@ -9,7 +9,7 @@
 	* [1.3.MySQL到Kafka的数据变更通知](1/1.3_mysql_kafka.md)
 * 2.快速开始
 	* [2.0.MySQL的单向复制](2/2.0_mysql_replication_1_1.md)
-	* 2.1.MySQL的聚合复制
+	* [2.1.MySQL的聚合复制](2/2.1_mysql_replication_n_1.md)
 	* 2.2.MySQL的数据分散
 	* 2.3.MySQL的跨数据中心的双向复制
 	* 2.4.阿里云到京东云的MySQL复制

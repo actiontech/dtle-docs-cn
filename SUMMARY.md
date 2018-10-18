@@ -1,7 +1,6 @@
 # Summary
 
 * [0.概述](0/0_overview.md)
-	* [0.1.Release Note](0/0.1_release_note.md)
 * 1.适用场景
 	* [1.0.MySQL的单向复制/聚合/分散](1/1.0_mysql_replication.md)
 	* [1.1.跨数据中心的双向复制](1/1.1_bidirectional_replication.md)

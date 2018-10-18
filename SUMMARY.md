@@ -1,7 +1,7 @@
 # Summary
 
 * [0.概述](0/0_overview.md)
-	* 0.1.Release Note 
+	* [0.1.Release Note](0/0.1_release_note.md)
 * 1.适用场景
 	* [1.0.MySQL的单向复制/聚合/分散](1/1.0_mysql_replication.md)
 	* [1.1.跨数据中心的双向复制](1/1.1_bidirectional_replication.md)
@@ -29,5 +29,7 @@
 
 * 5.设计说明
 	* [5.1.时间/资源估算](5/5.1_resource_estimation.md)
+	* [5.2 基本架构](5/5.2_architecture.md)
+	* [5.3 Kafka 消息格式](5/5.3_kafka_message_format.md)
 * [6.如何参与](6/howto_contribute.md)
-* 7.路线图
+* [7.路线图](7/7_roadmap.md)

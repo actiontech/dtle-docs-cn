@@ -10,10 +10,10 @@
 * 2.快速开始
 	* [2.0.MySQL的单向复制](2/2.0_mysql_replication_1_1.md)
 	* [2.1.MySQL的聚合复制](2/2.1_mysql_replication_n_1.md)
-	* 2.2.MySQL的数据分散
-	* 2.3.MySQL的跨数据中心的双向复制
-	* 2.4.阿里云到京东云的MySQL复制
-	* 2.5.MySQL到Kafka的数据变更通知
+	* [2.2.MySQL的数据分散](2/2.2_mysql_replication_1_n.md)
+	* [2.3.MySQL的跨数据中心的双向复制](2/2.3_dc_to_dc_bidirectional.md)
+	* [2.4.阿里云到京东云的MySQL复制](2/2.4_ali_to_jd.md)
+	* [2.5.MySQL到Kafka的数据变更通知](2/2.5_mysql_kafka.md)
 * 3.功能说明
 	* [3.0.功能/场景的映射列表](3/3.0_function_scenario_mapping.md)
 	* [3.1.使用限制](3/3.1_limitation.md)

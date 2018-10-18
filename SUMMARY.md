@@ -20,7 +20,7 @@
 	* [3.3.对目标端数据库的影响](3/3.3_impact_on_dest.md)
 	* [3.4.监控项说明](3/3.4_metrics.md)
 * 4.安装/配置说明
-	* 4.0.安装步骤
+	* [4.0.安装步骤](4/4.0_installation.md)
 	* [4.1.配置说明](4/4.1_configuration.md)
 	* [4.2.命令说明](4/4.2_command.md)
 	* [4.3.HTTP API说明](4/4.3_http_api.md)

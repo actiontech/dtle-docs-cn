@@ -21,10 +21,11 @@
 	* [3.4.监控项说明](3/3.4_metrics.md)
 * 4.安装/配置说明
 	* [4.0.安装步骤](4/4.0_installation.md)
-	* [4.1.配置说明](4/4.1_configuration.md)
+	* [4.1.节点配置](4/4.1_node_configuration.md)
 	* [4.2.命令说明](4/4.2_command.md)
-	* [4.3.HTTP API说明](4/4.3_http_api.md)
-	* [4.4.MySQL 用户权限说明](4/4.4_mysql_user_privileges.md)
+	* [4.3.作业(job)配置](4/4.3_job_configuration.md)
+	* [4.4.HTTP API说明](4/4.4_http_api.md)
+	* [4.5.MySQL 用户权限说明](4/4.5_mysql_user_privileges.md)
 
 * 5.设计说明
 	* [5.1.时间/资源估算](5/5.1_resource_estimation.md)

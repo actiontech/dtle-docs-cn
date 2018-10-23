@@ -17,7 +17,7 @@ publish_prepare:
 	git checkout gh-pages
 	git pull origin gh-pages --rebase
 	cp -R _book/* . || true
-	git clean -fx node_modules
+#	git clean -f node_modules
 	git clean -fx _book
 	git add .
 	git commit -a -m "Update docs"

@@ -7,7 +7,7 @@ gitbook_build:
 	gitbook build
 
 pdf:
-	gitbook pdf ./ ./dble-manual.pdf
+	gitbook pdf ./ ./dtle-manual.pdf
 
 install:
 	npm install -g gitbook-cli

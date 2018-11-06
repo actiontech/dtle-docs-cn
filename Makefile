@@ -1,9 +1,11 @@
 default: gitbook_build publish
 publish: publish_prepare publish_push
 
-gitbook_preview:
+gitbook_install:
+	gitbook install
+gitbook_preview: gitbook_install
 	gitbook serve
-gitbook_build:
+gitbook_build: gitbook_install
 	gitbook build
 
 pdf:

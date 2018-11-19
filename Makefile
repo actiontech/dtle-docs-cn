@@ -1,19 +1,16 @@
-default: gitbook_build publish
+default: gitbook_build publish gitbook_pdf
 publish: publish_prepare publish_push
 
-gitbook_install:
-	gitbook install
-gitbook_preview: gitbook_install
-	gitbook serve
-gitbook_build: gitbook_install
-	gitbook build
+gitbook_preview:
+	docker run --rm -v "${PWD}":/gitbook -p 4000:4000 billryan/gitbook:zh-hans gitbook serve
+gitbook_build:
+	docker run --rm -v "${PWD}":/gitbook -p 4000:4000 billryan/gitbook:zh-hans gitbook build
 
-pdf:
-	gitbook pdf ./ ./dtle-manual.pdf
-
-install:
-	npm install -g gitbook-cli
-	gitbook install
+gitbook_pdf:
+	docker run --rm -v "${PWD}":/gitbook -p 4000:4000 billryan/gitbook:zh-hans gitbook pdf ./ ./dtle-manual.pdf
+	git add .
+	git commit -a -m "Update pdf"
+	git push
 
 publish_prepare:
 	git checkout gh-pages

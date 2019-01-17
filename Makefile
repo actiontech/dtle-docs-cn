@@ -4,7 +4,7 @@ publish: publish_prepare publish_push
 gitbook_preview:
 	docker run --rm -v "${PWD}":/gitbook -p 4000:4000 billryan/gitbook:zh-hans gitbook serve
 gitbook_build:
-	docker run --rm -v "${PWD}":/gitbook -p 4000:4000 billryan/gitbook:zh-hans gitbook build
+	docker run --rm -v "${PWD}":/gitbook -p 4000:4000 billryan/gitbook:zh-hans  /bin/bash -c "gitbook install && gitbook build"
 
 gitbook_pdf:
 	docker run --rm -v "${PWD}":/gitbook -p 4000:4000 billryan/gitbook:zh-hans gitbook pdf ./ ./dtle-manual.pdf

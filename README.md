@@ -1,7 +1,7 @@
 # dtle 中文技术参考手册
 
 ## 目录
-参考 gitbook 左侧目录区 或 [SUMMARY.md](https://github.com/actiontech/dtle-docs-cn/blob/master/SUMMARY.md)
+参考 [gitbook](https://actiontech.github.io/dtle-docs-cn) 左侧目录区 或 [SUMMARY.md](https://github.com/actiontech/dtle-docs-cn/blob/master/SUMMARY.md)
 
 ## PDF下载
 [PDF下载](https://github.com/actiontech/dtle-docs-cn/raw/master/dtle-manual.pdf)

@@ -1,4 +1,5 @@
-default: gitbook_build publish gitbook_pdf
+default: gitbook_build publish
+default_with_pdf: default gitbook_pdf
 publish: publish_prepare publish_push
 
 gitbook_preview:

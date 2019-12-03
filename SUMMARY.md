@@ -23,6 +23,7 @@
 	* [3.6.DDL支持度](3/3.6_DDL.md)
 	* [3.7.DCL支持度](3/3.7_DCL.md)
 	* [3.8.dtle mapping支持](3/3.8_dtle_mapping.md)
+	* [3.9.Binlog Relay (中继)](3/3.9_binlog_relay.md)
 * 4.安装/配置说明
 	* [4.0.安装步骤](4/4.0_installation.md)
 	* [4.1.节点配置](4/4.1_node_configuration.md)

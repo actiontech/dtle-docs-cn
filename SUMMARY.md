@@ -8,6 +8,7 @@
 	* [1.3.MySQL到Kafka的数据变更通知](1/1.3_mysql_kafka.md)
 * 2.快速开始
 	* [2.0.MySQL的单向复制](2/2.0_mysql_replication_1_1.md)
+	  * [2.0.1.HTTP API、nomad 命令行工具 和 Web界面](2/2.0.1_interface.md)
 	* [2.1.MySQL的聚合复制](2/2.1_mysql_replication_n_1.md)
 	* [2.2.MySQL的数据分散](2/2.2_mysql_replication_1_n.md)
 	* [2.3.MySQL的跨数据中心的双向复制](2/2.3_dc_to_dc_bidirectional.md)

@@ -8,11 +8,13 @@
 	* [1.3.MySQL到Kafka的数据变更通知](1/1.3_mysql_kafka.md)
 * 2.快速开始
 	* [2.0.MySQL的单向复制](2/2.0_mysql_replication_1_1.md)
+	  * [2.0.1.HTTP API、nomad 命令行工具 和 Web界面](2/2.0.1_interface.md)
 	* [2.1.MySQL的聚合复制](2/2.1_mysql_replication_n_1.md)
 	* [2.2.MySQL的数据分散](2/2.2_mysql_replication_1_n.md)
 	* [2.3.MySQL的跨数据中心的双向复制](2/2.3_dc_to_dc_bidirectional.md)
 	* [2.4.阿里云到京东云的MySQL复制](2/2.4_ali_to_jd.md)
 	* [2.5.MySQL到Kafka的数据变更通知](2/2.5_mysql_kafka.md)
+	* [2.6.多nomad server部署](2/2.6_multi_node.md)
 * 3.功能说明
 	* [3.0.功能/场景的映射列表](3/3.0_function_scenario_mapping.md)
 	* [3.1.使用限制](3/3.1_limitation.md)
@@ -24,14 +26,17 @@
 	* [3.7.DCL支持度](3/3.7_DCL.md)
 	* [3.8.dtle mapping支持](3/3.8_dtle_mapping.md)
 	* [3.9.Binlog Relay (中继)](3/3.9_binlog_relay.md)
+	* [3.10.consul 上的 job 数据管理](3/3.10_consul.md)
 * 4.安装/配置说明
 	* [4.0.安装步骤](4/4.0_installation.md)
 	* [4.1.节点配置](4/4.1_node_configuration.md)
 	* [4.2.命令说明](4/4.2_command.md)
 	* [4.3.作业(job)配置](4/4.3_job_configuration.md)
+	* [4.3.1.性能调优](4/4.3.1_tuning.md)
 	* [4.4.HTTP API说明](4/4.4_http_api.md)
+	* [4.4.1.旧版（2.x）HTTP API说明](4/4.4.1_http_api_oldv2.md)
 	* [4.5.MySQL 用户权限说明](4/4.5_mysql_user_privileges.md)
-
+	* [4.6.dtle 2升级到3](4/4.6_dtle_2to3.md)
 * 5.设计说明
 	* [5.1.时间/资源估算](5/5.1_resource_estimation.md)
 	* [5.2 基本架构](5/5.2_architecture.md)

@@ -1,5 +1,5 @@
 default: gitbook_build publish
-default_with_pdf: default gitbook_pdf
+default_with_pdf: default gitbook_pdf_commit
 publish: publish_prepare publish_push
 
 gitbook_preview:
@@ -9,6 +9,8 @@ gitbook_build:
 
 gitbook_pdf:
 	docker run --rm -v "${PWD}":/gitbook -p 4000:4000 billryan/gitbook:zh-hans gitbook pdf ./ ./dts-manual.pdf
+
+gitbook_pdf_commit: gitbook_pdf
 	git add .
 	git commit -a -m "Update pdf"
 	git push

@@ -19,7 +19,7 @@
 	* [3.0.功能/场景的映射列表](3/3.0_function_scenario_mapping.md)
 	* [3.1.使用限制](3/3.1_limitation.md)
 	* [3.2.端口使用说明](3/3.2_ports.md)
-	* [3.3.对目标端数据库的影响](3/3.3_impact_on_dest.md)
+	* [3.3.对目标端数据库的影响(gtid_executed表)](3/3.3_impact_on_dest.md)
 	* [3.4.监控项说明](3/3.4_metrics.md)
 	* [3.5.部署结构](3/3.5_deployment.md)
 	* [3.6.DDL支持度](3/3.6_DDL.md)

@@ -1,6 +1,6 @@
 # 概述
 
-dtle (Data-Transformation-le) 是[上海爱可生信息技术股份有限公司](http://www.actionsky.com/) 开发并开源的 [CDC](https://en.wikipedia.org/wiki/Change_data_capture) 工具. 其功能特点是: 
+dts 是 甜橙金融 开发并开源的 [CDC](https://en.wikipedia.org/wiki/Change_data_capture) 工具. 其功能特点是: 
 - 多种数据传输模式
 	- 支持链路压缩
 	- 支持同构传输和异构传输

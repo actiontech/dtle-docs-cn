@@ -38,6 +38,7 @@
 	* [4.4.1.旧版（2.x）HTTP API说明](4/4.4.1_http_api_oldv2.md)
 	* [4.5.MySQL 用户权限说明](4/4.5_mysql_user_privileges.md)
 	* [4.6.dtle 2升级到3](4/4.6_dtle_2to3.md)
+	* [4.7.故障诊断](4/4.7_diagnosing.md)
 * 5.设计说明
 	* [5.1.时间/资源估算](5/5.1_resource_estimation.md)
 	* [5.2 基本架构](5/5.2_architecture.md)

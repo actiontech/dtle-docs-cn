@@ -34,11 +34,12 @@
 	* [4.2.命令说明](4/4.2_command.md)
 	* [4.3.作业(job)配置](4/4.3_job_configuration.md)
 	* [4.3.1.性能调优](4/4.3.1_tuning.md)
+	* [4.3.2.Job示例](4/4.3.1_tuning.md)
 	* [4.4.HTTP API说明](4/4.4_http_api.md)
 	* [4.4.1.旧版（2.x）HTTP API说明](4/4.4.1_http_api_oldv2.md)
 	* [4.5.MySQL 用户权限说明](4/4.5_mysql_user_privileges.md)
 	* [4.6.dtle 2升级到3](4/4.6_dtle_2to3.md)
-	* [4.7.故障诊断](4/4.7_diagnosing.md)
+	* [4.7.问题诊断 FAQ](4/4.7_diagnosing.md)
 * 5.设计说明
 	* [5.1.时间/资源估算](5/5.1_resource_estimation.md)
 	* [5.2 基本架构](5/5.2_architecture.md)

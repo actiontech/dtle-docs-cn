@@ -798,7 +798,7 @@
     }]
   }]
 </code></pre><h2 id="&#x590D;&#x5236;&#x591A;&#x4E2A;&#x5E93;&#x4E2D;&#x7684;&#x591A;&#x4E2A;&#x8868;">&#x590D;&#x5236;&#x591A;&#x4E2A;&#x5E93;&#x4E2D;&#x7684;&#x591A;&#x4E2A;&#x8868;</h2>
-<p>job.json&#x4E2D;ReplicateDoDb&#x914D;&#x7F6E;&#xFF1A;</p>
+<p>job.hcl &#x4E2D;ReplicateDoDb&#x914D;&#x7F6E;&#xFF1A;</p>
 <pre><code>  ReplicateDoDb = [{
     TableSchema = &quot;action_db_1&quot;
     Tables = [{
@@ -822,7 +822,47 @@
 <p>&#x53C2;&#x8003;<a href="../2/2.2_mysql_replication_1_n.html">2.2.MySQL &#x7684;&#x6570;&#x636E;&#x5206;&#x6563;</a></p>
 <h2 id="&#x4F7F;&#x7528;&#x6B63;&#x5219;&#x6311;&#x9009;&#x590D;&#x5236;&#x5E93;&#x8868;">&#x4F7F;&#x7528;&#x6B63;&#x5219;&#x6311;&#x9009;&#x590D;&#x5236;&#x5E93;&#x8868;</h2>
 <p>&#x53C2;&#x8003;<a href="../3/3.8_dtle_mapping.html">3.8.dtle mapping &#x652F;&#x6301;</a></p>
-
+<h2 id="&#x5FFD;&#x7565;&#x6307;&#x5B9A;&#x7684;&#x5E93;">&#x5FFD;&#x7565;&#x6307;&#x5B9A;&#x7684;&#x5E93;</h2>
+<p>job.hcl&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x914D;&#x7F6E;&#x5FFD;&#x7565;&#x8868;db1&#x53CA;db1&#x5185;&#x6240;&#x6709;&#x7684;&#x8868;</p>
+<pre><code>  ReplicateDoDb = []
+  ReplicateIgnoreDb = [{
+    TableSchema = &quot;db1&quot;
+  }]
+</code></pre><p>job.hcl&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x914D;&#x7F6E;&#x5728;ReplicateDoDb&#x6307;&#x5B9A;&#x7684;&#x8303;&#x56F4;&#x5185;&#x5FFD;&#x7565;&#x8868;db1&#x548C;db1&#x4E0B;&#x7684;&#x6240;&#x6709;&#x8868;&#xFF0C;&#x6700;&#x7EC8;&#x6548;&#x679C;&#x662F;&#x6CA1;&#x6709;&#x8981;&#x590D;&#x5236;&#x7684;&#x5E93;&#x8868;</p>
+<pre><code>  ReplicateDoDb = [{
+    TableSchema = &quot;db1&quot;
+    Tables = [{
+      TableName = &quot;tb1&quot;
+    }]
+  }]
+  ReplicateIgnoreDb = [{
+    TableSchema = &quot;db1&quot;
+  }]
+</code></pre><h2 id="&#x5FFD;&#x7565;&#x6307;&#x5B9A;&#x7684;&#x8868;">&#x5FFD;&#x7565;&#x6307;&#x5B9A;&#x7684;&#x8868;</h2>
+<p>job.hcl&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x914D;&#x7F6E;&#x5728;ReplicateDoDb&#x6307;&#x5B9A;&#x7684;&#x8303;&#x56F4;&#x5185;&#x5FFD;&#x7565;db1.tb1&#xFF0C;&#x6700;&#x7EC8;&#x590D;&#x5236;&#x5E93;db1&#x4E0B;&#x9664;&#x4E86;tb1&#x4EE5;&#x5916;&#x7684;&#x8868;</p>
+<pre><code>  ReplicateDoDb = [{
+    TableSchema = &quot;db1&quot;
+  }]
+  ReplicateIgnoreDb = [{
+    TableSchema = &quot;db1&quot;
+    Tables = [{
+      TableName = &quot;tb1&quot;
+    }]
+  }]
+</code></pre><p>job.hcl&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x914D;&#x7F6E;&#x5728;ReplicateDoDb&#x6307;&#x5B9A;&#x7684;&#x8303;&#x56F4;&#x5185;&#x5FFD;&#x7565;db1.tb1&#xFF0C;&#x6700;&#x7EC8;&#x53EA;&#x590D;&#x5236;&#x5E93;db1&#x7ED3;&#x6784;&#xFF0C;&#x4F46;&#x4E0D;&#x590D;&#x5236;db1&#x4E0B;&#x7684;&#x4EFB;&#x4F55;&#x8868;</p>
+<pre><code>  ReplicateDoDb = [{
+    TableSchema = &quot;db1&quot;
+    Tables = [{
+      TableName = &quot;tb1&quot;
+    }]
+  }]
+  ReplicateIgnoreDb = [{
+    TableSchema = &quot;db1&quot;
+    Tables = [{
+      TableName = &quot;tb1&quot;
+    }]
+  }]
+</code></pre>
                                 
                                 </section>
                             
@@ -865,7 +905,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.3.2.Job示例","level":"1.6.6","depth":2,"next":{"title":"4.4.HTTP API说明","level":"1.6.7","depth":2,"path":"4/4.4_http_api.md","ref":"4/4.4_http_api.md","articles":[]},"previous":{"title":"4.3.1.性能调优","level":"1.6.5","depth":2,"path":"4/4.3.1_tuning.md","ref":"4/4.3.1_tuning.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"4/4.3.2_job_sample.md","mtime":"2021-02-03T07:19:35.448Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-05T09:17:20.041Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.3.2.Job示例","level":"1.6.6","depth":2,"next":{"title":"4.4.HTTP API说明","level":"1.6.7","depth":2,"path":"4/4.4_http_api.md","ref":"4/4.4_http_api.md","articles":[]},"previous":{"title":"4.3.1.性能调优","level":"1.6.5","depth":2,"path":"4/4.3.1_tuning.md","ref":"4/4.3.1_tuning.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"4/4.3.2_job_sample.md","mtime":"2021-03-05T02:34:57.851Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-05T02:36:16.735Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

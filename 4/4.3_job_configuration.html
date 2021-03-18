@@ -1191,15 +1191,15 @@ task &#x4E2D;&#x6307;&#x5B9A; driver = &quot;dtle&quot;, &#x5728;config&#x6BB5;&
 </tbody>
 </table>
 <h2 id="nomad-job-&#x5E38;&#x7528;&#x901A;&#x7528;&#x914D;&#x7F6E;">nomad job &#x5E38;&#x7528;&#x901A;&#x7528;&#x914D;&#x7F6E;</h2>
-<h3 id="affinity">affinity</h3>
-<p>job&#x3001;group &#x6216; task &#x7EA7;&#x914D;&#x7F6E;&#x3002;&#x914D;&#x7F6E;&#x540E;&#x8BE5;job/group/task&#x4F1A;&#x4F18;&#x5148;&#x5728;&#x6307;&#x5B9A;&#x7684;&#x8282;&#x70B9;&#x4E0A;&#x6267;&#x884C;</p>
-<pre><code>affinity {
+<h3 id="constraint">constraint</h3>
+<p>job&#x3001;group &#x6216; task &#x7EA7;&#x914D;&#x7F6E;&#x3002;&#x914D;&#x7F6E;&#x540E;&#x8BE5;job/group/task&#x4F1A;&#x7ED1;&#x5B9A;&#x5728;&#x6307;&#x5B9A;&#x7684;&#x8282;&#x70B9;&#x4E0A;&#x6267;&#x884C;</p>
+<pre><code>constraint {
   attribute = &quot;${node.unique.name}&quot;
   value = &quot;nomad3&quot;
 }
 </code></pre><p>&#x5B8C;&#x6574;&#x53C2;&#x8003;</p>
 <ul>
-<li><a href="https://www.nomadproject.io/docs/job-specification/affinity" target="_blank">https://www.nomadproject.io/docs/job-specification/affinity</a></li>
+<li><a href="https://www.nomadproject.io/docs/job-specification/constraint" target="_blank">https://www.nomadproject.io/docs/job-specification/constraint</a></li>
 <li><a href="https://www.nomadproject.io/docs/runtime/interpolation#interpreted_node_vars" target="_blank">https://www.nomadproject.io/docs/runtime/interpolation#interpreted_node_vars</a></li>
 </ul>
 <h3 id="resources">resources</h3>
@@ -1290,7 +1290,7 @@ reschedule { # job or group level
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.3.作业(job)配置","level":"1.6.4","depth":2,"next":{"title":"4.3.1.性能调优","level":"1.6.5","depth":2,"path":"4/4.3.1_tuning.md","ref":"4/4.3.1_tuning.md","articles":[]},"previous":{"title":"4.2.命令说明","level":"1.6.3","depth":2,"path":"4/4.2_command.md","ref":"4/4.2_command.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"4/4.3_job_configuration.md","mtime":"2021-03-05T02:34:57.852Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-05T02:36:16.735Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.3.作业(job)配置","level":"1.6.4","depth":2,"next":{"title":"4.3.1.性能调优","level":"1.6.5","depth":2,"path":"4/4.3.1_tuning.md","ref":"4/4.3.1_tuning.md","articles":[]},"previous":{"title":"4.2.命令说明","level":"1.6.3","depth":2,"path":"4/4.2_command.md","ref":"4/4.2_command.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"4/4.3_job_configuration.md","mtime":"2021-03-18T08:01:45.213Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-18T08:04:23.389Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

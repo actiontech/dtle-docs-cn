@@ -889,7 +889,7 @@ plugin &quot;dtle&quot; {
         &quot;Tasks&quot;: [{
           &quot;Name&quot;: &quot;src&quot;,
           &quot;Driver&quot;: &quot;dtle&quot;,
-          &quot;Affinities&quot;: [{
+          &quot;Constraints&quot;: [{
             &quot;LTarget&quot;: &quot;${node.unique.name}&quot;,
             &quot;RTarget&quot;: &quot;nomad1&quot;,
             &quot;Operand&quot;: &quot;=&quot;
@@ -915,7 +915,7 @@ plugin &quot;dtle&quot; {
         &quot;Tasks&quot;: [{
           &quot;Name&quot;: &quot;dest&quot;,
           &quot;Driver&quot;: &quot;dtle&quot;,
-          &quot;Affinities&quot;: [{
+          &quot;Constraints&quot;: [{
             &quot;LTarget&quot;: &quot;${node.unique.name}&quot;,
             &quot;RTarget&quot;: &quot;nomad2&quot;,
             &quot;Operand&quot;: &quot;=&quot;
@@ -937,8 +937,8 @@ plugin &quot;dtle&quot; {
 <li>&#x6E90;&#x7AEF;/&#x76EE;&#x6807;&#x7AEF;&#x7684;&#x8FDE;&#x63A5;&#x5B57;&#x7B26;&#x4E32;</li>
 <li>&#x8981;&#x590D;&#x5236;&#x7684;&#x8868;&#x4E3A;<code>demo.demo_tbl</code></li>
 <li>GTID&#x70B9;&#x4F4D;, &#x8868;&#x793A;&#x6B64;&#x590D;&#x5236;&#x662F; &#x589E;&#x91CF;&#x590D;&#x5236; (&#x53CC;&#x5411;&#x590D;&#x5236; &#x53EA;&#x652F;&#x6301;&#x589E;&#x91CF;&#x590D;&#x5236;)</li>
-<li>&#x6E90;&#x4EFB;&#x52A1;(src)&#x914D;&#x7F6E;&#x5728;dc1&#x7684;dtle&#x8282;&#x70B9;&#x4E0A;&#x6267;&#x884C; (&#x901A;&#x8FC7; Affinities &#x6307;&#x5B9A;)</li>
-<li>&#x76EE;&#x6807;&#x4EFB;&#x52A1;(dest)&#x914D;&#x7F6E;&#x5728;dc2&#x7684;dtle&#x8282;&#x70B9;&#x4E0A;&#x6267;&#x884C; (&#x901A;&#x8FC7; Affinities &#x6307;&#x5B9A;)</li>
+<li>&#x6E90;&#x4EFB;&#x52A1;(src)&#x914D;&#x7F6E;&#x5728;dc1&#x7684;dtle&#x8282;&#x70B9;&#x4E0A;&#x6267;&#x884C; (&#x901A;&#x8FC7; Constraints &#x6307;&#x5B9A;)</li>
+<li>&#x76EE;&#x6807;&#x4EFB;&#x52A1;(dest)&#x914D;&#x7F6E;&#x5728;dc2&#x7684;dtle&#x8282;&#x70B9;&#x4E0A;&#x6267;&#x884C; (&#x901A;&#x8FC7; Constraints &#x6307;&#x5B9A;)</li>
 </ul>
 <h2 id="&#x521B;&#x5EFA;dc1&#x5230;dc2&#x7684;&#x590D;&#x5236;&#x4EFB;&#x52A1;">&#x521B;&#x5EFA;dc1&#x5230;dc2&#x7684;&#x590D;&#x5236;&#x4EFB;&#x52A1;</h2>
 <pre><code>&gt; curl -XPOST &quot;http://127.0.0.1:4646/v1/jobs&quot; -d @job-dc1-dc2.json -s | jq
@@ -965,7 +965,7 @@ Executed_Gtid_Set: 41f102d4-d29f-11e8-8de7-0242ac130002:6-7,
         &quot;Tasks&quot;: [{
           &quot;Name&quot;: &quot;src&quot;,
           &quot;Driver&quot;: &quot;dtle&quot;,
-          &quot;Affinities&quot;: [{
+          &quot;Constraints&quot;: [{
             &quot;LTarget&quot;: &quot;${node.unique.name}&quot;,
             &quot;RTarget&quot;: &quot;nomad2&quot;,
             &quot;Operand&quot;: &quot;=&quot;
@@ -991,7 +991,7 @@ Executed_Gtid_Set: 41f102d4-d29f-11e8-8de7-0242ac130002:6-7,
         &quot;Tasks&quot;: [{
           &quot;Name&quot;: &quot;dest&quot;,
           &quot;Driver&quot;: &quot;dtle&quot;,
-          &quot;Affinities&quot;: [{
+          &quot;Constraints&quot;: [{
             &quot;LTarget&quot;: &quot;${node.unique.name}&quot;,
             &quot;RTarget&quot;: &quot;nomad1&quot;,
             &quot;Operand&quot;: &quot;=&quot;
@@ -1069,7 +1069,7 @@ Executed_Gtid_Set: 41f102d4-d29f-11e8-8de7-0242ac130002:6-7,
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.3.MySQL的跨数据中心的双向复制","level":"1.4.4","depth":2,"next":{"title":"2.4.阿里云到京东云的MySQL复制","level":"1.4.5","depth":2,"path":"2/2.4_ali_to_jd.md","ref":"2/2.4_ali_to_jd.md","articles":[]},"previous":{"title":"2.2.MySQL的数据分散","level":"1.4.3","depth":2,"path":"2/2.2_mysql_replication_1_n.md","ref":"2/2.2_mysql_replication_1_n.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"2/2.3_dc_to_dc_bidirectional.md","mtime":"2021-03-04T06:22:10.992Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-05T02:36:16.735Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.3.MySQL的跨数据中心的双向复制","level":"1.4.4","depth":2,"next":{"title":"2.4.阿里云到京东云的MySQL复制","level":"1.4.5","depth":2,"path":"2/2.4_ali_to_jd.md","ref":"2/2.4_ali_to_jd.md","articles":[]},"previous":{"title":"2.2.MySQL的数据分散","level":"1.4.3","depth":2,"path":"2/2.2_mysql_replication_1_n.md","ref":"2/2.2_mysql_replication_1_n.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"2/2.3_dc_to_dc_bidirectional.md","mtime":"2021-03-18T08:01:45.213Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-18T08:04:23.389Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

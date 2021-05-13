@@ -1,0 +1,1809 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>4.4.1.dtle 3.x HTTP API说明 · dtle manual</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="ActionTech">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="4.5_mysql_user_privileges.html" />
+    
+    
+    <link rel="prev" href="4.4_http_api.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../0/0_overview.html">
+            
+                <a href="../0/0_overview.html">
+            
+                    
+                    0.概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    1.适用场景
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../1/1.0_mysql_replication.html">
+            
+                <a href="../1/1.0_mysql_replication.html">
+            
+                    
+                    1.0.MySQL的单向复制/聚合/分散
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../1/1.1_bidirectional_replication.html">
+            
+                <a href="../1/1.1_bidirectional_replication.html">
+            
+                    
+                    1.1.跨数据中心的双向复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../1/1.2_sync_between_cloud.html">
+            
+                <a href="../1/1.2_sync_between_cloud.html">
+            
+                    
+                    1.2.公有云间的数据同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../1/1.3_mysql_kafka.html">
+            
+                <a href="../1/1.3_mysql_kafka.html">
+            
+                    
+                    1.3.MySQL到Kafka的数据变更通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    2.快速开始
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../2/2.0_mysql_replication_1_1.html">
+            
+                <a href="../2/2.0_mysql_replication_1_1.html">
+            
+                    
+                    2.0.MySQL的单向复制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../2/2.0.1_interface.html">
+            
+                <a href="../2/2.0.1_interface.html">
+            
+                    
+                    2.0.1.HTTP API、nomad 命令行工具 和 Web界面
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../2/2.1_mysql_replication_n_1.html">
+            
+                <a href="../2/2.1_mysql_replication_n_1.html">
+            
+                    
+                    2.1.MySQL的聚合复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../2/2.2_mysql_replication_1_n.html">
+            
+                <a href="../2/2.2_mysql_replication_1_n.html">
+            
+                    
+                    2.2.MySQL的数据分散
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../2/2.3_dc_to_dc_bidirectional.html">
+            
+                <a href="../2/2.3_dc_to_dc_bidirectional.html">
+            
+                    
+                    2.3.MySQL的跨数据中心的双向复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../2/2.4_ali_to_jd.html">
+            
+                <a href="../2/2.4_ali_to_jd.html">
+            
+                    
+                    2.4.阿里云到京东云的MySQL复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../2/2.5_mysql_kafka.html">
+            
+                <a href="../2/2.5_mysql_kafka.html">
+            
+                    
+                    2.5.MySQL到Kafka的数据变更通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../2/2.6_multi_node.html">
+            
+                <a href="../2/2.6_multi_node.html">
+            
+                    
+                    2.6.多nomad server部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    3.功能说明
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../3/3.0_function_scenario_mapping.html">
+            
+                <a href="../3/3.0_function_scenario_mapping.html">
+            
+                    
+                    3.0.功能/场景的映射列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../3/3.1_limitation.html">
+            
+                <a href="../3/3.1_limitation.html">
+            
+                    
+                    3.1.使用限制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../3/3.2_ports.html">
+            
+                <a href="../3/3.2_ports.html">
+            
+                    
+                    3.2.端口使用说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../3/3.3_impact_on_dest.html">
+            
+                <a href="../3/3.3_impact_on_dest.html">
+            
+                    
+                    3.3.对目标端数据库的影响(gtid_executed表)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../3/3.4_metrics.html">
+            
+                <a href="../3/3.4_metrics.html">
+            
+                    
+                    3.4.监控项说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../3/3.5_deployment.html">
+            
+                <a href="../3/3.5_deployment.html">
+            
+                    
+                    3.5.部署结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../3/3.6_DDL.html">
+            
+                <a href="../3/3.6_DDL.html">
+            
+                    
+                    3.6.DDL支持度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../3/3.7_DCL.html">
+            
+                <a href="../3/3.7_DCL.html">
+            
+                    
+                    3.7.DCL支持度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../3/3.8_dtle_mapping.html">
+            
+                <a href="../3/3.8_dtle_mapping.html">
+            
+                    
+                    3.8.dtle mapping支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../3/3.9_binlog_relay.html">
+            
+                <a href="../3/3.9_binlog_relay.html">
+            
+                    
+                    3.9.Binlog Relay (中继)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="../3/3.10_consul.html">
+            
+                <a href="../3/3.10_consul.html">
+            
+                    
+                    3.10.consul 上的 job 数据管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="../3/3.11_delay.html">
+            
+                <a href="../3/3.11_delay.html">
+            
+                    
+                    3.11.延迟监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    4.安装/配置说明
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="4.0_installation.html">
+            
+                <a href="4.0_installation.html">
+            
+                    
+                    4.0.安装步骤
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="4.1_node_configuration.html">
+            
+                <a href="4.1_node_configuration.html">
+            
+                    
+                    4.1.节点配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="4.2_command.html">
+            
+                <a href="4.2_command.html">
+            
+                    
+                    4.2.命令说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="4.3_job_configuration.html">
+            
+                <a href="4.3_job_configuration.html">
+            
+                    
+                    4.3.作业(job)配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="4.3.1_tuning.html">
+            
+                <a href="4.3.1_tuning.html">
+            
+                    
+                    4.3.1.性能调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="4.3.2_job_sample.html">
+            
+                <a href="4.3.2_job_sample.html">
+            
+                    
+                    4.3.2.Job示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="4.4_http_api.html">
+            
+                <a href="4.4_http_api.html">
+            
+                    
+                    4.4.HTTP API说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.8" data-path="4.4.1_dtle_http_api.html">
+            
+                <a href="4.4.1_dtle_http_api.html">
+            
+                    
+                    4.4.1.dtle 3.x HTTP API说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="4.5_mysql_user_privileges.html">
+            
+                <a href="4.5_mysql_user_privileges.html">
+            
+                    
+                    4.5.MySQL 用户权限说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="4.6_dtle_2to3.html">
+            
+                <a href="4.6_dtle_2to3.html">
+            
+                    
+                    4.6.dtle 2升级到3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="4.7_diagnosing.html">
+            
+                <a href="4.7_diagnosing.html">
+            
+                    
+                    4.7.问题诊断 FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    5.设计说明
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../5/5.1_resource_estimation.html">
+            
+                <a href="../5/5.1_resource_estimation.html">
+            
+                    
+                    5.1.时间/资源估算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../5/5.2_architecture.html">
+            
+                <a href="../5/5.2_architecture.html">
+            
+                    
+                    5.2 基本架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../5/5.3_kafka_message_format.html">
+            
+                <a href="../5/5.3_kafka_message_format.html">
+            
+                    
+                    5.3 Kafka 消息格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../6/howto_contribute.html">
+            
+                <a href="../6/howto_contribute.html">
+            
+                    
+                    6.如何参与
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../7/7_roadmap.html">
+            
+                <a href="../7/7_roadmap.html">
+            
+                    
+                    7.路线图
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >4.4.1.dtle 3.x HTTP API说明</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="dtle-3x-http-api-&#x8BF4;&#x660E;">dtle 3.x HTTP API &#x8BF4;&#x660E;</h1>
+<p>dtle 3.x &#x6839;&#x636E;&#x4E1A;&#x52A1;&#x529F;&#x80FD;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x5957;HTTP API&#xFF08;&#x5F00;&#x542F;&#x65B9;&#x5F0F;&#x89C1;<a href="4.1_node_configuration.html">&quot;&#x8282;&#x70B9;&#x914D;&#x7F6E;&quot;</a>&#xFF0C;api_addr&#xFF09;&#xFF0C;&#x53EF;&#x4E0E;dtle UI&#x914D;&#x5957;&#x4F7F;&#x7528;&#x3002;  </p>
+<p>&#x672C;&#x8282;API&#x793A;&#x4F8B;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;swagger UI&#x8C03;&#x7528;&#x3002;</p>
+<h2 id="&#x901A;&#x8FC7;swagger-ui&#x67E5;&#x770B;&#x63A5;&#x53E3;&#x6587;&#x6863;">&#x901A;&#x8FC7;swagger UI&#x67E5;&#x770B;&#x63A5;&#x53E3;&#x6587;&#x6863;</h2>
+<p>&#x8BBF;&#x95EE;<code>http://{dtle ip}:8190/swagger/index.html</code>&#x901A;&#x8FC7;swagger UI&#x67E5;&#x770B;&#x63A5;&#x53E3;&#x6587;&#x6863;&#xFF0C;&#x6253;&#x5F00;&#x754C;&#x9762;&#x5982;&#x4E0B;&#xFF1A;  </p>
+<p><img src="images/4.4.1_swagger_ui.png" alt=""></p>
+<h2 id="&#x901A;&#x8FC7;swagger-ui&#x8C03;&#x7528;api">&#x901A;&#x8FC7;swagger UI&#x8C03;&#x7528;API</h2>
+<p>&#x9664;&#x4E86;&#x4F7F;&#x7528;curl&#x547D;&#x4EE4;&#x5916;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;swagger UI&#x754C;&#x9762;&#x8C03;&#x7528;API&#xFF0C;&#x5177;&#x4F53;&#x6B65;&#x9AA4;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>1 &#x70B9;&#x51FB;&quot;Try it out&quot;&#xFF0C;&#x8FDB;&#x5165;&#x8C03;&#x8BD5;&#x6A21;&#x5F0F;</p>
+<p><img src="images/4.4.1_try_it_out.png" alt=""></p>
+<p>2 &#x586B;&#x5199;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x540E;&#x70B9;&#x51FB;&quot;Execute&quot;&#x8C03;&#x7528;API</p>
+<p><img src="images/4.4.1_execute.png" alt=""></p>
+<p>3 &#x67E5;&#x770B;&#x54CD;&#x5E94;&#xFF1A;</p>
+<p><img src="images/4.4.1_response.png" alt=""></p>
+<h2 id="&#x521B;&#x5EFA;&#x66F4;&#x65B0;-&#x4E00;&#x4E2A;&#x8FC1;&#x79FB;&#x4F5C;&#x4E1A;">&#x521B;&#x5EFA;/&#x66F4;&#x65B0; &#x4E00;&#x4E2A;&#x8FC1;&#x79FB;&#x4F5C;&#x4E1A;</h2>
+<h4 id="api-post-v2jobmigration">API: <code>POST /v2/job/migration</code></h4>
+<p>&#x521B;&#x5EFA;&#x7684;job&#x7C7B;&#x578B;&#x4E3A;<code>migration</code></p>
+<h4 id="&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x8BF4;&#x660E;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;&#x540D;</th>
+<th>&#x5FC5;&#x586B;?</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>migration_job_config</td>
+<td>&#x662F;</td>
+<td>JSON Object</td>
+<td>&quot;&quot;</td>
+<td>&#x521B;&#x5EFA;job&#x6240;&#x9700;&#x7684;&#x914D;&#x7F6E;</td>
+</tr>
+</tbody>
+</table>
+<p><code>migration_job_config</code>&#x5B57;&#x6BB5;&#x8BF4;&#x660E;&#xFF1A;  </p>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;&#x540D;</th>
+<th>&#x5FC5;&#x586B;?</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>job_id</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>&quot;job_name-{job&#x7C7B;&#x578B;}&quot;</td>
+<td>&#x5982;&#x679C;&#x586B;&#x5199;<code>job_id</code>&#xFF0C;&#x521B;&#x5EFA;job&#x65F6;&#x4F1A;&#x6307;&#x5B9A;job id&#x4E3A; <code>&quot;job_id-{job&#x7C7B;&#x578B;}&quot;</code></td>
+</tr>
+<tr>
+<td>failover</td>
+<td>&#x5426;</td>
+<td>bool</td>
+<td>true</td>
+<td>&#x662F;&#x5426;&#x652F;&#x6301;&#x6545;&#x969C;&#x8F6C;&#x79FB;&#x3002;&#x8BBE;&#x7F6E;failover=false&#x65F6;&#xFF0C;&#x8BE5;job&#x7684;&#x6240;&#x6709;task&#x4E0D;&#x542F;&#x7528;&#x6545;&#x969C;&#x8F6C;&#x79FB;&#xFF0C;&#x8981;&#x6C42;&#x540C;&#x65F6;&#x586B;&#x5199;task&#x7684;<code>node_id</code>&#x4EE5;&#x6307;&#x5B9A;&#x6BCF;&#x4E2A;task&#x8FD0;&#x884C;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x5982;&#x679C;&#x8FD0;&#x884C;&#x8282;&#x70B9;&#x53D1;&#x751F;&#x6545;&#x969C;&#xFF0C;&#x4E0D;&#x4F1A;&#x5C06;task&#x8F6C;&#x79FB;&#x5230;&#x5176;&#x5B83;&#x8282;&#x70B9;&#x8FD0;&#x884C;&#xFF1B;&#x8BBE;&#x7F6E;failover=true&#x65F6;&#xFF0C;&#x542F;&#x7528;&#x6545;&#x969C;&#x8F6C;&#x79FB;&#x3002;</td>
+</tr>
+<tr>
+<td>is_mysql_password_encrypted</td>
+<td>&#x5426;</td>
+<td>bool</td>
+<td>false</td>
+<td>MySQL&#x5BC6;&#x7801;&#x662F;&#x5426;&#x7ECF;&#x8FC7;&#x52A0;&#x5BC6;&#x3002;&#x8BBE;&#x7F6E;is_mysql_password_encrypted=true&#x65F6;&#xFF0C;&#x8BA4;&#x4E3A;&#x6240;&#x586B;&#x5199;&#x7684;<code>mysql_password</code>&#x7ECF;&#x8FC7;&#x4E24;&#x6B21;&#x52A0;&#x5BC6;&#xFF08;&#x5148;&#x662F;rsa/none/pkcs1 padding &#x52A0;&#x5BC6;&#xFF0C;&#x518D;&#x505A;base64&#x7F16;&#x7801;&#xFF09;&#xFF0C;&#x8981;&#x6C42;&#x5C06;rsa&#x5BC6;&#x94A5;&#x4EE5;pem&#x683C;&#x5F0F;&#x4FDD;&#x5B58;&#x5728;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x518D;&#x5C06;&#x6587;&#x4EF6;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x914D;&#x7F6E;&#x5230;nomad.hcl&#x7684;<code>rsa_private_key_path</code>&#x53C2;&#x6570;&#xFF08;&#x914D;&#x7F6E;&#x65B9;&#x6CD5;&#x89C1;<a href="4.1_node_configuration.html">&quot;&#x8282;&#x70B9;&#x914D;&#x7F6E;&quot;</a>&#xFF09;&#xFF1B;&#x8BBE;&#x7F6E;is_mysql_password_encrypted=false&#x65F6;&#xFF0C;<code>mysql_password</code>&#x586B;&#x5199;&#x660E;&#x6587;&#x5BC6;&#x7801;&#x3002;</td>
+</tr>
+<tr>
+<td>dest_task</td>
+<td>&#x662F;</td>
+<td>JSON Object</td>
+<td>&quot;&quot;</td>
+<td>&#x76EE;&#x6807;&#x7AEF;&#x914D;&#x7F6E;&#xFF0C;&#x53C2;&#x6570;&#x8BF4;&#x660E;&#x53C2;&#x8003;<a href="4.3_job_configuration.html">&quot;&#x4F5C;&#x4E1A;&#x914D;&#x7F6E;&quot;</a></td>
+</tr>
+<tr>
+<td>dest_task.node_id</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>&quot;&quot;</td>
+<td>task&#x8FD0;&#x884C;&#x7684;&#x8282;&#x70B9;id&#x3002;failover=true&#x65F6;&#xFF0C;task&#x4F18;&#x5148;&#x653E;&#x5728;&#x6307;&#x5B9A;&#x8282;&#x70B9;&#x8FD0;&#x884C;</td>
+</tr>
+<tr>
+<td>src_task</td>
+<td>&#x662F;</td>
+<td>JSON Object</td>
+<td>&quot;&quot;</td>
+<td>&#x6E90;&#x7AEF;&#x914D;&#x7F6E;&#xFF0C;&#x53C2;&#x6570;&#x8BF4;&#x660E;&#x53C2;&#x8003;<a href="4.3_job_configuration.html">&quot;&#x4F5C;&#x4E1A;&#x914D;&#x7F6E;&quot;</a></td>
+</tr>
+<tr>
+<td>src_task.node_id</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>&quot;&quot;</td>
+<td>&#x540C;<code>dest_task.node_id</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x54CD;&#x5E94;&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x54CD;&#x5E94;&#x53C2;&#x6570;&#x8BF4;&#x660E;</h4>
+<p>&#x8FD4;&#x56DE;&#x8BF7;&#x6C42;&#x7684;job&#x914D;&#x7F6E;</p>
+<h4 id="&#x6837;&#x4F8B;">&#x6837;&#x4F8B;</h4>
+<p>params&#xFF1A;<br><code>migration_job_config</code>: </p>
+<pre><code>{
+  &quot;is_mysql_password_encrypted&quot;: true,
+  &quot;failover&quot;: true,
+  &quot;dest_task&quot;: {
+      &quot;mysql_connection_config&quot;: {
+      &quot;mysql_host&quot;: &quot;10.186.63.28&quot;,
+      &quot;mysql_password&quot;: &quot;vo0+U/SoBFC2QHE1KSunmAIZGpkxpXRWyDJVMNZ3HaQGQRcrVl2w/VuT2gfdD76Pj/Te+24LMBDeoWyNzc8w1NBNqL2+BD7uuLl2aAHPrarhY07LvI2X3NC8n59c0ozN/3+uJPvX7YQ5w8jMjm8xD4qhtI99PkBtC+hfjP1WY38=&quot;,
+      &quot;mysql_port&quot;: 3308,
+      &quot;mysql_user&quot;: &quot;test&quot;
+    },
+    &quot;task_name&quot;: &quot;dest&quot;
+  },
+  &quot;job_name&quot;: &quot;job1&quot;,
+  &quot;src_task&quot;: {
+      &quot;mysql_connection_config&quot;: {
+      &quot;mysql_host&quot;: &quot;10.186.63.28&quot;,
+      &quot;mysql_password&quot;: &quot;vo0+U/SoBFC2QHE1KSunmAIZGpkxpXRWyDJVMNZ3HaQGQRcrVl2w/VuT2gfdD76Pj/Te+24LMBDeoWyNzc8w1NBNqL2+BD7uuLl2aAHPrarhY07LvI2X3NC8n59c0ozN/3+uJPvX7YQ5w8jMjm8xD4qhtI99PkBtC+hfjP1WY38=&quot;,
+      &quot;mysql_port&quot;: 3307,
+      &quot;mysql_user&quot;: &quot;test&quot;
+    },
+    &quot;replicate_do_db&quot;: [
+      {
+        &quot;table_schema&quot;: &quot;db1&quot;,
+        &quot;tables&quot;: [
+          {
+            &quot;table_name&quot;: &quot;tb1&quot;
+          }
+        ]
+      }
+    ],
+    &quot;task_name&quot;: &quot;src&quot;
+  }
+}
+</code></pre><p>response:</p>
+<pre><code>{
+  &quot;job&quot;: {
+    &quot;job_name&quot;: &quot;job1&quot;,
+    &quot;job_id&quot;: &quot;&quot;,
+    &quot;failover&quot;: true,
+    &quot;is_mysql_password_encrypted&quot;: true,
+    &quot;src_task&quot;: {
+      &quot;task_name&quot;: &quot;src&quot;,
+      &quot;node_id&quot;: &quot;&quot;,
+      &quot;gtid&quot;: &quot;&quot;,
+      &quot;group_max_size&quot;: 0,
+      &quot;chunk_size&quot;: 0,
+      &quot;drop_table_if_exists&quot;: false,
+      &quot;skip_create_db_table&quot;: false,
+      &quot;repl_chan_buffer_size&quot;: 0,
+      &quot;replicate_do_db&quot;: [
+        {
+          &quot;table_schema&quot;: &quot;db1&quot;,
+          &quot;table_schema_rename&quot;: null,
+          &quot;tables&quot;: [
+            {
+              &quot;table_name&quot;: &quot;tb1&quot;,
+              &quot;table_rename&quot;: &quot;&quot;,
+              &quot;column_map_from&quot;: null,
+              &quot;where&quot;: &quot;&quot;
+            }
+          ]
+        }
+      ],
+      &quot;replicate_ignore_db&quot;: null,
+      &quot;mysql_connection_config&quot;: {
+        &quot;mysql_host&quot;: &quot;10.186.63.28&quot;,
+        &quot;mysql_port&quot;: 3307,
+        &quot;mysql_user&quot;: &quot;test&quot;,
+        &quot;mysql_password&quot;: &quot;*&quot;
+      }
+    },
+    &quot;dest_task&quot;: {
+      &quot;task_name&quot;: &quot;dest&quot;,
+      &quot;node_id&quot;: &quot;&quot;,
+      &quot;parallel_workers&quot;: 0,
+      &quot;mysql_connection_config&quot;: {
+        &quot;mysql_host&quot;: &quot;10.186.63.28&quot;,
+        &quot;mysql_port&quot;: 3308,
+        &quot;mysql_user&quot;: &quot;test&quot;,
+        &quot;mysql_password&quot;: &quot;*&quot;
+      }
+    }
+  },
+  &quot;eval_create_index&quot;: 1103,
+  &quot;job_modify_index&quot;: 13,
+  &quot;message&quot;: &quot;ok&quot;
+}
+</code></pre><h2 id="&#x5217;&#x51FA;&#x6240;&#x6709;&#x4F5C;&#x4E1A;">&#x5217;&#x51FA;&#x6240;&#x6709;&#x4F5C;&#x4E1A;</h2>
+<h4 id="api-get-v2jobs">API: <code>GET /v2/jobs</code></h4>
+<h4 id="&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x8BF4;&#x660E;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;&#x540D;</th>
+<th>&#x5FC5;&#x586B;?</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>filter_job_type</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>&quot;&quot;</td>
+<td>&#x8FC7;&#x6EE4;&#x5668;&#xFF0C;&#x6839;&#x636E;job&#x7C7B;&#x578B;&#x8FC7;&#x6EE4;&#x8BF7;&#x6C42;&#x7ED3;&#x679C;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x54CD;&#x5E94;&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x54CD;&#x5E94;&#x53C2;&#x6570;&#x8BF4;&#x660E;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;&#x540D;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>jobs.job_status</td>
+<td>String</td>
+<td>job&#x8FD0;&#x884C;&#x72B6;&#x6001;&#xFF0C;&#x6CE8;&#x610F;&#x533A;&#x5206;job&#x72B6;&#x6001;&#x548C;task&#x72B6;&#x6001;&#xFF0C;&#x5982;&#x679C;&#x67D0;&#x4E2A;job&#x4E0B;&#x6709;task&#x5931;&#x8D25;&#xFF0C;&#x6B64;&#x65F6;&#x83B7;&#x53D6;&#x5230;&#x7684;job&#x72B6;&#x6001;&#x4ECD;&#x53EF;&#x80FD;&#x4E3A;&quot;running&quot;&#xFF0C;&#x56E0;&#x4E3A;job&#x8D1F;&#x8D23;&#x7BA1;&#x7406;&#x548C;&#x8C03;&#x5EA6;task&#xFF0C;&#x5B83;&#x786E;&#x5B9E;&#x662F;&#x5904;&#x4E8E;&#x6B63;&#x5E38;&#x8FD0;&#x884C;&#x72B6;&#x6001;&#xFF0C;&#x5B83;&#x53EF;&#x80FD;&#x6B63;&#x5728;&#x5BF9;&#x5931;&#x8D25;&#x7684;task&#x505A;&#x91CD;&#x8BD5;&#x3001;&#x91CD;&#x65B0;&#x5206;&#x914D;&#x7B49;&#x5DE5;&#x4F5C;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x6837;&#x4F8B;">&#x6837;&#x4F8B;</h4>
+<p>params&#xFF1A;<br><code>filter_job_type</code>: &quot;&quot;</p>
+<p>response:</p>
+<pre><code>{
+  &quot;jobs&quot;: [
+    {
+      &quot;job_id&quot;: &quot;job1-migration&quot;,
+      &quot;job_name&quot;: &quot;job1&quot;,
+      &quot;job_status&quot;: &quot;running&quot;,
+      &quot;job_status_description&quot;: &quot;&quot;
+    },
+    {
+      &quot;job_id&quot;: &quot;job2-sync&quot;,
+      &quot;job_name&quot;: &quot;job2&quot;,
+      &quot;job_status&quot;: &quot;running&quot;,
+      &quot;job_status_description&quot;: &quot;&quot;
+    }
+  ],
+  &quot;message&quot;: &quot;ok&quot;
+}
+</code></pre><h2 id="&#x83B7;&#x53D6;&#x67D0;&#x4E2A;&#x8FC1;&#x79FB;&#x4F5C;&#x4E1A;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;">&#x83B7;&#x53D6;&#x67D0;&#x4E2A;&#x8FC1;&#x79FB;&#x4F5C;&#x4E1A;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;</h2>
+<h4 id="api-get-v2jobmigrationdetail">API: <code>GET /v2/job/migration/detail</code></h4>
+<h4 id="&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x8BF4;&#x660E;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;&#x540D;</th>
+<th>&#x5FC5;&#x586B;?</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>job_id</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td>&quot;&quot;</td>
+<td>&#x8981;&#x67E5;&#x8BE2;&#x7684;job id</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x6837;&#x4F8B;">&#x6837;&#x4F8B;</h4>
+<p>params&#xFF1A;<br><code>job_id</code>: <code>job1-migration</code></p>
+<p>response:</p>
+<pre><code>{
+  &quot;job_id&quot;: &quot;job1-migration&quot;,
+  &quot;job_name&quot;: &quot;job1&quot;,
+  &quot;failover&quot;: true,
+  &quot;src_task_detail&quot;: {
+    &quot;allocation_id&quot;: &quot;5ac66f61-0876-9722-4398-9dff237593b0&quot;,
+    &quot;task_config&quot;: {
+      &quot;task_name&quot;: &quot;src&quot;,
+      &quot;node_id&quot;: &quot;e4fa3fde-dbed-b9c0-63d0-a0ee50f57244&quot;,
+      &quot;gtid&quot;: &quot;&quot;,
+      &quot;group_max_size&quot;: 0,
+      &quot;chunk_size&quot;: 0,
+      &quot;drop_table_if_exists&quot;: false,
+      &quot;skip_create_db_table&quot;: false,
+      &quot;repl_chan_buffer_size&quot;: 0,
+      &quot;replicate_do_db&quot;: [
+        {
+          &quot;table_schema&quot;: &quot;db1&quot;,
+          &quot;table_schema_rename&quot;: &quot;&quot;,
+          &quot;tables&quot;: [
+            {
+              &quot;table_name&quot;: &quot;tb1&quot;,
+              &quot;table_rename&quot;: &quot;&quot;,
+              &quot;column_map_from&quot;: null,
+              &quot;where&quot;: &quot;&quot;
+            }
+          ]
+        }
+      ],
+      &quot;replicate_ignore_db&quot;: [],
+      &quot;mysql_connection_config&quot;: {
+        &quot;mysql_host&quot;: &quot;10.186.63.28&quot;,
+        &quot;mysql_port&quot;: 3307,
+        &quot;mysql_user&quot;: &quot;test&quot;,
+        &quot;mysql_password&quot;: &quot;*&quot;
+      }
+    },
+    &quot;task_status&quot;: {
+      &quot;task_events&quot;: [
+        {
+          &quot;event_type&quot;: &quot;Received&quot;,
+          &quot;setup_error&quot;: &quot;&quot;,
+          &quot;message&quot;: &quot;&quot;,
+          &quot;time&quot;: &quot;2021-05-11T08:45:24Z&quot;
+        },
+        {
+          &quot;event_type&quot;: &quot;Task Setup&quot;,
+          &quot;setup_error&quot;: &quot;&quot;,
+          &quot;message&quot;: &quot;Building Task Directory&quot;,
+          &quot;time&quot;: &quot;2021-05-11T08:45:24Z&quot;
+        },
+        {
+          &quot;event_type&quot;: &quot;Started&quot;,
+          &quot;setup_error&quot;: &quot;&quot;,
+          &quot;message&quot;: &quot;&quot;,
+          &quot;time&quot;: &quot;2021-05-11T08:45:24Z&quot;
+        }
+      ],
+      &quot;started_at&quot;: &quot;2021-05-11T08:45:24.742580336Z&quot;,
+      &quot;finished_at&quot;: &quot;0001-01-01T00:00:00Z&quot;,
+      &quot;status&quot;: &quot;running&quot;
+    }
+  },
+  &quot;dest_task_detail&quot;: {
+    &quot;allocation_id&quot;: &quot;2700e319-39cb-2f08-c82f-a05605bb4f81&quot;,
+    &quot;task_config&quot;: {
+      &quot;task_name&quot;: &quot;dest&quot;,
+      &quot;node_id&quot;: &quot;e4fa3fde-dbed-b9c0-63d0-a0ee50f57244&quot;,
+      &quot;parallel_workers&quot;: 0,
+      &quot;mysql_connection_config&quot;: {
+        &quot;mysql_host&quot;: &quot;10.186.63.28&quot;,
+        &quot;mysql_port&quot;: 3308,
+        &quot;mysql_user&quot;: &quot;test&quot;,
+        &quot;mysql_password&quot;: &quot;*&quot;
+      }
+    },
+    &quot;task_status&quot;: {
+      &quot;task_events&quot;: [
+        {
+          &quot;event_type&quot;: &quot;Received&quot;,
+          &quot;setup_error&quot;: &quot;&quot;,
+          &quot;message&quot;: &quot;&quot;,
+          &quot;time&quot;: &quot;2021-05-11T08:45:24Z&quot;
+        },
+        {
+          &quot;event_type&quot;: &quot;Task Setup&quot;,
+          &quot;setup_error&quot;: &quot;&quot;,
+          &quot;message&quot;: &quot;Building Task Directory&quot;,
+          &quot;time&quot;: &quot;2021-05-11T08:45:24Z&quot;
+        },
+        {
+          &quot;event_type&quot;: &quot;Started&quot;,
+          &quot;setup_error&quot;: &quot;&quot;,
+          &quot;message&quot;: &quot;&quot;,
+          &quot;time&quot;: &quot;2021-05-11T08:45:24Z&quot;
+        },
+        {
+          &quot;event_type&quot;: &quot;Driver&quot;,
+          &quot;setup_error&quot;: &quot;&quot;,
+          &quot;message&quot;: &quot;&quot;,
+          &quot;time&quot;: &quot;2021-05-11T08:45:24Z&quot;
+        },
+        {
+          &quot;event_type&quot;: &quot;Driver&quot;,
+          &quot;setup_error&quot;: &quot;&quot;,
+          &quot;message&quot;: &quot;&quot;,
+          &quot;time&quot;: &quot;2021-05-11T08:45:25Z&quot;
+        }
+      ],
+      &quot;started_at&quot;: &quot;2021-05-11T08:45:24.740996838Z&quot;,
+      &quot;finished_at&quot;: &quot;0001-01-01T00:00:00Z&quot;,
+      &quot;status&quot;: &quot;running&quot;
+    }
+  },
+  &quot;message&quot;: &quot;ok&quot;
+}
+</code></pre><h2 id="&#x6821;&#x9A8C;&#x4F5C;&#x4E1A;&#x914D;&#x7F6E;">&#x6821;&#x9A8C;&#x4F5C;&#x4E1A;&#x914D;&#x7F6E;</h2>
+<h4 id="api-get-v2validationjob">API: <code>GET /v2/validation/job</code></h4>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x76EE;&#x524D;&#x53EA;&#x652F;&#x6301;&#x5BF9;MySQL-to-MySQL&#x7684;job&#x6821;&#x9A8C;</p>
+<h4 id="&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x8BF4;&#x660E;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;&#x540D;</th>
+<th>&#x5FC5;&#x586B;?</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>job_config</td>
+<td>&#x662F;</td>
+<td>JSON Object</td>
+<td>&quot;&quot;</td>
+<td>&#x53C2;&#x8003;<code>POST /v2/job/migration</code>&#x7684;<code>migration_job_config</code>&#x914D;&#x7F6E;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x54CD;&#x5E94;&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x54CD;&#x5E94;&#x53C2;&#x6570;&#x8BF4;&#x660E;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;&#x540D;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>driver_config_validated</td>
+<td>bool</td>
+<td>&#x662F;&#x5426;&#x6821;&#x9A8C;driver</td>
+</tr>
+<tr>
+<td>job_validation_error</td>
+<td>String</td>
+<td>&#x6821;&#x9A8C;job&#x914D;&#x7F6E;&#x7684;&#x9519;&#x8BEF;&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td>job_validation_warning</td>
+<td>String</td>
+<td>&#x6821;&#x9A8C;job&#x914D;&#x7F6E;&#x7684;&#x8B66;&#x544A;&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td>mysql_task_validation_report</td>
+<td>JSON Array</td>
+<td>task&#x7684;&#x6821;&#x9A8C;&#x7ED3;&#x679C;</td>
+</tr>
+<tr>
+<td>mysql_task_validation_report.task_name</td>
+<td>String</td>
+<td>task&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>mysql_task_validation_report.binlog_validation</td>
+<td>JSON Object</td>
+<td>binlog&#x6821;&#x9A8C;&#x7ED3;&#x679C;</td>
+</tr>
+<tr>
+<td>mysql_task_validation_report.connection_validation</td>
+<td>JSON Object</td>
+<td>dtle&#x548C;&#x6570;&#x636E;&#x5E93;&#x7684;&#x8FDE;&#x63A5;&#x6821;&#x9A8C;&#x7ED3;&#x679C;</td>
+</tr>
+<tr>
+<td>mysql_task_validation_report.gtid_mode_validation</td>
+<td>JSON Object</td>
+<td>gtid mode&#x6821;&#x9A8C;&#x7ED3;&#x679C;</td>
+</tr>
+<tr>
+<td>mysql_task_validation_report.privileges_validation</td>
+<td>JSON Object</td>
+<td>&#x7528;&#x6237;&#x6743;&#x9650;&#x6821;&#x9A8C;&#x7ED3;&#x679C;</td>
+</tr>
+<tr>
+<td>mysql_task_validation_report.server_id_validation</td>
+<td>JSON Object</td>
+<td>MySQL server ID&#x6821;&#x9A8C;&#x7ED3;&#x679C;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x6837;&#x4F8B;">&#x6837;&#x4F8B;</h4>
+<p>params&#xFF1A;<br><code>job_config</code>: </p>
+<pre><code class="lang-{">  &quot;is_mysql_password_encrypted&quot;: true,
+  &quot;failover&quot;: true,
+  &quot;dest_task&quot;: {
+      &quot;mysql_connection_config&quot;: {
+      &quot;mysql_host&quot;: &quot;10.186.63.28&quot;,
+      &quot;mysql_password&quot;: &quot;vo0+U/SoBFC2QHE1KSunmAIZGpkxpXRWyDJVMNZ3HaQGQRcrVl2w/VuT2gfdD76Pj/Te+24LMBDeoWyNzc8w1NBNqL2+BD7uuLl2aAHPrarhY07LvI2X3NC8n59c0ozN/3+uJPvX7YQ5w8jMjm8xD4qhtI99PkBtC+hfjP1WY38=&quot;,
+      &quot;mysql_port&quot;: 3308,
+      &quot;mysql_user&quot;: &quot;test&quot;
+    },
+    &quot;task_name&quot;: &quot;dest&quot;
+  },
+  &quot;job_name&quot;: &quot;job1&quot;,
+  &quot;src_task&quot;: {
+      &quot;mysql_connection_config&quot;: {
+      &quot;mysql_host&quot;: &quot;10.186.63.28&quot;,
+      &quot;mysql_password&quot;: &quot;vo0+U/SoBFC2QHE1KSunmAIZGpkxpXRWyDJVMNZ3HaQGQRcrVl2w/VuT2gfdD76Pj/Te+24LMBDeoWyNzc8w1NBNqL2+BD7uuLl2aAHPrarhY07LvI2X3NC8n59c0ozN/3+uJPvX7YQ5w8jMjm8xD4qhtI99PkBtC+hfjP1WY38=&quot;,
+      &quot;mysql_port&quot;: 3307,
+      &quot;mysql_user&quot;: &quot;test&quot;
+    },
+    &quot;replicate_do_db&quot;: [
+      {
+        &quot;table_schema&quot;: &quot;db1&quot;,
+        &quot;tables&quot;: [
+          {
+            &quot;table_name&quot;: &quot;tb1&quot;
+          }
+        ]
+      }
+    ],
+    &quot;task_name&quot;: &quot;src&quot;
+  }
+}
+</code></pre>
+<p>response:</p>
+<pre><code>{
+  &quot;driver_config_validated&quot;: true,
+  &quot;mysql_task_validation_report&quot;: [
+    {
+      &quot;task_name&quot;: &quot;src&quot;,
+      &quot;connection_validation&quot;: {
+        &quot;validated&quot;: true,
+        &quot;error&quot;: &quot;&quot;
+      },
+      &quot;privileges_validation&quot;: {
+        &quot;validated&quot;: true,
+        &quot;error&quot;: &quot;&quot;
+      },
+      &quot;gtid_mode_validation&quot;: {
+        &quot;validated&quot;: true,
+        &quot;error&quot;: &quot;&quot;
+      },
+      &quot;server_id_validation&quot;: {
+        &quot;validated&quot;: true,
+        &quot;error&quot;: &quot;&quot;
+      },
+      &quot;binlog_validation&quot;: {
+        &quot;validated&quot;: true,
+        &quot;error&quot;: &quot;&quot;
+      }
+    },
+    {
+      &quot;task_name&quot;: &quot;dest&quot;,
+      &quot;connection_validation&quot;: {
+        &quot;validated&quot;: true,
+        &quot;error&quot;: &quot;&quot;
+      },
+      &quot;privileges_validation&quot;: {
+        &quot;validated&quot;: true,
+        &quot;error&quot;: &quot;&quot;
+      },
+      &quot;gtid_mode_validation&quot;: null,
+      &quot;server_id_validation&quot;: null,
+      &quot;binlog_validation&quot;: null
+    }
+  ],
+  &quot;job_validation_error&quot;: &quot;&quot;,
+  &quot;job_validation_warning&quot;: &quot;&quot;,
+  &quot;message&quot;: &quot;ok&quot;
+}
+</code></pre><h2 id="&#x67E5;&#x770B;&#x67D0;&#x4E2A;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x7684;&#x72B6;&#x6001;">&#x67E5;&#x770B;&#x67D0;&#x4E2A;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x7684;&#x72B6;&#x6001;</h2>
+<p>API: <code>GET /v2/monitor/task</code></p>
+<h4 id="&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x8BF4;&#x660E;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;&#x540D;</th>
+<th>&#x5FC5;&#x586B;?</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>allocation_id</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td>&quot;&quot;</td>
+<td>&#x8981;&#x67E5;&#x8BE2;&#x7684;&#x4EFB;&#x52A1;&#x7684;allocation id</td>
+</tr>
+<tr>
+<td>task_name</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td>&quot;&quot;</td>
+<td>&#x8981;&#x67E5;&#x8BE2;&#x7684;&#x4EFB;&#x52A1;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>nomad_http_address</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>&quot;&quot;</td>
+<td>dtle&#x5185;&#x90E8;&#x4F7F;&#x7528;&#xFF0C;&#x53EF;&#x4EE5;&#x5FFD;&#x7565;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x54CD;&#x5E94;&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x54CD;&#x5E94;&#x53C2;&#x6570;&#x8BF4;&#x660E;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;&#x540D;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>file</td>
+<td>String</td>
+<td>&#x6B63;&#x5728;&#x590D;&#x5236;&#x7684;binlog&#x6587;&#x4EF6;&#x540D;</td>
+</tr>
+<tr>
+<td>gtid_set</td>
+<td>String</td>
+<td>&#x5DF2;&#x590D;&#x5236;&#x7684;GTID&#x96C6;&#x5408;</td>
+</tr>
+<tr>
+<td>delay_count</td>
+<td>JSON Object</td>
+<td>&#x5EF6;&#x65F6;&#x7EDF;&#x8BA1;</td>
+</tr>
+<tr>
+<td>progress_PCT</td>
+<td>String</td>
+<td>&#x5168;&#x91CF;&#x590D;&#x5236;&#x8FDB;&#x5EA6;</td>
+</tr>
+<tr>
+<td>ETA</td>
+<td>String</td>
+<td>&#x5168;&#x91CF;&#x590D;&#x5236;&#x9884;&#x4F30;&#x5269;&#x4F59;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>nats_message_status</td>
+<td>JSON Object</td>
+<td>Nats&#x7F51;&#x7EDC;&#x541E;&#x5410;&#x6570;&#x636E;</td>
+</tr>
+<tr>
+<td>stage</td>
+<td>String</td>
+<td>&#x590D;&#x5236;&#x9636;&#x6BB5;</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>Timestamp</td>
+<td>&#x5F53;&#x524D;&#x65F6;&#x95F4;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x6837;&#x4F8B;">&#x6837;&#x4F8B;</h4>
+<p>params&#xFF1A;<br><code>allocation_id</code>: <code>0d3939ec-a499-90e3-6bfe-f857448712f9</code>
+<code>task_name</code>: <code>src</code></p>
+<p>response:</p>
+<pre><code>{
+  &quot;tasks_status&quot;: {
+    &quot;current_coordinates&quot;: {
+      &quot;file&quot;: &quot;mysql-bin.000001&quot;,
+      &quot;position&quot;: 154,
+      &quot;gtid_set&quot;: &quot;00003307-1111-1111-1111-111111111111:1-24&quot;,
+      &quot;relay_master_log_file&quot;: &quot;&quot;,
+      &quot;read_master_log_pos&quot;: 0,
+      &quot;retrieved_gtid_set&quot;: &quot;&quot;
+    },
+    &quot;delay_count&quot;: {
+      &quot;num&quot;: 0,
+      &quot;time&quot;: 0
+    },
+    &quot;progress_PCT&quot;: &quot;100.0&quot;,
+    &quot;exec_master_row_count&quot;: 4,
+    &quot;exec_master_tx_count&quot;: 958859,
+    &quot;read_master_row_count&quot;: 4,
+    &quot;read_master_tx_count&quot;: 958859,
+    &quot;ETA&quot;: &quot;0s&quot;,
+    &quot;backlog&quot;: &quot;0/128&quot;,
+    &quot;throughput_status&quot;: null,
+    &quot;nats_message_status&quot;: {
+      &quot;in_messages&quot;: 5,
+      &quot;out_messages&quot;: 5,
+      &quot;in_bytes&quot;: 0,
+      &quot;out_bytes&quot;: 1021,
+      &quot;reconnects&quot;: 0
+    },
+    &quot;buffer_status&quot;: {
+      &quot;binlog_event_queue_size&quot;: 0,
+      &quot;extractor_tx_queue_size&quot;: 0,
+      &quot;applier_tx_queue_size&quot;: 0,
+      &quot;send_by_timeout&quot;: 0,
+      &quot;send_by_size_full&quot;: 0
+    },
+    &quot;stage&quot;: &quot;Master has sent all binlog to slave; waiting for more updates&quot;,
+    &quot;timestamp&quot;: 1620882952091441700
+  },
+  &quot;message&quot;: &quot;ok&quot;
+}
+</code></pre><h2 id="&#x5217;&#x51FA;&#x6240;&#x6709;&#x8282;&#x70B9;">&#x5217;&#x51FA;&#x6240;&#x6709;&#x8282;&#x70B9;</h2>
+<p>API: <code>GET /v2/nodes</code></p>
+<h4 id="&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x8BF4;&#x660E;</h4>
+<p>&#x6CA1;&#x6709;&#x8BF7;&#x6C42;&#x53C2;&#x6570;</p>
+<h4 id="&#x54CD;&#x5E94;&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x54CD;&#x5E94;&#x53C2;&#x6570;&#x8BF4;&#x660E;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;&#x540D;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nodes</td>
+<td>JSON Array</td>
+<td>&#x6240;&#x6709;&#x8282;&#x70B9;&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td>nodes.node_name</td>
+<td>String</td>
+<td>&#x8282;&#x70B9;&#x7684;hostname</td>
+</tr>
+<tr>
+<td>nodes.node_address</td>
+<td>String</td>
+<td>&#x8282;&#x70B9;&#x7684;IP</td>
+</tr>
+<tr>
+<td>nodes.node_id</td>
+<td>String</td>
+<td>&#x8282;&#x70B9;ID</td>
+</tr>
+<tr>
+<td>nodes.node_status</td>
+<td>String</td>
+<td>&#x8282;&#x70B9;&#x72B6;&#x6001;</td>
+</tr>
+<tr>
+<td>nodes.node_status_description</td>
+<td>String</td>
+<td>&#x8282;&#x70B9;&#x72B6;&#x6001;&#x63CF;&#x8FF0;</td>
+</tr>
+<tr>
+<td>nodes.datacenter</td>
+<td>String</td>
+<td>&#x8282;&#x70B9;&#x6240;&#x5728;&#x7684;datacenter</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x6837;&#x4F8B;">&#x6837;&#x4F8B;</h4>
+<p>response:</p>
+<pre><code>{
+  &quot;nodes&quot;: [
+    {
+      &quot;node_address&quot;: &quot;10.186.63.86&quot;,
+      &quot;node_name&quot;: &quot;dtle-dest-1&quot;,
+      &quot;node_id&quot;: &quot;37dc2ff4-ca49-f466-d8a1-12b41b949422&quot;,
+      &quot;node_status&quot;: &quot;ready&quot;,
+      &quot;node_status_description&quot;: &quot;&quot;,
+      &quot;datacenter&quot;: &quot;dc1&quot;
+    },
+    {
+      &quot;node_address&quot;: &quot;10.186.63.21&quot;,
+      &quot;node_name&quot;: &quot;dtle-src-1&quot;,
+      &quot;node_id&quot;: &quot;c8bec79c-4434-de62-e9f6-d0f24b5f2be4&quot;,
+      &quot;node_status&quot;: &quot;ready&quot;,
+      &quot;node_status_description&quot;: &quot;&quot;,
+      &quot;datacenter&quot;: &quot;dc1&quot;
+    }
+  ],
+  &quot;message&quot;: &quot;ok&quot;
+}
+</code></pre><h2 id="&#x83B7;&#x53D6;mysql&#x5B9E;&#x4F8B;&#x7684;schemas">&#x83B7;&#x53D6;MySQL&#x5B9E;&#x4F8B;&#x7684;schemas</h2>
+<h4 id="api-get-v2mysqlschemas">API: <code>GET /v2/mysql/schemas</code></h4>
+<h4 id="&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x8BF4;&#x660E;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;&#x540D;</th>
+<th>&#x5FC5;&#x586B;?</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mysql_host</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td>&quot;&quot;</td>
+<td>MySQL&#x6240;&#x5728;&#x4E3B;&#x673A;IP</td>
+</tr>
+<tr>
+<td>mysql_port</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td>&quot;&quot;</td>
+<td>MySQL&#x7AEF;&#x53E3;</td>
+</tr>
+<tr>
+<td>mysql_user</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td>&quot;&quot;</td>
+<td>MySQL&#x8FDE;&#x63A5;&#x7528;&#x6237;</td>
+</tr>
+<tr>
+<td>mysql_password</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td>&quot;&quot;</td>
+<td>MySQL&#x8FDE;&#x63A5;&#x5BC6;&#x7801;</td>
+</tr>
+<tr>
+<td>mysql_character_set</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>&quot;utf8mb4&quot;</td>
+<td>MySQL&#x5B57;&#x7B26;&#x96C6;</td>
+</tr>
+<tr>
+<td>is_mysql_password_encrypted</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>false</td>
+<td>MySQL&#x5BC6;&#x7801;&#x662F;&#x5426;&#x7ECF;&#x8FC7;&#x52A0;&#x5BC6;&#x3002;&#x8BBE;&#x7F6E;is_mysql_password_encrypted=true&#x65F6;&#xFF0C;&#x8BA4;&#x4E3A;&#x6240;&#x586B;&#x5199;&#x7684;<code>mysql_password</code>&#x7ECF;&#x8FC7;&#x4E24;&#x6B21;&#x52A0;&#x5BC6;&#xFF08;&#x5148;&#x662F;rsa/none/pkcs1 padding &#x52A0;&#x5BC6;&#xFF0C;&#x518D;&#x505A;base64&#x7F16;&#x7801;&#xFF09;&#xFF0C;&#x8981;&#x6C42;&#x5C06;rsa&#x5BC6;&#x94A5;&#x4EE5;pem&#x683C;&#x5F0F;&#x4FDD;&#x5B58;&#x5728;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x518D;&#x5C06;&#x6587;&#x4EF6;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x914D;&#x7F6E;&#x5230;nomad.hcl&#x7684;<code>rsa_private_key_path</code>&#x53C2;&#x6570;&#xFF08;&#x914D;&#x7F6E;&#x65B9;&#x6CD5;&#x89C1;<a href="4.1_node_configuration.html">&quot;&#x8282;&#x70B9;&#x914D;&#x7F6E;&quot;</a>&#xFF09;&#xFF1B;&#x8BBE;&#x7F6E;is_mysql_password_encrypted=false&#x65F6;&#xFF0C;<code>mysql_password</code>&#x586B;&#x5199;&#x660E;&#x6587;&#x5BC6;&#x7801;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x54CD;&#x5E94;&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x54CD;&#x5E94;&#x53C2;&#x6570;&#x8BF4;&#x660E;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;&#x540D;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>schemas</td>
+<td>JSON Array</td>
+<td>&#x5728;MySQL&#x5B9E;&#x4F8B;&#x4E0A;&#x6267;&#x884C;<code>show databases</code>&#x83B7;&#x53D6;&#x5230;&#x7684;schema</td>
+</tr>
+<tr>
+<td>schemas.schema_name</td>
+<td>String</td>
+<td>schema&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>schemas.tables</td>
+<td>JSON Array</td>
+<td>&#x5728;&#x67D0;&#x4E2A;schema&#x4E0A;&#x6267;&#x884C;<code>show tables</code>&#x83B7;&#x53D6;&#x5230;&#x7684;table</td>
+</tr>
+<tr>
+<td>schemas.tables.table_name</td>
+<td>String</td>
+<td>table&#x540D;&#x79F0;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x6837;&#x4F8B;">&#x6837;&#x4F8B;</h4>
+<p>response:</p>
+<pre><code>{
+  &quot;schemas&quot;: [
+    {
+      &quot;schema_name&quot;: &quot;db1&quot;,
+      &quot;Tables&quot;: [
+        {
+          &quot;table_name&quot;: &quot;tb1&quot;
+        }
+      ]
+    },
+    {
+      &quot;schema_name&quot;: &quot;dbtest&quot;,
+      &quot;Tables&quot;: []
+    },
+    {
+      &quot;schema_name&quot;: &quot;test&quot;,
+      &quot;Tables&quot;: []
+    }
+  ],
+  &quot;message&quot;: &quot;ok&quot;
+}
+</code></pre><h2 id="&#x4FEE;&#x6539;&#x65E5;&#x5FD7;&#x7B49;&#x7EA7;">&#x4FEE;&#x6539;&#x65E5;&#x5FD7;&#x7B49;&#x7EA7;</h2>
+<p>&#x901A;&#x8FC7;&#x8BE5;API&#x53EF;&#x4EE5;&#x52A8;&#x6001;&#x4FEE;&#x6539;&#x65E5;&#x5FD7;&#x7B49;&#x7EA7;&#xFF0C;&#x4FEE;&#x6539;&#x6B65;&#x9AA4;&#x5982;&#x4E0B;&#xFF1A; 
+&#x5982;&#x8981;&#x5C06;&#x65E5;&#x5FD7;&#x7B49;&#x7EA7;&#x53D8;&#x66F4;&#x4E3A;<code>DEBUG</code>
+1 &#x4FEE;&#x6539;nomad.hcl&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x7684;nomad&#x53CA;dtle&#x65E5;&#x5FD7;&#x7B49;&#x7EA7;&#x4E3A;<code>DEBUG</code>&#xFF0C;&#x5982;</p>
+<pre><code># nomad.hcl
+...
+log_level = &quot;DEBUG&quot;
+...
+
+plugin &quot;dtle&quot; {
+  config {
+...
+    log_level = &quot;DEBUG&quot;
+...
+  }
+}
+</code></pre><p>2 &#x8C03;&#x7528;API&#xFF0C;&#x8BF7;&#x6C42;&#x53C2;&#x6570;<code>dtle_log_level</code>&#x4F20;&#x5165;<code>DEBUG</code>
+3 &#x67E5;&#x770B;&#x65E5;&#x5FD7;&#xFF0C;&#x68C0;&#x67E5;&#x5185;&#x5BB9;&#x7B49;&#x7EA7;&#x662F;&#x5426;&#x53D8;&#x66F4;</p>
+<h4 id="api-post-v2loglevel">API: <code>POST /v2/log/level</code></h4>
+<h4 id="&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x8BF4;&#x660E;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;&#x540D;</th>
+<th>&#x5FC5;&#x586B;?</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dtle_log_level</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td>&quot;&quot;</td>
+<td>&#x8981;&#x4FEE;&#x6539;&#x7684;&#x65E5;&#x5FD7;&#x7B49;&#x7EA7;&#xFF0C;&#x652F;&#x6301;<code>TRACE, DEBUG, INFO, WARN, ERROR</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x54CD;&#x5E94;&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x54CD;&#x5E94;&#x53C2;&#x6570;&#x8BF4;&#x660E;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;&#x540D;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dtle_log_level</td>
+<td>String</td>
+<td>&#x4FEE;&#x6539;&#x540E;&#x7684;&#x65E5;&#x5FD7;&#x7B49;&#x7EA7;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x6837;&#x4F8B;">&#x6837;&#x4F8B;</h4>
+<p>params&#xFF1A;<br><code>dtle_log_level</code>: <code>DEBUG</code></p>
+<p>response:</p>
+<pre><code>{
+  &quot;dtle_log_level&quot;: &quot;DEBUG&quot;,
+  &quot;message&quot;: &quot;ok&quot;
+}
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="4.4_http_api.html" class="navigation navigation-prev " aria-label="Previous page: 4.4.HTTP API说明">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="4.5_mysql_user_privileges.html" class="navigation navigation-next " aria-label="Next page: 4.5.MySQL 用户权限说明">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4.4.1.dtle 3.x HTTP API说明","level":"1.6.8","depth":2,"next":{"title":"4.5.MySQL 用户权限说明","level":"1.6.9","depth":2,"path":"4/4.5_mysql_user_privileges.md","ref":"4/4.5_mysql_user_privileges.md","articles":[]},"previous":{"title":"4.4.HTTP API说明","level":"1.6.7","depth":2,"path":"4/4.4_http_api.md","ref":"4/4.4_http_api.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"4/4.4.1_dtle_http_api.md","mtime":"2021-05-13T10:24:54.573Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-13T10:42:27.410Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -829,10 +829,10 @@
 <tbody>
 <tr>
 <td>job_id</td>
-<td>&#x5426;</td>
+<td>&#x662F;</td>
 <td>String</td>
-<td>&quot;job_name-{job&#x7C7B;&#x578B;}&quot;</td>
-<td>&#x5982;&#x679C;&#x586B;&#x5199;<code>job_id</code>&#xFF0C;&#x521B;&#x5EFA;job&#x65F6;&#x4F1A;&#x6307;&#x5B9A;job id&#x4E3A; <code>&quot;job_id-{job&#x7C7B;&#x578B;}&quot;</code></td>
+<td>&quot;&quot;</td>
+<td>&#x521B;&#x5EFA;job&#x65F6;&#x4F1A;&#x6307;&#x5B9A;job id&#x4E3A; <code>&quot;job_id-{job&#x7C7B;&#x578B;}&quot;</code></td>
 </tr>
 <tr>
 <td>failover</td>
@@ -840,6 +840,13 @@
 <td>bool</td>
 <td>true</td>
 <td>&#x662F;&#x5426;&#x652F;&#x6301;&#x6545;&#x969C;&#x8F6C;&#x79FB;&#x3002;&#x8BBE;&#x7F6E;failover=false&#x65F6;&#xFF0C;&#x8BE5;job&#x7684;&#x6240;&#x6709;task&#x4E0D;&#x542F;&#x7528;&#x6545;&#x969C;&#x8F6C;&#x79FB;&#xFF0C;&#x8981;&#x6C42;&#x540C;&#x65F6;&#x586B;&#x5199;task&#x7684;<code>node_id</code>&#x4EE5;&#x6307;&#x5B9A;&#x6BCF;&#x4E2A;task&#x8FD0;&#x884C;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x5982;&#x679C;&#x8FD0;&#x884C;&#x8282;&#x70B9;&#x53D1;&#x751F;&#x6545;&#x969C;&#xFF0C;&#x4E0D;&#x4F1A;&#x5C06;task&#x8F6C;&#x79FB;&#x5230;&#x5176;&#x5B83;&#x8282;&#x70B9;&#x8FD0;&#x884C;&#xFF1B;&#x8BBE;&#x7F6E;failover=true&#x65F6;&#xFF0C;&#x542F;&#x7528;&#x6545;&#x969C;&#x8F6C;&#x79FB;&#x3002;</td>
+</tr>
+<tr>
+<td>task_step_name</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>&quot;&quot;</td>
+<td>&#x4EFB;&#x52A1;&#x6B65;&#x9AA4;&#x540D;&#x3002;&#x8868;&#x793A;&#x8BE5;&#x4EFB;&#x52A1;&#x4E3A;&#x5168;&#x91CF;&#x590D;&#x5236; job_stage_full&#xFF0C;&#x589E;&#x91CF;&#x590D;&#x5236; job_stage_incr&#xFF0C;&#x589E;&#x91CF;&#x52A0;&#x5168;&#x91CF; all</td>
 </tr>
 <tr>
 <td>is_mysql_password_encrypted</td>
@@ -856,25 +863,11 @@
 <td>&#x76EE;&#x6807;&#x7AEF;&#x914D;&#x7F6E;&#xFF0C;&#x53C2;&#x6570;&#x8BF4;&#x660E;&#x53C2;&#x8003;<a href="4.3_job_configuration.html">&quot;&#x4F5C;&#x4E1A;&#x914D;&#x7F6E;&quot;</a></td>
 </tr>
 <tr>
-<td>dest_task.node_id</td>
-<td>&#x5426;</td>
-<td>String</td>
-<td>&quot;&quot;</td>
-<td>task&#x8FD0;&#x884C;&#x7684;&#x8282;&#x70B9;id&#x3002;failover=true&#x65F6;&#xFF0C;task&#x4F18;&#x5148;&#x653E;&#x5728;&#x6307;&#x5B9A;&#x8282;&#x70B9;&#x8FD0;&#x884C;</td>
-</tr>
-<tr>
 <td>src_task</td>
 <td>&#x662F;</td>
 <td>JSON Object</td>
 <td>&quot;&quot;</td>
 <td>&#x6E90;&#x7AEF;&#x914D;&#x7F6E;&#xFF0C;&#x53C2;&#x6570;&#x8BF4;&#x660E;&#x53C2;&#x8003;<a href="4.3_job_configuration.html">&quot;&#x4F5C;&#x4E1A;&#x914D;&#x7F6E;&quot;</a></td>
-</tr>
-<tr>
-<td>src_task.node_id</td>
-<td>&#x5426;</td>
-<td>String</td>
-<td>&quot;&quot;</td>
-<td>&#x540C;<code>dest_task.node_id</code></td>
 </tr>
 </tbody>
 </table>
@@ -883,67 +876,70 @@
 <h4 id="&#x6837;&#x4F8B;">&#x6837;&#x4F8B;</h4>
 <p>params&#xFF1A;<br><code>migration_job_config</code>: </p>
 <pre><code>{
-  &quot;is_mysql_password_encrypted&quot;: false,
-  &quot;failover&quot;: true,
   &quot;dest_task&quot;: {
-      &quot;mysql_connection_config&quot;: {
-      &quot;mysql_host&quot;: &quot;10.186.63.28&quot;,
-      &quot;mysql_password&quot;: &quot;test&quot;,
-      &quot;mysql_port&quot;: 3308,
-      &quot;mysql_user&quot;: &quot;test&quot;
+    &quot;mysql_connection_config&quot;: {
+      &quot;mysql_host&quot;: &quot;172.18.0.3&quot;,
+      &quot;mysql_password&quot;: &quot;pass&quot;,
+      &quot;mysql_port&quot;: 3306,
+      &quot;mysql_user&quot;: &quot;root&quot;
     },
+    &quot;parallel_workers&quot;: 1,
     &quot;task_name&quot;: &quot;dest&quot;
   },
-  &quot;job_name&quot;: &quot;job1&quot;,
+  &quot;failover&quot;: true,
+  &quot;is_mysql_password_encrypted&quot;: false,
+  &quot;job_id&quot;: &quot;dtle-demo&quot;,
   &quot;src_task&quot;: {
-      &quot;mysql_connection_config&quot;: {
-      &quot;mysql_host&quot;: &quot;10.186.63.28&quot;,
-      &quot;mysql_password&quot;: &quot;test&quot;,
-      &quot;mysql_port&quot;: 3307,
-      &quot;mysql_user&quot;: &quot;test&quot;
+    &quot;mysql_connection_config&quot;: {
+      &quot;mysql_host&quot;: &quot;172.18.0.2&quot;,
+      &quot;mysql_password&quot;: &quot;pass&quot;,
+      &quot;mysql_port&quot;: 3306,
+      &quot;mysql_user&quot;: &quot;root&quot;
     },
-    &quot;replicate_do_db&quot;: [],
     &quot;task_name&quot;: &quot;src&quot;
-  }
+  },
+  &quot;task_step_name&quot;: &quot;job_stage_full&quot;
 }
 </code></pre><p>response:</p>
 <pre><code>{
-  &quot;job&quot;: {
-    &quot;job_name&quot;: &quot;job1&quot;,
-    &quot;job_id&quot;: &quot;job1-migration&quot;,
-    &quot;failover&quot;: true,
-    &quot;is_mysql_password_encrypted&quot;: false,
-    &quot;src_task&quot;: {
-      &quot;task_name&quot;: &quot;src&quot;,
-      &quot;gtid&quot;: &quot;&quot;,
-      &quot;group_max_size&quot;: 1,
-      &quot;chunk_size&quot;: 2000,
-      &quot;drop_table_if_exists&quot;: false,
-      &quot;skip_create_db_table&quot;: false,
-      &quot;repl_chan_buffer_size&quot;: 32,
-      &quot;replicate_do_db&quot;: [],
-      &quot;replicate_ignore_db&quot;: null,
-      &quot;mysql_connection_config&quot;: {
-        &quot;mysql_host&quot;: &quot;10.186.63.28&quot;,
-        &quot;mysql_port&quot;: 3307,
-        &quot;mysql_user&quot;: &quot;test&quot;,
-        &quot;mysql_password&quot;: &quot;*&quot;
-      }
+    &quot;job&quot;: {
+        &quot;job_id&quot;: &quot;dtle-demo-migration&quot;,
+        &quot;task_step_name&quot;: &quot;job_stage_full&quot;,
+        &quot;failover&quot;: true,
+        &quot;is_mysql_password_encrypted&quot;: false,
+        &quot;src_task&quot;: {
+            &quot;task_name&quot;: &quot;src&quot;,
+            &quot;gtid&quot;: &quot;&quot;,
+            &quot;group_max_size&quot;: 1,
+            &quot;chunk_size&quot;: 2000,
+            &quot;drop_table_if_exists&quot;: false,
+            &quot;skip_create_db_table&quot;: false,
+            &quot;repl_chan_buffer_size&quot;: 32,
+            &quot;replicate_do_db&quot;: null,
+            &quot;replicate_ignore_db&quot;: null,
+            &quot;mysql_connection_config&quot;: {
+                &quot;mysql_host&quot;: &quot;172.18.0.2&quot;,
+                &quot;mysql_port&quot;: 3306,
+                &quot;mysql_user&quot;: &quot;root&quot;,
+                &quot;mysql_password&quot;: &quot;*&quot;
+            },
+            &quot;binlog_relay&quot;: false,
+            &quot;group_timeout&quot;: 100
+        },
+        &quot;dest_task&quot;: {
+            &quot;task_name&quot;: &quot;dest&quot;,
+            &quot;parallel_workers&quot;: 1,
+            &quot;mysql_connection_config&quot;: {
+                &quot;mysql_host&quot;: &quot;172.18.0.3&quot;,
+                &quot;mysql_port&quot;: 3306,
+                &quot;mysql_user&quot;: &quot;root&quot;,
+                &quot;mysql_password&quot;: &quot;*&quot;
+            }
+        }
     },
-    &quot;dest_task&quot;: {
-      &quot;task_name&quot;: &quot;dest&quot;,
-      &quot;parallel_workers&quot;: 1,
-      &quot;mysql_connection_config&quot;: {
-        &quot;mysql_host&quot;: &quot;10.186.63.28&quot;,
-        &quot;mysql_port&quot;: 3308,
-        &quot;mysql_user&quot;: &quot;test&quot;,
-        &quot;mysql_password&quot;: &quot;*&quot;
-      }
-    }
-  },
-  &quot;eval_create_index&quot;: 81,
-  &quot;job_modify_index&quot;: 80,
-  &quot;message&quot;: &quot;ok&quot;
+    &quot;eval_create_index&quot;: 6697,
+    &quot;job_modify_index&quot;: 6696,
+    &quot;message&quot;: &quot;ok&quot;
 }
 </code></pre><h2 id="&#x521B;&#x5EFA;&#x66F4;&#x65B0;-&#x4E00;&#x4E2A;&#x540C;&#x6B65;&#x4F5C;&#x4E1A;">&#x521B;&#x5EFA;/&#x66F4;&#x65B0; &#x4E00;&#x4E2A;&#x540C;&#x6B65;&#x4F5C;&#x4E1A;</h2>
 <h4 id="api-post-v2jobsync">API: <code>POST /v2/job/sync</code></h4>
@@ -983,10 +979,10 @@
 <tbody>
 <tr>
 <td>job_id</td>
-<td>&#x5426;</td>
+<td>&#x662F;</td>
 <td>String</td>
-<td>&quot;job_name-{job&#x7C7B;&#x578B;}&quot;</td>
-<td>&#x5982;&#x679C;&#x586B;&#x5199;<code>job_id</code>&#xFF0C;&#x521B;&#x5EFA;job&#x65F6;&#x4F1A;&#x6307;&#x5B9A;job id&#x4E3A; <code>&quot;job_id-{job&#x7C7B;&#x578B;}&quot;</code></td>
+<td>&quot;&quot;</td>
+<td>&#x521B;&#x5EFA;job&#x65F6;&#x4F1A;&#x6307;&#x5B9A;job id&#x4E3A; <code>&quot;job_id-{job&#x7C7B;&#x578B;}&quot;</code></td>
 </tr>
 <tr>
 <td>failover</td>
@@ -994,6 +990,13 @@
 <td>bool</td>
 <td>true</td>
 <td>&#x662F;&#x5426;&#x652F;&#x6301;&#x6545;&#x969C;&#x8F6C;&#x79FB;&#x3002;&#x8BBE;&#x7F6E;failover=false&#x65F6;&#xFF0C;&#x8BE5;job&#x7684;&#x6240;&#x6709;task&#x4E0D;&#x542F;&#x7528;&#x6545;&#x969C;&#x8F6C;&#x79FB;&#xFF0C;&#x8981;&#x6C42;&#x540C;&#x65F6;&#x586B;&#x5199;task&#x7684;<code>node_id</code>&#x4EE5;&#x6307;&#x5B9A;&#x6BCF;&#x4E2A;task&#x8FD0;&#x884C;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x5982;&#x679C;&#x8FD0;&#x884C;&#x8282;&#x70B9;&#x53D1;&#x751F;&#x6545;&#x969C;&#xFF0C;&#x4E0D;&#x4F1A;&#x5C06;task&#x8F6C;&#x79FB;&#x5230;&#x5176;&#x5B83;&#x8282;&#x70B9;&#x8FD0;&#x884C;&#xFF1B;&#x8BBE;&#x7F6E;failover=true&#x65F6;&#xFF0C;&#x542F;&#x7528;&#x6545;&#x969C;&#x8F6C;&#x79FB;&#x3002;</td>
+</tr>
+<tr>
+<td>task_step_name</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>&quot;&quot;</td>
+<td>&#x4EFB;&#x52A1;&#x6B65;&#x9AA4;&#x540D;&#x3002;&#x8868;&#x793A;&#x8BE5;&#x4EFB;&#x52A1;&#x4E3A;&#x5168;&#x91CF;&#x590D;&#x5236; job_stage_full&#xFF0C;&#x589E;&#x91CF;&#x590D;&#x5236; job_stage_incr&#xFF0C;&#x589E;&#x91CF;&#x52A0;&#x5168;&#x91CF; all</td>
 </tr>
 <tr>
 <td>is_mysql_password_encrypted</td>
@@ -1010,25 +1013,11 @@
 <td>&#x76EE;&#x6807;&#x7AEF;&#x914D;&#x7F6E;&#xFF0C;&#x53C2;&#x6570;&#x8BF4;&#x660E;&#x53C2;&#x8003;<a href="4.3_job_configuration.html">&quot;&#x4F5C;&#x4E1A;&#x914D;&#x7F6E;&quot;</a></td>
 </tr>
 <tr>
-<td>dest_task.node_id</td>
-<td>&#x5426;</td>
-<td>String</td>
-<td>&quot;&quot;</td>
-<td>task&#x8FD0;&#x884C;&#x7684;&#x8282;&#x70B9;id&#x3002;failover=true&#x65F6;&#xFF0C;task&#x4F18;&#x5148;&#x653E;&#x5728;&#x6307;&#x5B9A;&#x8282;&#x70B9;&#x8FD0;&#x884C;</td>
-</tr>
-<tr>
 <td>src_task</td>
 <td>&#x662F;</td>
 <td>JSON Object</td>
 <td>&quot;&quot;</td>
 <td>&#x6E90;&#x7AEF;&#x914D;&#x7F6E;&#xFF0C;&#x53C2;&#x6570;&#x8BF4;&#x660E;&#x53C2;&#x8003;<a href="4.3_job_configuration.html">&quot;&#x4F5C;&#x4E1A;&#x914D;&#x7F6E;&quot;</a></td>
-</tr>
-<tr>
-<td>src_task.node_id</td>
-<td>&#x5426;</td>
-<td>String</td>
-<td>&quot;&quot;</td>
-<td>&#x540C;<code>dest_task.node_id</code></td>
 </tr>
 </tbody>
 </table>
@@ -1037,67 +1026,70 @@
 <h4 id="&#x6837;&#x4F8B;">&#x6837;&#x4F8B;</h4>
 <p>params&#xFF1A;<br><code>sync_job_config</code>:</p>
 <pre><code>{
-  &quot;is_mysql_password_encrypted&quot;: false,
-  &quot;failover&quot;: true,
   &quot;dest_task&quot;: {
-      &quot;mysql_connection_config&quot;: {
-      &quot;mysql_host&quot;: &quot;10.186.63.28&quot;,
-      &quot;mysql_password&quot;: &quot;test&quot;,
-      &quot;mysql_port&quot;: 3308,
-      &quot;mysql_user&quot;: &quot;test&quot;
+    &quot;mysql_connection_config&quot;: {
+      &quot;mysql_host&quot;: &quot;172.18.0.3&quot;,
+      &quot;mysql_password&quot;: &quot;pass&quot;,
+      &quot;mysql_port&quot;: 3306,
+      &quot;mysql_user&quot;: &quot;root&quot;
     },
+    &quot;parallel_workers&quot;: 1,
     &quot;task_name&quot;: &quot;dest&quot;
   },
-  &quot;job_name&quot;: &quot;job1&quot;,
+  &quot;failover&quot;: true,
+  &quot;is_mysql_password_encrypted&quot;: false,
+  &quot;job_id&quot;: &quot;dtle-demo&quot;,
   &quot;src_task&quot;: {
-      &quot;mysql_connection_config&quot;: {
-      &quot;mysql_host&quot;: &quot;10.186.63.28&quot;,
-      &quot;mysql_password&quot;: &quot;test&quot;,
-      &quot;mysql_port&quot;: 3307,
-      &quot;mysql_user&quot;: &quot;test&quot;
+    &quot;mysql_connection_config&quot;: {
+      &quot;mysql_host&quot;: &quot;172.18.0.2&quot;,
+      &quot;mysql_password&quot;: &quot;pass&quot;,
+      &quot;mysql_port&quot;: 3306,
+      &quot;mysql_user&quot;: &quot;root&quot;
     },
-    &quot;replicate_do_db&quot;: [],
     &quot;task_name&quot;: &quot;src&quot;
-  }
+  },
+  &quot;task_step_name&quot;: &quot;job_stage_incr&quot;
 }
 </code></pre><p>response:</p>
 <pre><code>{
-  &quot;job&quot;: {
-    &quot;job_name&quot;: &quot;job1&quot;,
-    &quot;job_id&quot;: &quot;job1-sync&quot;,
-    &quot;failover&quot;: true,
-    &quot;is_mysql_password_encrypted&quot;: false,
-    &quot;src_task&quot;: {
-      &quot;task_name&quot;: &quot;src&quot;,
-      &quot;gtid&quot;: &quot;&quot;,
-      &quot;group_max_size&quot;: 1,
-      &quot;chunk_size&quot;: 2000,
-      &quot;drop_table_if_exists&quot;: false,
-      &quot;skip_create_db_table&quot;: false,
-      &quot;repl_chan_buffer_size&quot;: 32,
-      &quot;replicate_do_db&quot;: [],
-      &quot;replicate_ignore_db&quot;: null,
-      &quot;mysql_connection_config&quot;: {
-        &quot;mysql_host&quot;: &quot;10.186.63.28&quot;,
-        &quot;mysql_port&quot;: 3307,
-        &quot;mysql_user&quot;: &quot;test&quot;,
-        &quot;mysql_password&quot;: &quot;*&quot;
-      }
+    &quot;job&quot;: {
+        &quot;job_id&quot;: &quot;dtle-demo-sync&quot;,
+        &quot;task_step_name&quot;: &quot;job_stage_incr&quot;,
+        &quot;failover&quot;: true,
+        &quot;is_mysql_password_encrypted&quot;: false,
+        &quot;src_task&quot;: {
+            &quot;task_name&quot;: &quot;src&quot;,
+            &quot;gtid&quot;: &quot;&quot;,
+            &quot;group_max_size&quot;: 1,
+            &quot;chunk_size&quot;: 2000,
+            &quot;drop_table_if_exists&quot;: false,
+            &quot;skip_create_db_table&quot;: false,
+            &quot;repl_chan_buffer_size&quot;: 32,
+            &quot;replicate_do_db&quot;: null,
+            &quot;replicate_ignore_db&quot;: null,
+            &quot;mysql_connection_config&quot;: {
+                &quot;mysql_host&quot;: &quot;172.18.0.2&quot;,
+                &quot;mysql_port&quot;: 3306,
+                &quot;mysql_user&quot;: &quot;root&quot;,
+                &quot;mysql_password&quot;: &quot;*&quot;
+            },
+            &quot;binlog_relay&quot;: false,
+            &quot;group_timeout&quot;: 100
+        },
+        &quot;dest_task&quot;: {
+            &quot;task_name&quot;: &quot;dest&quot;,
+            &quot;parallel_workers&quot;: 1,
+            &quot;mysql_connection_config&quot;: {
+                &quot;mysql_host&quot;: &quot;172.18.0.3&quot;,
+                &quot;mysql_port&quot;: 3306,
+                &quot;mysql_user&quot;: &quot;root&quot;,
+                &quot;mysql_password&quot;: &quot;*&quot;
+            }
+        }
     },
-    &quot;dest_task&quot;: {
-      &quot;task_name&quot;: &quot;dest&quot;,
-      &quot;parallel_workers&quot;: 1,
-      &quot;mysql_connection_config&quot;: {
-        &quot;mysql_host&quot;: &quot;10.186.63.28&quot;,
-        &quot;mysql_port&quot;: 3308,
-        &quot;mysql_user&quot;: &quot;test&quot;,
-        &quot;mysql_password&quot;: &quot;*&quot;
-      }
-    }
-  },
-  &quot;eval_create_index&quot;: 45,
-  &quot;job_modify_index&quot;: 44,
-  &quot;message&quot;: &quot;ok&quot;
+    &quot;eval_create_index&quot;: 6743,
+    &quot;job_modify_index&quot;: 6742,
+    &quot;message&quot;: &quot;ok&quot;
 }
 </code></pre><h2 id="&#x521B;&#x5EFA;&#x66F4;&#x65B0;-&#x4E00;&#x4E2A;&#x8BA2;&#x9605;&#x4F5C;&#x4E1A;">&#x521B;&#x5EFA;/&#x66F4;&#x65B0; &#x4E00;&#x4E2A;&#x8BA2;&#x9605;&#x4F5C;&#x4E1A;</h2>
 <h4 id="api-post-v2jobsubscription">API: <code>POST /v2/job/subscription</code></h4>
@@ -1137,10 +1129,17 @@
 <tbody>
 <tr>
 <td>job_id</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td>&quot;&quot;</td>
+<td>&#x521B;&#x5EFA;job&#x65F6;&#x4F1A;&#x6307;&#x5B9A;job id&#x4E3A; <code>&quot;job_id-{job&#x7C7B;&#x578B;}&quot;</code></td>
+</tr>
+<tr>
+<td>task_step_name</td>
 <td>&#x5426;</td>
 <td>String</td>
-<td>&quot;job_name-{job&#x7C7B;&#x578B;}&quot;</td>
-<td>&#x5982;&#x679C;&#x586B;&#x5199;<code>job_id</code>&#xFF0C;&#x521B;&#x5EFA;job&#x65F6;&#x4F1A;&#x6307;&#x5B9A;job id&#x4E3A; <code>&quot;job_id-{job&#x7C7B;&#x578B;}&quot;</code></td>
+<td>&quot;&quot;</td>
+<td>&#x4EFB;&#x52A1;&#x6B65;&#x9AA4;&#x540D;&#x3002;&#x8868;&#x793A;&#x8BE5;&#x4EFB;&#x52A1;&#x4E3A;&#x5168;&#x91CF;&#x590D;&#x5236; job_stage_full&#xFF0C;&#x589E;&#x91CF;&#x590D;&#x5236; job_stage_incr&#xFF0C;&#x589E;&#x91CF;&#x52A0;&#x5168;&#x91CF; all</td>
 </tr>
 <tr>
 <td>failover</td>
@@ -1164,25 +1163,11 @@
 <td>&#x76EE;&#x6807;&#x7AEF;&#x914D;&#x7F6E;&#xFF0C;&#x53C2;&#x6570;&#x8BF4;&#x660E;&#x53C2;&#x8003;<a href="4.3_job_configuration.html">&quot;&#x4F5C;&#x4E1A;&#x914D;&#x7F6E;&quot;</a></td>
 </tr>
 <tr>
-<td>dest_task.node_id</td>
-<td>&#x5426;</td>
-<td>String</td>
-<td>&quot;&quot;</td>
-<td>task&#x8FD0;&#x884C;&#x7684;&#x8282;&#x70B9;id&#x3002;failover=true&#x65F6;&#xFF0C;task&#x4F18;&#x5148;&#x653E;&#x5728;&#x6307;&#x5B9A;&#x8282;&#x70B9;&#x8FD0;&#x884C;</td>
-</tr>
-<tr>
 <td>src_task</td>
 <td>&#x662F;</td>
 <td>JSON Object</td>
 <td>&quot;&quot;</td>
 <td>&#x6E90;&#x7AEF;&#x914D;&#x7F6E;&#xFF0C;&#x53C2;&#x6570;&#x8BF4;&#x660E;&#x53C2;&#x8003;<a href="4.3_job_configuration.html">&quot;&#x4F5C;&#x4E1A;&#x914D;&#x7F6E;&quot;</a></td>
-</tr>
-<tr>
-<td>src_task.node_id</td>
-<td>&#x5426;</td>
-<td>String</td>
-<td>&quot;&quot;</td>
-<td>&#x540C;<code>dest_task.node_id</code></td>
 </tr>
 </tbody>
 </table>
@@ -1194,24 +1179,24 @@
   &quot;is_mysql_password_encrypted&quot;: false,
   &quot;failover&quot;: true,
   &quot;dest_task&quot;: {
-    &quot;kafka_broker_addrs&quot;: [&quot;10.186.63.162:9092&quot;],
+    &quot;kafka_broker_addrs&quot;: [&quot;172.18.0.5:9092&quot;],
     &quot;kafka_topic&quot;: &quot;bss&quot;,
     &quot;task_name&quot;: &quot;dest&quot;
   },
-  &quot;job_name&quot;: &quot;job1&quot;,
+  &quot;job_id&quot;: &quot;dtle-demo&quot;,
   &quot;src_task&quot;: {
       &quot;mysql_connection_config&quot;: {
-      &quot;mysql_host&quot;: &quot;10.186.63.28&quot;,
-      &quot;mysql_password&quot;: &quot;test&quot;,
-      &quot;mysql_port&quot;: 3307,
-      &quot;mysql_user&quot;: &quot;test&quot;
+      &quot;mysql_host&quot;: &quot;172.18.0.2&quot;,
+      &quot;mysql_password&quot;: &quot;pass&quot;,
+      &quot;mysql_port&quot;: 3306,
+      &quot;mysql_user&quot;: &quot;root&quot;
     },
     &quot;replicate_do_db&quot;: [
       {
-        &quot;table_schema&quot;: &quot;db1&quot;,
+        &quot;table_schema&quot;: &quot;demo&quot;,
         &quot;tables&quot;: [
           {
-            &quot;table_name&quot;: &quot;tb1&quot;
+            &quot;table_name&quot;: &quot;demo_tbl&quot;
           }
         ]
       }
@@ -1221,54 +1206,58 @@
 }
 </code></pre><p>response:</p>
 <pre><code>{
-  &quot;job&quot;: {
-    &quot;job_name&quot;: &quot;job1&quot;,
-    &quot;job_id&quot;: &quot;job1-subscription&quot;,
-    &quot;failover&quot;: true,
-    &quot;is_mysql_password_encrypted&quot;: false,
-    &quot;src_task&quot;: {
-      &quot;task_name&quot;: &quot;src&quot;,
-      &quot;gtid&quot;: &quot;&quot;,
-      &quot;group_max_size&quot;: 1,
-      &quot;chunk_size&quot;: 2000,
-      &quot;drop_table_if_exists&quot;: false,
-      &quot;skip_create_db_table&quot;: false,
-      &quot;repl_chan_buffer_size&quot;: 32,
-      &quot;replicate_do_db&quot;: [
-        {
-          &quot;table_schema&quot;: &quot;db1&quot;,
-          &quot;table_schema_rename&quot;: null,
-          &quot;tables&quot;: [
-            {
-              &quot;table_name&quot;: &quot;tb1&quot;,
-              &quot;table_rename&quot;: &quot;&quot;,
-              &quot;column_map_from&quot;: null,
-              &quot;where&quot;: &quot;&quot;
-            }
-          ]
+    &quot;job&quot;: {
+        &quot;job_id&quot;: &quot;dtle-demo-subscription&quot;,
+        &quot;task_step_name&quot;: &quot;&quot;,
+        &quot;failover&quot;: true,
+        &quot;is_mysql_password_encrypted&quot;: false,
+        &quot;src_task&quot;: {
+            &quot;task_name&quot;: &quot;src&quot;,
+            &quot;gtid&quot;: &quot;&quot;,
+            &quot;group_max_size&quot;: 1,
+            &quot;chunk_size&quot;: 2000,
+            &quot;drop_table_if_exists&quot;: false,
+            &quot;skip_create_db_table&quot;: false,
+            &quot;repl_chan_buffer_size&quot;: 32,
+            &quot;replicate_do_db&quot;: [
+                {
+                    &quot;table_schema&quot;: &quot;demo&quot;,
+                    &quot;table_schema_regex&quot;: &quot;&quot;,
+                    &quot;table_schema_rename&quot;: null,
+                    &quot;tables&quot;: [
+                        {
+                            &quot;table_name&quot;: &quot;demo_tbl&quot;,
+                            &quot;table_regex&quot;: &quot;&quot;,
+                            &quot;table_rename&quot;: &quot;&quot;,
+                            &quot;column_map_from&quot;: null,
+                            &quot;where&quot;: &quot;&quot;
+                        }
+                    ]
+                }
+            ],
+            &quot;replicate_ignore_db&quot;: null,
+            &quot;mysql_connection_config&quot;: {
+                &quot;mysql_host&quot;: &quot;172.18.0.2&quot;,
+                &quot;mysql_port&quot;: 3306,
+                &quot;mysql_user&quot;: &quot;root&quot;,
+                &quot;mysql_password&quot;: &quot;*&quot;
+            },
+            &quot;binlog_relay&quot;: false,
+            &quot;group_timeout&quot;: 100
+        },
+        &quot;dest_task&quot;: {
+            &quot;task_name&quot;: &quot;dest&quot;,
+            &quot;kafka_broker_addrs&quot;: [
+                &quot;172.18.0.5:9092&quot;
+            ],
+            &quot;kafka_topic&quot;: &quot;bss&quot;,
+            &quot;message_group_max_size&quot;: 1,
+            &quot;message_group_timeout&quot;: 100
         }
-      ],
-      &quot;replicate_ignore_db&quot;: null,
-      &quot;mysql_connection_config&quot;: {
-        &quot;mysql_host&quot;: &quot;10.186.63.28&quot;,
-        &quot;mysql_port&quot;: 3307,
-        &quot;mysql_user&quot;: &quot;test&quot;,
-        &quot;mysql_password&quot;: &quot;*&quot;
-      }
     },
-    &quot;dest_task&quot;: {
-      &quot;task_name&quot;: &quot;dest&quot;,
-      &quot;kafka_broker_addrs&quot;: [
-        &quot;10.186.63.162:9092&quot;
-      ],
-      &quot;kafka_topic&quot;: &quot;bss&quot;,
-      &quot;message_group_max_size&quot;: 1,
-      &quot;message_group_timeout&quot;: 100
-    }
-  },
-  &quot;eval_create_index&quot;: 143,
-  &quot;job_modify_index&quot;: 23,
-  &quot;message&quot;: &quot;ok&quot;
+    &quot;eval_create_index&quot;: 6651,
+    &quot;job_modify_index&quot;: 6650,
+    &quot;message&quot;: &quot;ok&quot;
 }
 </code></pre><h2 id="&#x6682;&#x505C;&#x4E00;&#x4E2A;&#x8FC1;&#x79FB;&#x4F5C;&#x4E1A;">&#x6682;&#x505C;&#x4E00;&#x4E2A;&#x8FC1;&#x79FB;&#x4F5C;&#x4E1A;</h2>
 <h4 id="api-post-v2jobpause">API: <code>POST /v2/job/pause</code></h4>
@@ -1384,6 +1373,27 @@
 <td>&quot;&quot;</td>
 <td>&#x8FC7;&#x6EE4;&#x5668;&#xFF0C;&#x6839;&#x636E;job&#x7C7B;&#x578B;&#x8FC7;&#x6EE4;&#x8BF7;&#x6C42;&#x7ED3;&#x679C;</td>
 </tr>
+<tr>
+<td>filter_job_name</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>&quot;&quot;</td>
+<td>&#x8FC7;&#x6EE4;&#x5668;&#xFF0C;&#x6839;&#x636E;job&#x540D;&#x8FC7;&#x6EE4;&#x8BF7;&#x6C42;&#x7ED3;&#x679C;</td>
+</tr>
+<tr>
+<td>filter_job_status</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>&quot;&quot;</td>
+<td>&#x8FC7;&#x6EE4;&#x5668;&#xFF0C;&#x6839;&#x636E;job&#x72B6;&#x6001;&#x8FC7;&#x6EE4;&#x8BF7;&#x6C42;&#x7ED3;&#x679C;</td>
+</tr>
+<tr>
+<td>order_by</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>&quot;&quot;</td>
+<td>&#x6392;&#x5E8F;</td>
+</tr>
 </tbody>
 </table>
 <h4 id="&#x54CD;&#x5E94;&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x54CD;&#x5E94;&#x53C2;&#x6570;&#x8BF4;&#x660E;</h4>
@@ -1397,31 +1407,108 @@
 </thead>
 <tbody>
 <tr>
+<td>jobs.job_id</td>
+<td>String</td>
+<td>job id</td>
+</tr>
+<tr>
 <td>jobs.job_status</td>
 <td>String</td>
 <td>job&#x8FD0;&#x884C;&#x72B6;&#x6001;&#xFF0C;&#x6CE8;&#x610F;&#x533A;&#x5206;job&#x72B6;&#x6001;&#x548C;task&#x72B6;&#x6001;&#xFF0C;&#x5982;&#x679C;&#x67D0;&#x4E2A;job&#x4E0B;&#x6709;task&#x5931;&#x8D25;&#xFF0C;&#x6B64;&#x65F6;&#x83B7;&#x53D6;&#x5230;&#x7684;job&#x72B6;&#x6001;&#x4ECD;&#x53EF;&#x80FD;&#x4E3A;&quot;running&quot;&#xFF0C;&#x56E0;&#x4E3A;job&#x8D1F;&#x8D23;&#x7BA1;&#x7406;&#x548C;&#x8C03;&#x5EA6;task&#xFF0C;&#x5B83;&#x786E;&#x5B9E;&#x662F;&#x5904;&#x4E8E;&#x6B63;&#x5E38;&#x8FD0;&#x884C;&#x72B6;&#x6001;&#xFF0C;&#x5B83;&#x53EF;&#x80FD;&#x6B63;&#x5728;&#x5BF9;&#x5931;&#x8D25;&#x7684;task&#x505A;&#x91CD;&#x8BD5;&#x3001;&#x91CD;&#x65B0;&#x5206;&#x914D;&#x7B49;&#x5DE5;&#x4F5C;</td>
 </tr>
+<tr>
+<td>jobs.topic</td>
+<td>String</td>
+<td>&#x8BA2;&#x9605;&#x4EFB;&#x52A1;&#x4E13;&#x7528;topic</td>
+</tr>
+<tr>
+<td>jobs.job_create_time</td>
+<td>String</td>
+<td>&#x4EFB;&#x52A1;&#x521B;&#x5EFA;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>jobs.src_addr_list</td>
+<td>[]String</td>
+<td>&#x6E90;&#x7AEF;&#x5730;&#x5740;</td>
+</tr>
+<tr>
+<td>jobs.dst_addr_list</td>
+<td>[]String</td>
+<td>&#x76EE;&#x6807;&#x7AEF;&#x5730;&#x5740;</td>
+</tr>
+<tr>
+<td>jobs.user</td>
+<td>String</td>
+<td>&#x521B;&#x5EFA;&#x4EFB;&#x52A1;&#x7528;&#x6237;(&#x76EE;&#x524D;&#x7248;&#x672C;&#x6CA1;&#x6709;&#x7528;&#x6237;&#x7BA1;&#x7406;&#xFF0C;&#x6240;&#x6709;&#x4EFB;&#x52A1;&#x5747;&#x4E3A;root&#x521B;&#x5EFA;)</td>
+</tr>
 </tbody>
 </table>
 <h4 id="&#x6837;&#x4F8B;">&#x6837;&#x4F8B;</h4>
-<p>params&#xFF1A;<br><code>filter_job_type</code>: &quot;&quot;</p>
+<p>params&#xFF1A;<br><code>filter_job_type</code>: &quot;&quot;
+<code>filter_job_name</code>: &quot;&quot;
+<code>filter_job_status</code>: &quot;&quot;
+<code>order_by</code>: &quot;&quot;</p>
 <p>response:</p>
 <pre><code>{
-  &quot;jobs&quot;: [
-    {
-      &quot;job_id&quot;: &quot;job1-migration&quot;,
-      &quot;job_name&quot;: &quot;job1&quot;,
-      &quot;job_status&quot;: &quot;running&quot;,
-      &quot;job_status_description&quot;: &quot;&quot;
-    },
-    {
-      &quot;job_id&quot;: &quot;job2-sync&quot;,
-      &quot;job_name&quot;: &quot;job2&quot;,
-      &quot;job_status&quot;: &quot;running&quot;,
-      &quot;job_status_description&quot;: &quot;&quot;
-    }
-  ],
-  &quot;message&quot;: &quot;ok&quot;
+    &quot;jobs&quot;: [
+        {
+            &quot;job_id&quot;: &quot;dtle-demo-migration&quot;,
+            &quot;job_status&quot;: &quot;running&quot;,
+            &quot;topic&quot;: &quot;&quot;,
+            &quot;job_create_time&quot;: &quot;2021-07-07T07:07:50Z&quot;,
+            &quot;src_addr_list&quot;: [
+                &quot;172.18.0.2&quot;
+            ],
+            &quot;dst_addr_list&quot;: [
+                &quot;172.18.0.3&quot;
+            ],
+            &quot;user&quot;: &quot;root&quot;,
+            &quot;job_steps&quot;: [
+                {
+                    &quot;step_name&quot;: &quot;job_stage_full&quot;,
+                    &quot;step_status&quot;: &quot;start&quot;,
+                    &quot;step_schedule&quot;: 0,
+                    &quot;job_create_time&quot;: &quot;2021-07-07T07:07:50Z&quot;
+                }
+            ]
+        },
+        {
+            &quot;job_id&quot;: &quot;dtle-demo-subscription&quot;,
+            &quot;job_status&quot;: &quot;running&quot;,
+            &quot;topic&quot;: &quot;&quot;,
+            &quot;job_create_time&quot;: &quot;2021-07-07T06:34:55Z&quot;,
+            &quot;src_addr_list&quot;: [
+                &quot;172.18.0.2&quot;
+            ],
+            &quot;dst_addr_list&quot;: [
+                &quot;172.18.0.5:9092&quot;
+            ],
+            &quot;user&quot;: &quot;root&quot;,
+            &quot;job_steps&quot;: null
+        },
+        {
+            &quot;job_id&quot;: &quot;dtle-demo-sync&quot;,
+            &quot;job_status&quot;: &quot;running&quot;,
+            &quot;topic&quot;: &quot;&quot;,
+            &quot;job_create_time&quot;: &quot;2021-07-07T07:15:22Z&quot;,
+            &quot;src_addr_list&quot;: [
+                &quot;172.18.0.2&quot;
+            ],
+            &quot;dst_addr_list&quot;: [
+                &quot;172.18.0.3&quot;
+            ],
+            &quot;user&quot;: &quot;root&quot;,
+            &quot;job_steps&quot;: [
+                {
+                    &quot;step_name&quot;: &quot;job_stage_incr&quot;,
+                    &quot;step_status&quot;: &quot;start&quot;,
+                    &quot;step_schedule&quot;: 0,
+                    &quot;job_create_time&quot;: &quot;2021-07-07T07:15:22Z&quot;
+                }
+            ]
+        }
+    ],
+    &quot;message&quot;: &quot;ok&quot;
 }
 </code></pre><h2 id="&#x83B7;&#x53D6;&#x67D0;&#x4E2A;&#x8FC1;&#x79FB;&#x4F5C;&#x4E1A;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;">&#x83B7;&#x53D6;&#x67D0;&#x4E2A;&#x8FC1;&#x79FB;&#x4F5C;&#x4E1A;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;</h2>
 <h4 id="api-get-v2jobmigrationdetail">API: <code>GET /v2/job/migration/detail</code></h4>
@@ -1447,118 +1534,91 @@
 </tbody>
 </table>
 <h4 id="&#x6837;&#x4F8B;">&#x6837;&#x4F8B;</h4>
-<p>params&#xFF1A;<br><code>job_id</code>: <code>job1-migration</code></p>
+<p>params&#xFF1A;<br><code>job_id</code>: <code>dtle-demo-migration</code></p>
 <p>response:</p>
 <pre><code>{
-  &quot;job_id&quot;: &quot;job1-migration&quot;,
-  &quot;job_name&quot;: &quot;job1&quot;,
-  &quot;failover&quot;: true,
-  &quot;src_task_detail&quot;: {
-    &quot;allocations&quot;: [
-      {
-        &quot;node_id&quot;: &quot;aae994ee-e4e3-635f-fe9b-b2fa511e6a32&quot;,
-        &quot;allocation_id&quot;: &quot;976b3a73-837a-182d-9c25-d9e7dc85cc44&quot;,
-        &quot;task_status&quot;: {
-          &quot;task_events&quot;: [
+    &quot;basic_task_profile&quot;: {
+        &quot;job_base_info&quot;: {
+            &quot;job_id&quot;: &quot;dtle-demo-migration&quot;,
+            &quot;subscription_topic&quot;: &quot;&quot;,
+            &quot;job_status&quot;: &quot;running&quot;,
+            &quot;job_create_time&quot;: &quot;2021-07-07T07:07:50Z&quot;,
+            &quot;job_steps&quot;: [
+                {
+                    &quot;step_name&quot;: &quot;job_stage_full&quot;,
+                    &quot;step_status&quot;: &quot;start&quot;,
+                    &quot;step_schedule&quot;: 0,
+                    &quot;job_create_time&quot;: &quot;2021-07-07T07:07:50Z&quot;
+                }
+            ],
+            &quot;delay&quot;: 0
+        },
+        &quot;dtle_node_infos&quot;: [
             {
-              &quot;event_type&quot;: &quot;Received&quot;,
-              &quot;setup_error&quot;: &quot;&quot;,
-              &quot;message&quot;: &quot;Task received by client&quot;,
-              &quot;time&quot;: &quot;2021-06-04T09:10:18Z&quot;
-            },
-            {
-              &quot;event_type&quot;: &quot;Task Setup&quot;,
-              &quot;setup_error&quot;: &quot;&quot;,
-              &quot;message&quot;: &quot;Building Task Directory&quot;,
-              &quot;time&quot;: &quot;2021-06-04T09:10:18Z&quot;
-            },
-            {
-              &quot;event_type&quot;: &quot;Started&quot;,
-              &quot;setup_error&quot;: &quot;&quot;,
-              &quot;message&quot;: &quot;Task started by client&quot;,
-              &quot;time&quot;: &quot;2021-06-04T09:10:18Z&quot;
+                &quot;node_addr&quot;: &quot;127.0.0.1&quot;,
+                &quot;node_id&quot;: &quot;0b8c9507-7a02-931e-4e91-99aedb5a0399&quot;,
+                &quot;data_source&quot;: &quot;172.18.0.2:3306&quot;
             }
-          ],
-          &quot;started_at&quot;: &quot;2021-06-04T09:10:18.097633981Z&quot;,
-          &quot;finished_at&quot;: &quot;0001-01-01T00:00:00Z&quot;,
-          &quot;status&quot;: &quot;running&quot;
+        ],
+        &quot;connection_info&quot;: {
+            &quot;src_data_base_list&quot;: [
+                {
+                    &quot;mysql_host&quot;: &quot;172.18.0.3&quot;,
+                    &quot;mysql_port&quot;: 3306,
+                    &quot;mysql_user&quot;: &quot;root&quot;,
+                    &quot;mysql_password&quot;: &quot;*&quot;
+                }
+            ],
+            &quot;dst_data_base_list&quot;: [
+                {
+                    &quot;mysql_host&quot;: &quot;172.18.0.2&quot;,
+                    &quot;mysql_port&quot;: 3306,
+                    &quot;mysql_user&quot;: &quot;root&quot;,
+                    &quot;mysql_password&quot;: &quot;*&quot;
+                }
+            ]
+        },
+        &quot;configuration&quot;: {
+            &quot;binlog_relay&quot;: false,
+            &quot;fail_over&quot;: true,
+            &quot;retry_time&quot;: 0,
+            &quot;parallel_workers&quot;: 1,
+            &quot;repl_chan_buffer_size&quot;: 1,
+            &quot;group_max_size&quot;: 32,
+            &quot;chunk_size&quot;: 2000,
+            &quot;group_timeout&quot;: 0
+        },
+        &quot;operation_object&quot;: []
+    },
+    &quot;task_logs&quot;: [
+        {
+            &quot;task_events&quot;: [
+                {
+                    &quot;event_type&quot;: &quot;Received&quot;,
+                    &quot;setup_error&quot;: &quot;&quot;,
+                    &quot;message&quot;: &quot;Task received by client&quot;,
+                    &quot;time&quot;: &quot;2021-07-07T07:07:50Z&quot;
+                },
+                {
+                    &quot;event_type&quot;: &quot;Task Setup&quot;,
+                    &quot;setup_error&quot;: &quot;&quot;,
+                    &quot;message&quot;: &quot;Building Task Directory&quot;,
+                    &quot;time&quot;: &quot;2021-07-07T07:07:50Z&quot;
+                },
+                {
+                    &quot;event_type&quot;: &quot;Started&quot;,
+                    &quot;setup_error&quot;: &quot;&quot;,
+                    &quot;message&quot;: &quot;Task started by client&quot;,
+                    &quot;time&quot;: &quot;2021-07-07T07:07:50Z&quot;
+                }
+            ],
+            &quot;node_id&quot;: &quot;0b8c9507-7a02-931e-4e91-99aedb5a0399&quot;,
+            &quot;allocation_id&quot;: &quot;0e1dad33-657e-50a7-0fb9-e00c9b26d48f&quot;,
+            &quot;address&quot;: &quot;127.0.0.1&quot;,
+            &quot;target&quot;: &quot;src&quot;
         }
-      }
     ],
-    &quot;task_config&quot;: {
-      &quot;task_name&quot;: &quot;src&quot;,
-      &quot;gtid&quot;: &quot;&quot;,
-      &quot;group_max_size&quot;: 1,
-      &quot;chunk_size&quot;: 2000,
-      &quot;drop_table_if_exists&quot;: false,
-      &quot;skip_create_db_table&quot;: false,
-      &quot;repl_chan_buffer_size&quot;: 32,
-      &quot;replicate_do_db&quot;: [],
-      &quot;replicate_ignore_db&quot;: [],
-      &quot;mysql_connection_config&quot;: {
-        &quot;mysql_host&quot;: &quot;10.186.63.28&quot;,
-        &quot;mysql_port&quot;: 3307,
-        &quot;mysql_user&quot;: &quot;test&quot;,
-        &quot;mysql_password&quot;: &quot;*&quot;
-      }
-    }
-  },
-  &quot;dest_task_detail&quot;: {
-    &quot;allocations&quot;: [
-      {
-        &quot;node_id&quot;: &quot;aae994ee-e4e3-635f-fe9b-b2fa511e6a32&quot;,
-        &quot;allocation_id&quot;: &quot;68f980ba-3fe9-f716-f7d0-54e70e62f8fb&quot;,
-        &quot;task_status&quot;: {
-          &quot;task_events&quot;: [
-            {
-              &quot;event_type&quot;: &quot;Received&quot;,
-              &quot;setup_error&quot;: &quot;&quot;,
-              &quot;message&quot;: &quot;Task received by client&quot;,
-              &quot;time&quot;: &quot;2021-06-04T09:10:18Z&quot;
-            },
-            {
-              &quot;event_type&quot;: &quot;Task Setup&quot;,
-              &quot;setup_error&quot;: &quot;&quot;,
-              &quot;message&quot;: &quot;Building Task Directory&quot;,
-              &quot;time&quot;: &quot;2021-06-04T09:10:18Z&quot;
-            },
-            {
-              &quot;event_type&quot;: &quot;Started&quot;,
-              &quot;setup_error&quot;: &quot;&quot;,
-              &quot;message&quot;: &quot;Task started by client&quot;,
-              &quot;time&quot;: &quot;2021-06-04T09:10:18Z&quot;
-            },
-            {
-              &quot;event_type&quot;: &quot;Driver&quot;,
-              &quot;setup_error&quot;: &quot;&quot;,
-              &quot;message&quot;: &quot;job_stage_full&quot;,
-              &quot;time&quot;: &quot;2021-06-04T09:10:18Z&quot;
-            },
-            {
-              &quot;event_type&quot;: &quot;Driver&quot;,
-              &quot;setup_error&quot;: &quot;&quot;,
-              &quot;message&quot;: &quot;job_stage_incr&quot;,
-              &quot;time&quot;: &quot;2021-06-04T09:10:20Z&quot;
-            }
-          ],
-          &quot;started_at&quot;: &quot;2021-06-04T09:10:18.100365767Z&quot;,
-          &quot;finished_at&quot;: &quot;0001-01-01T00:00:00Z&quot;,
-          &quot;status&quot;: &quot;running&quot;
-        }
-      }
-    ],
-    &quot;task_config&quot;: {
-      &quot;task_name&quot;: &quot;dest&quot;,
-      &quot;parallel_workers&quot;: 1,
-      &quot;mysql_connection_config&quot;: {
-        &quot;mysql_host&quot;: &quot;10.186.63.28&quot;,
-        &quot;mysql_port&quot;: 3308,
-        &quot;mysql_user&quot;: &quot;test&quot;,
-        &quot;mysql_password&quot;: &quot;*&quot;
-      }
-    }
-  },
-  &quot;message&quot;: &quot;ok&quot;
+    &quot;message&quot;: &quot;ok&quot;
 }
 </code></pre><h2 id="&#x83B7;&#x53D6;&#x67D0;&#x4E2A;&#x540C;&#x6B65;&#x4F5C;&#x4E1A;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;">&#x83B7;&#x53D6;&#x67D0;&#x4E2A;&#x540C;&#x6B65;&#x4F5C;&#x4E1A;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;</h2>
 <h4 id="api-get-v2jobsyncdetail">API: <code>GET /v2/job/sync/detail</code></h4>
@@ -1587,115 +1647,131 @@
 <p>params&#xFF1A;<br><code>job_id</code>: <code>job1-sync</code></p>
 <p>response:</p>
 <pre><code>{
-  &quot;job_id&quot;: &quot;job1-sync&quot;,
-  &quot;job_name&quot;: &quot;job1&quot;,
-  &quot;failover&quot;: true,
-  &quot;src_task_detail&quot;: {
-    &quot;allocations&quot;: [
-      {
-        &quot;node_id&quot;: &quot;b4ad8733-db80-8794-a1c6-d258928ae8f4&quot;,
-        &quot;allocation_id&quot;: &quot;a44a22a5-e1bf-b4ee-76e6-96f468feb492&quot;,
-        &quot;task_status&quot;: {
-          &quot;task_events&quot;: [
+    &quot;basic_task_profile&quot;: {
+        &quot;job_base_info&quot;: {
+            &quot;job_id&quot;: &quot;dtle-demo-sync&quot;,
+            &quot;subscription_topic&quot;: &quot;&quot;,
+            &quot;job_status&quot;: &quot;running&quot;,
+            &quot;job_create_time&quot;: &quot;2021-07-07T07:15:22Z&quot;,
+            &quot;job_steps&quot;: [
+                {
+                    &quot;step_name&quot;: &quot;job_stage_incr&quot;,
+                    &quot;step_status&quot;: &quot;start&quot;,
+                    &quot;step_schedule&quot;: 0,
+                    &quot;job_create_time&quot;: &quot;2021-07-07T07:15:22Z&quot;
+                }
+            ],
+            &quot;delay&quot;: 0
+        },
+        &quot;dtle_node_infos&quot;: [
             {
-              &quot;event_type&quot;: &quot;Received&quot;,
-              &quot;setup_error&quot;: &quot;&quot;,
-              &quot;message&quot;: &quot;Task received by client&quot;,
-              &quot;time&quot;: &quot;2021-06-04T09:11:56Z&quot;
+                &quot;node_addr&quot;: &quot;127.0.0.1&quot;,
+                &quot;node_id&quot;: &quot;0b8c9507-7a02-931e-4e91-99aedb5a0399&quot;,
+                &quot;data_source&quot;: &quot;172.18.0.2:3306&quot;
             },
             {
-              &quot;event_type&quot;: &quot;Task Setup&quot;,
-              &quot;setup_error&quot;: &quot;&quot;,
-              &quot;message&quot;: &quot;Building Task Directory&quot;,
-              &quot;time&quot;: &quot;2021-06-04T09:11:56Z&quot;
-            },
-            {
-              &quot;event_type&quot;: &quot;Started&quot;,
-              &quot;setup_error&quot;: &quot;&quot;,
-              &quot;message&quot;: &quot;Task started by client&quot;,
-              &quot;time&quot;: &quot;2021-06-04T09:11:56Z&quot;
+                &quot;node_addr&quot;: &quot;127.0.0.1&quot;,
+                &quot;node_id&quot;: &quot;0b8c9507-7a02-931e-4e91-99aedb5a0399&quot;,
+                &quot;data_source&quot;: &quot;172.18.0.3:3306&quot;
             }
-          ],
-          &quot;started_at&quot;: &quot;2021-06-04T09:11:56.108067466Z&quot;,
-          &quot;finished_at&quot;: &quot;0001-01-01T00:00:00Z&quot;,
-          &quot;status&quot;: &quot;running&quot;
+        ],
+        &quot;connection_info&quot;: {
+            &quot;src_data_base_list&quot;: [
+                {
+                    &quot;mysql_host&quot;: &quot;172.18.0.3&quot;,
+                    &quot;mysql_port&quot;: 3306,
+                    &quot;mysql_user&quot;: &quot;root&quot;,
+                    &quot;mysql_password&quot;: &quot;*&quot;
+                }
+            ],
+            &quot;dst_data_base_list&quot;: [
+                {
+                    &quot;mysql_host&quot;: &quot;172.18.0.2&quot;,
+                    &quot;mysql_port&quot;: 3306,
+                    &quot;mysql_user&quot;: &quot;root&quot;,
+                    &quot;mysql_password&quot;: &quot;*&quot;
+                }
+            ]
+        },
+        &quot;configuration&quot;: {
+            &quot;binlog_relay&quot;: false,
+            &quot;fail_over&quot;: true,
+            &quot;retry_time&quot;: 0,
+            &quot;parallel_workers&quot;: 1,
+            &quot;repl_chan_buffer_size&quot;: 1,
+            &quot;group_max_size&quot;: 32,
+            &quot;chunk_size&quot;: 2000,
+            &quot;group_timeout&quot;: 0
+        },
+        &quot;operation_object&quot;: []
+    },
+    &quot;task_logs&quot;: [
+        {
+            &quot;task_events&quot;: [
+                {
+                    &quot;event_type&quot;: &quot;Received&quot;,
+                    &quot;setup_error&quot;: &quot;&quot;,
+                    &quot;message&quot;: &quot;Task received by client&quot;,
+                    &quot;time&quot;: &quot;2021-07-07T07:15:22Z&quot;
+                },
+                {
+                    &quot;event_type&quot;: &quot;Task Setup&quot;,
+                    &quot;setup_error&quot;: &quot;&quot;,
+                    &quot;message&quot;: &quot;Building Task Directory&quot;,
+                    &quot;time&quot;: &quot;2021-07-07T07:15:22Z&quot;
+                },
+                {
+                    &quot;event_type&quot;: &quot;Started&quot;,
+                    &quot;setup_error&quot;: &quot;&quot;,
+                    &quot;message&quot;: &quot;Task started by client&quot;,
+                    &quot;time&quot;: &quot;2021-07-07T07:15:22Z&quot;
+                }
+            ],
+            &quot;node_id&quot;: &quot;0b8c9507-7a02-931e-4e91-99aedb5a0399&quot;,
+            &quot;allocation_id&quot;: &quot;33c21f68-734d-a9f7-7893-b64b73bff432&quot;,
+            &quot;address&quot;: &quot;127.0.0.1&quot;,
+            &quot;target&quot;: &quot;src&quot;
+        },
+        {
+            &quot;task_events&quot;: [
+                {
+                    &quot;event_type&quot;: &quot;Received&quot;,
+                    &quot;setup_error&quot;: &quot;&quot;,
+                    &quot;message&quot;: &quot;Task received by client&quot;,
+                    &quot;time&quot;: &quot;2021-07-07T07:15:22Z&quot;
+                },
+                {
+                    &quot;event_type&quot;: &quot;Task Setup&quot;,
+                    &quot;setup_error&quot;: &quot;&quot;,
+                    &quot;message&quot;: &quot;Building Task Directory&quot;,
+                    &quot;time&quot;: &quot;2021-07-07T07:15:22Z&quot;
+                },
+                {
+                    &quot;event_type&quot;: &quot;Started&quot;,
+                    &quot;setup_error&quot;: &quot;&quot;,
+                    &quot;message&quot;: &quot;Task started by client&quot;,
+                    &quot;time&quot;: &quot;2021-07-07T07:15:22Z&quot;
+                },
+                {
+                    &quot;event_type&quot;: &quot;Driver&quot;,
+                    &quot;setup_error&quot;: &quot;&quot;,
+                    &quot;message&quot;: &quot;job_stage_full&quot;,
+                    &quot;time&quot;: &quot;2021-07-07T07:15:22Z&quot;
+                },
+                {
+                    &quot;event_type&quot;: &quot;Driver&quot;,
+                    &quot;setup_error&quot;: &quot;&quot;,
+                    &quot;message&quot;: &quot;job_stage_incr&quot;,
+                    &quot;time&quot;: &quot;2021-07-07T07:15:23Z&quot;
+                }
+            ],
+            &quot;node_id&quot;: &quot;0b8c9507-7a02-931e-4e91-99aedb5a0399&quot;,
+            &quot;allocation_id&quot;: &quot;33702556-ba79-104c-14b2-be385a47232f&quot;,
+            &quot;address&quot;: &quot;127.0.0.1&quot;,
+            &quot;target&quot;: &quot;dst&quot;
         }
-      }
     ],
-    &quot;task_config&quot;: {
-      &quot;task_name&quot;: &quot;src&quot;,
-      &quot;gtid&quot;: &quot;&quot;,
-      &quot;group_max_size&quot;: 1,
-      &quot;chunk_size&quot;: 2000,
-      &quot;drop_table_if_exists&quot;: false,
-      &quot;skip_create_db_table&quot;: false,
-      &quot;repl_chan_buffer_size&quot;: 32,
-      &quot;replicate_do_db&quot;: [],
-      &quot;replicate_ignore_db&quot;: [],
-      &quot;mysql_connection_config&quot;: {
-        &quot;mysql_host&quot;: &quot;10.186.63.28&quot;,
-        &quot;mysql_port&quot;: 3307,
-        &quot;mysql_user&quot;: &quot;test&quot;,
-        &quot;mysql_password&quot;: &quot;*&quot;
-      }
-    }
-  },
-  &quot;dest_task_detail&quot;: {
-    &quot;allocations&quot;: [
-      {
-        &quot;node_id&quot;: &quot;b4ad8733-db80-8794-a1c6-d258928ae8f4&quot;,
-        &quot;allocation_id&quot;: &quot;222aecea-a361-c364-7821-a8e643be5f56&quot;,
-        &quot;task_status&quot;: {
-          &quot;task_events&quot;: [
-            {
-              &quot;event_type&quot;: &quot;Received&quot;,
-              &quot;setup_error&quot;: &quot;&quot;,
-              &quot;message&quot;: &quot;Task received by client&quot;,
-              &quot;time&quot;: &quot;2021-06-04T09:11:56Z&quot;
-            },
-            {
-              &quot;event_type&quot;: &quot;Task Setup&quot;,
-              &quot;setup_error&quot;: &quot;&quot;,
-              &quot;message&quot;: &quot;Building Task Directory&quot;,
-              &quot;time&quot;: &quot;2021-06-04T09:11:56Z&quot;
-            },
-            {
-              &quot;event_type&quot;: &quot;Started&quot;,
-              &quot;setup_error&quot;: &quot;&quot;,
-              &quot;message&quot;: &quot;Task started by client&quot;,
-              &quot;time&quot;: &quot;2021-06-04T09:11:56Z&quot;
-            },
-            {
-              &quot;event_type&quot;: &quot;Driver&quot;,
-              &quot;setup_error&quot;: &quot;&quot;,
-              &quot;message&quot;: &quot;job_stage_full&quot;,
-              &quot;time&quot;: &quot;2021-06-04T09:11:56Z&quot;
-            },
-            {
-              &quot;event_type&quot;: &quot;Driver&quot;,
-              &quot;setup_error&quot;: &quot;&quot;,
-              &quot;message&quot;: &quot;job_stage_incr&quot;,
-              &quot;time&quot;: &quot;2021-06-04T09:11:58Z&quot;
-            }
-          ],
-          &quot;started_at&quot;: &quot;2021-06-04T09:11:56.105007762Z&quot;,
-          &quot;finished_at&quot;: &quot;0001-01-01T00:00:00Z&quot;,
-          &quot;status&quot;: &quot;running&quot;
-        }
-      }
-    ],
-    &quot;task_config&quot;: {
-      &quot;task_name&quot;: &quot;dest&quot;,
-      &quot;parallel_workers&quot;: 1,
-      &quot;mysql_connection_config&quot;: {
-        &quot;mysql_host&quot;: &quot;10.186.63.28&quot;,
-        &quot;mysql_port&quot;: 3308,
-        &quot;mysql_user&quot;: &quot;test&quot;,
-        &quot;mysql_password&quot;: &quot;*&quot;
-      }
-    }
-  },
-  &quot;message&quot;: &quot;ok&quot;
+    &quot;message&quot;: &quot;ok&quot;
 }
 </code></pre><h2 id="&#x83B7;&#x53D6;&#x67D0;&#x4E2A;&#x8BA2;&#x9605;&#x4F5C;&#x4E1A;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;">&#x83B7;&#x53D6;&#x67D0;&#x4E2A;&#x8BA2;&#x9605;&#x4F5C;&#x4E1A;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;</h2>
 <h4 id="api-get-v2jobsubscriptiondetail">API: <code>GET /v2/job/subscription/detail</code></h4>
@@ -1721,118 +1797,123 @@
 </tbody>
 </table>
 <h4 id="&#x6837;&#x4F8B;">&#x6837;&#x4F8B;</h4>
-<p>params&#xFF1A;<br><code>job_id</code>: <code>job1-subscription</code></p>
+<p>params&#xFF1A;<br><code>job_id</code>: <code>dtle-demo-subscription</code></p>
 <p>response:</p>
 <pre><code>{
-  &quot;job_id&quot;: &quot;job1-subscription&quot;,
-  &quot;job_name&quot;: &quot;job1&quot;,
-  &quot;failover&quot;: true,
-  &quot;src_task_detail&quot;: {
-    &quot;allocations&quot;: [
-      {
-        &quot;node_id&quot;: &quot;b4ad8733-db80-8794-a1c6-d258928ae8f4&quot;,
-        &quot;allocation_id&quot;: &quot;b3004644-9007-d763-4d0c-71621bfee818&quot;,
-        &quot;task_status&quot;: {
-          &quot;task_events&quot;: [
+    &quot;basic_task_profile&quot;: {
+        &quot;job_base_info&quot;: {
+            &quot;job_id&quot;: &quot;dtle-demo-subscription&quot;,
+            &quot;subscription_topic&quot;: &quot;bss&quot;,
+            &quot;job_status&quot;: &quot;running&quot;,
+            &quot;job_create_time&quot;: &quot;2021-07-07T06:34:55Z&quot;,
+            &quot;job_steps&quot;: null,
+            &quot;delay&quot;: 0
+        },
+        &quot;dtle_node_infos&quot;: [
             {
-              &quot;event_type&quot;: &quot;Received&quot;,
-              &quot;setup_error&quot;: &quot;&quot;,
-              &quot;message&quot;: &quot;Task received by client&quot;,
-              &quot;time&quot;: &quot;2021-06-04T09:11:13Z&quot;
+                &quot;node_addr&quot;: &quot;127.0.0.1&quot;,
+                &quot;node_id&quot;: &quot;0b8c9507-7a02-931e-4e91-99aedb5a0399&quot;,
+                &quot;data_source&quot;: &quot;[172.18.0.5:9092]&quot;
             },
             {
-              &quot;event_type&quot;: &quot;Task Setup&quot;,
-              &quot;setup_error&quot;: &quot;&quot;,
-              &quot;message&quot;: &quot;Building Task Directory&quot;,
-              &quot;time&quot;: &quot;2021-06-04T09:11:13Z&quot;
-            },
-            {
-              &quot;event_type&quot;: &quot;Started&quot;,
-              &quot;setup_error&quot;: &quot;&quot;,
-              &quot;message&quot;: &quot;Task started by client&quot;,
-              &quot;time&quot;: &quot;2021-06-04T09:11:13Z&quot;
+                &quot;node_addr&quot;: &quot;127.0.0.1&quot;,
+                &quot;node_id&quot;: &quot;0b8c9507-7a02-931e-4e91-99aedb5a0399&quot;,
+                &quot;data_source&quot;: &quot;172.18.0.2:3306&quot;
             }
-          ],
-          &quot;started_at&quot;: &quot;2021-06-04T09:11:13.829024525Z&quot;,
-          &quot;finished_at&quot;: &quot;0001-01-01T00:00:00Z&quot;,
-          &quot;status&quot;: &quot;running&quot;
-        }
-      }
-    ],
-    &quot;task_config&quot;: {
-      &quot;task_name&quot;: &quot;src&quot;,
-      &quot;gtid&quot;: &quot;&quot;,
-      &quot;group_max_size&quot;: 1,
-      &quot;chunk_size&quot;: 2000,
-      &quot;drop_table_if_exists&quot;: false,
-      &quot;skip_create_db_table&quot;: false,
-      &quot;repl_chan_buffer_size&quot;: 32,
-      &quot;replicate_do_db&quot;: [
+        ],
+        &quot;connection_info&quot;: {
+            &quot;src_data_base_list&quot;: null,
+            &quot;dst_data_base_list&quot;: [
+                {
+                    &quot;mysql_host&quot;: &quot;172.18.0.2&quot;,
+                    &quot;mysql_port&quot;: 3306,
+                    &quot;mysql_user&quot;: &quot;root&quot;,
+                    &quot;mysql_password&quot;: &quot;*&quot;
+                }
+            ]
+        },
+        &quot;configuration&quot;: {
+            &quot;binlog_relay&quot;: false,
+            &quot;fail_over&quot;: true,
+            &quot;retry_time&quot;: 0,
+            &quot;parallel_workers&quot;: 0,
+            &quot;repl_chan_buffer_size&quot;: 1,
+            &quot;group_max_size&quot;: 32,
+            &quot;chunk_size&quot;: 2000,
+            &quot;group_timeout&quot;: 0
+        },
+        &quot;operation_object&quot;: [
+            {
+                &quot;table_schema&quot;: &quot;demo&quot;,
+                &quot;table_schema_regex&quot;: &quot;&quot;,
+                &quot;table_schema_rename&quot;: &quot;&quot;,
+                &quot;tables&quot;: [
+                    {
+                        &quot;table_name&quot;: &quot;demo_tbl&quot;,
+                        &quot;table_regex&quot;: &quot;&quot;,
+                        &quot;table_rename&quot;: &quot;&quot;,
+                        &quot;column_map_from&quot;: null,
+                        &quot;where&quot;: &quot;&quot;
+                    }
+                ]
+            }
+        ]
+    },
+    &quot;task_logs&quot;: [
         {
-          &quot;table_schema&quot;: &quot;db1&quot;,
-          &quot;table_schema_rename&quot;: &quot;&quot;,
-          &quot;tables&quot;: [
-            {
-              &quot;table_name&quot;: &quot;tb1&quot;,
-              &quot;table_rename&quot;: &quot;&quot;,
-              &quot;column_map_from&quot;: null,
-              &quot;where&quot;: &quot;&quot;
-            }
-          ]
+            &quot;task_events&quot;: [
+                {
+                    &quot;event_type&quot;: &quot;Received&quot;,
+                    &quot;setup_error&quot;: &quot;&quot;,
+                    &quot;message&quot;: &quot;Task received by client&quot;,
+                    &quot;time&quot;: &quot;2021-07-07T06:34:56Z&quot;
+                },
+                {
+                    &quot;event_type&quot;: &quot;Task Setup&quot;,
+                    &quot;setup_error&quot;: &quot;&quot;,
+                    &quot;message&quot;: &quot;Building Task Directory&quot;,
+                    &quot;time&quot;: &quot;2021-07-07T06:34:56Z&quot;
+                },
+                {
+                    &quot;event_type&quot;: &quot;Started&quot;,
+                    &quot;setup_error&quot;: &quot;&quot;,
+                    &quot;message&quot;: &quot;Task started by client&quot;,
+                    &quot;time&quot;: &quot;2021-07-07T06:34:56Z&quot;
+                }
+            ],
+            &quot;node_id&quot;: &quot;0b8c9507-7a02-931e-4e91-99aedb5a0399&quot;,
+            &quot;allocation_id&quot;: &quot;d04470e0-4ef2-2a13-857b-c6ef6cf9ef79&quot;,
+            &quot;address&quot;: &quot;127.0.0.1&quot;,
+            &quot;target&quot;: &quot;src&quot;
+        },
+        {
+            &quot;task_events&quot;: [
+                {
+                    &quot;event_type&quot;: &quot;Received&quot;,
+                    &quot;setup_error&quot;: &quot;&quot;,
+                    &quot;message&quot;: &quot;Task received by client&quot;,
+                    &quot;time&quot;: &quot;2021-07-07T06:34:56Z&quot;
+                },
+                {
+                    &quot;event_type&quot;: &quot;Task Setup&quot;,
+                    &quot;setup_error&quot;: &quot;&quot;,
+                    &quot;message&quot;: &quot;Building Task Directory&quot;,
+                    &quot;time&quot;: &quot;2021-07-07T06:34:56Z&quot;
+                },
+                {
+                    &quot;event_type&quot;: &quot;Started&quot;,
+                    &quot;setup_error&quot;: &quot;&quot;,
+                    &quot;message&quot;: &quot;Task started by client&quot;,
+                    &quot;time&quot;: &quot;2021-07-07T06:34:56Z&quot;
+                }
+            ],
+            &quot;node_id&quot;: &quot;0b8c9507-7a02-931e-4e91-99aedb5a0399&quot;,
+            &quot;allocation_id&quot;: &quot;06ba1170-4e0d-09ae-c456-200f78ae6a71&quot;,
+            &quot;address&quot;: &quot;127.0.0.1&quot;,
+            &quot;target&quot;: &quot;dst&quot;
         }
-      ],
-      &quot;replicate_ignore_db&quot;: [],
-      &quot;mysql_connection_config&quot;: {
-        &quot;mysql_host&quot;: &quot;10.186.63.28&quot;,
-        &quot;mysql_port&quot;: 3307,
-        &quot;mysql_user&quot;: &quot;test&quot;,
-        &quot;mysql_password&quot;: &quot;*&quot;
-      }
-    }
-  },
-  &quot;dest_task_detail&quot;: {
-    &quot;allocations&quot;: [
-      {
-        &quot;node_id&quot;: &quot;b4ad8733-db80-8794-a1c6-d258928ae8f4&quot;,
-        &quot;allocation_id&quot;: &quot;25083820-fb2f-7a9e-c5a2-8b1ac03bd22e&quot;,
-        &quot;task_status&quot;: {
-          &quot;task_events&quot;: [
-            {
-              &quot;event_type&quot;: &quot;Received&quot;,
-              &quot;setup_error&quot;: &quot;&quot;,
-              &quot;message&quot;: &quot;Task received by client&quot;,
-              &quot;time&quot;: &quot;2021-06-04T09:11:13Z&quot;
-            },
-            {
-              &quot;event_type&quot;: &quot;Task Setup&quot;,
-              &quot;setup_error&quot;: &quot;&quot;,
-              &quot;message&quot;: &quot;Building Task Directory&quot;,
-              &quot;time&quot;: &quot;2021-06-04T09:11:13Z&quot;
-            },
-            {
-              &quot;event_type&quot;: &quot;Started&quot;,
-              &quot;setup_error&quot;: &quot;&quot;,
-              &quot;message&quot;: &quot;Task started by client&quot;,
-              &quot;time&quot;: &quot;2021-06-04T09:11:13Z&quot;
-            }
-          ],
-          &quot;started_at&quot;: &quot;2021-06-04T09:11:13.82838617Z&quot;,
-          &quot;finished_at&quot;: &quot;0001-01-01T00:00:00Z&quot;,
-          &quot;status&quot;: &quot;running&quot;
-        }
-      }
     ],
-    &quot;task_config&quot;: {
-      &quot;task_name&quot;: &quot;dest&quot;,
-      &quot;kafka_broker_addrs&quot;: [
-        &quot;10.186.63.162:9092&quot;
-      ],
-      &quot;kafka_topic&quot;: &quot;bss&quot;,
-      &quot;message_group_max_size&quot;: 1,
-      &quot;message_group_timeout&quot;: 100
-    }
-  },
-  &quot;message&quot;: &quot;ok&quot;
+    &quot;message&quot;: &quot;ok&quot;
 }
 </code></pre><h2 id="&#x6821;&#x9A8C;&#x4F5C;&#x4E1A;&#x914D;&#x7F6E;">&#x6821;&#x9A8C;&#x4F5C;&#x4E1A;&#x914D;&#x7F6E;</h2>
 <h4 id="api-get-v2validationjob">API: <code>GET /v2/validation/job</code></h4>
@@ -2322,6 +2403,104 @@
   ],
   &quot;message&quot;: &quot;ok&quot;
 }
+</code></pre><h2 id="&#x83B7;&#x53D6;mysql&#x5B9E;&#x4F8B;&#x6307;&#x5B9A;schema&#x4E0B;&#x7684;table&#x7684;&#x6240;&#x6709;columns">&#x83B7;&#x53D6;MySQL&#x5B9E;&#x4F8B;&#x6307;&#x5B9A;schema&#x4E0B;&#x7684;table&#x7684;&#x6240;&#x6709;columns</h2>
+<h4 id="api-get-v2mysqlcolumns">API: <code>GET /v2/mysql/columns</code></h4>
+<h4 id="&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x8BF4;&#x660E;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;&#x540D;</th>
+<th>&#x5FC5;&#x586B;?</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mysql_host</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td>&quot;&quot;</td>
+<td>MySQL&#x6240;&#x5728;&#x4E3B;&#x673A;IP</td>
+</tr>
+<tr>
+<td>mysql_port</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td>&quot;&quot;</td>
+<td>MySQL&#x7AEF;&#x53E3;</td>
+</tr>
+<tr>
+<td>mysql_user</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td>&quot;&quot;</td>
+<td>MySQL&#x8FDE;&#x63A5;&#x7528;&#x6237;</td>
+</tr>
+<tr>
+<td>mysql_password</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td>&quot;&quot;</td>
+<td>MySQL&#x8FDE;&#x63A5;&#x5BC6;&#x7801;</td>
+</tr>
+<tr>
+<td>mysql_schema</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td>&quot;&quot;</td>
+<td>MySQL&#x6307;&#x5B9A;&#x5E93;</td>
+</tr>
+<tr>
+<td>mysql_table</td>
+<td>&#x662F;</td>
+<td>String</td>
+<td>&quot;&quot;</td>
+<td>MySQL&#x6307;&#x5B9A;&#x8868;</td>
+</tr>
+<tr>
+<td>mysql_character_set</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>&quot;utf8mb4&quot;</td>
+<td>MySQL&#x5B57;&#x7B26;&#x96C6;</td>
+</tr>
+<tr>
+<td>is_mysql_password_encrypted</td>
+<td>&#x5426;</td>
+<td>String</td>
+<td>false</td>
+<td>MySQL&#x5BC6;&#x7801;&#x662F;&#x5426;&#x7ECF;&#x8FC7;&#x52A0;&#x5BC6;&#x3002;&#x8BBE;&#x7F6E;is_mysql_password_encrypted=true&#x65F6;&#xFF0C;&#x8BA4;&#x4E3A;&#x6240;&#x586B;&#x5199;&#x7684;<code>mysql_password</code>&#x7ECF;&#x8FC7;&#x4E24;&#x6B21;&#x52A0;&#x5BC6;&#xFF08;&#x5148;&#x662F;rsa/none/pkcs1 padding &#x52A0;&#x5BC6;&#xFF0C;&#x518D;&#x505A;base64&#x7F16;&#x7801;&#xFF09;&#xFF0C;&#x8981;&#x6C42;&#x5C06;rsa&#x5BC6;&#x94A5;&#x4EE5;pem&#x683C;&#x5F0F;&#x4FDD;&#x5B58;&#x5728;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x518D;&#x5C06;&#x6587;&#x4EF6;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x914D;&#x7F6E;&#x5230;nomad.hcl&#x7684;<code>rsa_private_key_path</code>&#x53C2;&#x6570;&#xFF08;&#x914D;&#x7F6E;&#x65B9;&#x6CD5;&#x89C1;<a href="4.1_node_configuration.html">&quot;&#x8282;&#x70B9;&#x914D;&#x7F6E;&quot;</a>&#xFF09;&#xFF1B;&#x8BBE;&#x7F6E;is_mysql_password_encrypted=false&#x65F6;&#xFF0C;<code>mysql_password</code>&#x586B;&#x5199;&#x660E;&#x6587;&#x5BC6;&#x7801;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x54CD;&#x5E94;&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x54CD;&#x5E94;&#x53C2;&#x6570;&#x8BF4;&#x660E;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;&#x540D;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>columns</td>
+<td>String Array</td>
+<td>&#x5728;MySQL&#x5B9E;&#x4F8B;&#x4E0A;&#x6267;&#x884C;<code>use mysql_schema;select COLUMN_NAME from information_schema.columns where table_name = &apos;?&apos;</code>&#x83B7;&#x53D6;&#x5230;&#x7684;&#x5217;&#x6570;&#x636E;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x6837;&#x4F8B;">&#x6837;&#x4F8B;</h4>
+<p>response:</p>
+<pre><code>{
+  &quot;columns&quot;: [
+    &quot;id&quot;,
+    &quot;c_bit_1&quot;
+  ],
+  &quot;message&quot;: &quot;ok&quot;
+}
 </code></pre><h2 id="&#x4FEE;&#x6539;&#x65E5;&#x5FD7;&#x7B49;&#x7EA7;">&#x4FEE;&#x6539;&#x65E5;&#x5FD7;&#x7B49;&#x7EA7;</h2>
 <p>&#x901A;&#x8FC7;&#x8BE5;API&#x53EF;&#x4EE5;&#x52A8;&#x6001;&#x4FEE;&#x6539;&#x65E5;&#x5FD7;&#x7B49;&#x7EA7;&#xFF0C;&#x4FEE;&#x6539;&#x6B65;&#x9AA4;&#x5982;&#x4E0B;&#xFF1A; 
 &#x5982;&#x8981;&#x5C06;&#x65E5;&#x5FD7;&#x7B49;&#x7EA7;&#x53D8;&#x66F4;&#x4E3A;<code>DEBUG</code>
@@ -2429,7 +2608,7 @@ plugin &quot;dtle&quot; {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.4.1.dtle 3.x HTTP API说明","level":"1.6.8","depth":2,"next":{"title":"4.5.MySQL 用户权限说明","level":"1.6.9","depth":2,"path":"4/4.5_mysql_user_privileges.md","ref":"4/4.5_mysql_user_privileges.md","articles":[]},"previous":{"title":"4.4.HTTP API说明","level":"1.6.7","depth":2,"path":"4/4.4_http_api.md","ref":"4/4.4_http_api.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"4/4.4.1_dtle_http_api.md","mtime":"2021-06-09T07:32:24.361Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-09T07:46:59.684Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.4.1.dtle 3.x HTTP API说明","level":"1.6.8","depth":2,"next":{"title":"4.5.MySQL 用户权限说明","level":"1.6.9","depth":2,"path":"4/4.5_mysql_user_privileges.md","ref":"4/4.5_mysql_user_privileges.md","articles":[]},"previous":{"title":"4.4.HTTP API说明","level":"1.6.7","depth":2,"path":"4/4.4_http_api.md","ref":"4/4.4_http_api.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"4/4.4.1_dtle_http_api.md","mtime":"2021-07-07T07:32:01.206Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-07T07:39:31.357Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

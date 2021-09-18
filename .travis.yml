@@ -53,9 +53,9 @@ script:
   - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages
   - cd ..
   # pdf
-  - xvfb-run gitbook pdf ./ ./dble-manual.pdf
+  - xvfb-run gitbook pdf ./ ./dtle-manual.pdf
   - mkdir pdf
-  - cp dble-manual.pdf ./pdf/
+  - cp dtle-manual.pdf ./pdf/
   - cd ./pdf
   - git init
   - git config user.name "${GH_USER}"

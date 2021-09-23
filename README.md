@@ -4,7 +4,7 @@
 参考 [gitbook](https://actiontech.github.io/dtle-docs-cn) 左侧目录区 或 [SUMMARY.md](https://github.com/actiontech/dtle-docs-cn/blob/master/SUMMARY.md)
 
 ## PDF下载
-[PDF下载](https://github.com/actiontech/dtle-docs-cn/raw/master/dtle-manual.pdf)
+[PDF下载](https://github.com/actiontech/dtle-docs-cn/raw/pdf/dtle-manual.pdf)
 
 ## 官方技术支持
 - 代码库 github: [github.com/actiontech/dtle](https://github.com/actiontech/dtle)

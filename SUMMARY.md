@@ -22,6 +22,7 @@
 	* [3.3.对目标端数据库的影响(gtid_executed表)](3/3.3_impact_on_dest.md)
 	* [3.4.监控项说明](3/3.4_metrics.md)
 	* [3.4.1.延迟监控告警](3/3.4.1_delay_alert.md)
+	* [3.4.2.搭建监控系统](3/3.4.2_monitor.md)
 	* [3.5.部署结构](3/3.5_deployment.md)
 	* [3.6.DDL支持度](3/3.6_DDL.md)
 	* [3.7.DCL支持度](3/3.7_DCL.md)

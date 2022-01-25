@@ -6,6 +6,7 @@
 	* [1.1.跨数据中心的双向复制](1/1.1_bidirectional_replication.md)
 	* [1.2.公有云间的数据同步](1/1.2_sync_between_cloud.md)
 	* [1.3.MySQL到Kafka的数据变更通知](1/1.3_mysql_kafka.md)
+	* [1.4.Oracle到MySQL的数据同步](1/1.4_oracle_mysql.md)
 * 2.快速开始
 	* [2.0.MySQL的单向复制](2/2.0_mysql_replication_1_1.md)
 	  * [2.0.1.HTTP API、nomad 命令行工具 和 Web界面](2/2.0.1_interface.md)
@@ -14,7 +15,8 @@
 	* [2.3.MySQL的跨数据中心的双向复制](2/2.3_dc_to_dc_bidirectional.md)
 	* [2.4.阿里云到京东云的MySQL复制](2/2.4_ali_to_jd.md)
 	* [2.5.MySQL到Kafka的数据变更通知](2/2.5_mysql_kafka.md)
-	* [2.6.多nomad server部署](2/2.6_multi_node.md)
+	* [2.6.Oracle到MySQL的数据同步](2/2.6_oracle_mysql.md)
+	* [2.7.多nomad server部署](2/2.7_multi_node.md)
 * 3.功能说明
 	* [3.0.功能/场景的映射列表](3/3.0_function_scenario_mapping.md)
 	* [3.1.使用限制](3/3.1_limitation.md)
@@ -29,6 +31,7 @@
 	* [3.8.dtle mapping支持](3/3.8_dtle_mapping.md)
 	* [3.9.Binlog Relay (中继)](3/3.9_binlog_relay.md)
 	* [3.10.consul 上的 job 数据管理](3/3.10_consul.md)
+	* [3.11.Oracle MySQL同步支持](3/3.11_oracle_mysql.md)
 * 4.安装/配置说明
 	* [4.0.安装步骤](4/4.0_installation.md)
 	* [4.1.节点配置](4/4.1_node_configuration.md)
@@ -45,5 +48,6 @@
 	* [5.1.时间/资源估算](5/5.1_resource_estimation.md)
 	* [5.2 基本架构](5/5.2_architecture.md)
 	* [5.3 Kafka 消息格式](5/5.3_kafka_message_format.md)
+	* [5.4 Oracle MySQL 字段映射](5/5.4_columns_mapping.md)
 * [6.如何参与](6/howto_contribute.md)
 * [7.路线图](7/7_roadmap.md)

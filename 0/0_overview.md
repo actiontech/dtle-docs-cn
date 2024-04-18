@@ -11,7 +11,8 @@ dtle (Data-Transformation-le) 是[上海爱可生信息技术股份有限公司]
 	- 支持多对多的数据传输
 	- 支持回环传输
 - 多种源/目标端
-	- 支持MySQL - MySQL的数据传输
+	- 支持MySQL - ActionDB的数据传输
+        - 支持MySQL - MySQL的数据传输
 	- 支持MySQL - Kafka的数据传输
 	- 支持Oracle - MySQL的数据传输
 - 集群模式

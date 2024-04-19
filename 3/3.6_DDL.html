@@ -1,0 +1,1965 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3.6.DDL支持度 · dtle manual</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="ActionTech">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="3.7_DCL.html" />
+    
+    
+    <link rel="prev" href="3.5_deployment.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../0/0_overview.html">
+            
+                <a href="../0/0_overview.html">
+            
+                    
+                    0.概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    1.适用场景
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../1/1.0_mysql_replication.html">
+            
+                <a href="../1/1.0_mysql_replication.html">
+            
+                    
+                    1.0.MySQL的单向复制/聚合/分散
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../1/1.1_bidirectional_replication.html">
+            
+                <a href="../1/1.1_bidirectional_replication.html">
+            
+                    
+                    1.1.跨数据中心的双向复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../1/1.2_sync_between_cloud.html">
+            
+                <a href="../1/1.2_sync_between_cloud.html">
+            
+                    
+                    1.2.公有云间的数据同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../1/1.3_mysql_kafka.html">
+            
+                <a href="../1/1.3_mysql_kafka.html">
+            
+                    
+                    1.3.MySQL到Kafka的数据变更通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../1/1.4_oracle_mysql.html">
+            
+                <a href="../1/1.4_oracle_mysql.html">
+            
+                    
+                    1.4.Oracle到MySQL的数据同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    2.快速开始
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../2/2.0_mysql_replication_1_1.html">
+            
+                <a href="../2/2.0_mysql_replication_1_1.html">
+            
+                    
+                    2.0.MySQL的单向复制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../2/2.0.1_interface.html">
+            
+                <a href="../2/2.0.1_interface.html">
+            
+                    
+                    2.0.1.HTTP API、nomad 命令行工具 和 Web界面
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../2/2.1_mysql_replication_n_1.html">
+            
+                <a href="../2/2.1_mysql_replication_n_1.html">
+            
+                    
+                    2.1.MySQL的聚合复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../2/2.2_mysql_replication_1_n.html">
+            
+                <a href="../2/2.2_mysql_replication_1_n.html">
+            
+                    
+                    2.2.MySQL的数据分散
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../2/2.3_dc_to_dc_bidirectional.html">
+            
+                <a href="../2/2.3_dc_to_dc_bidirectional.html">
+            
+                    
+                    2.3.MySQL的跨数据中心的双向复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../2/2.4_ali_to_jd.html">
+            
+                <a href="../2/2.4_ali_to_jd.html">
+            
+                    
+                    2.4.阿里云到京东云的MySQL复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../2/2.5_mysql_kafka.html">
+            
+                <a href="../2/2.5_mysql_kafka.html">
+            
+                    
+                    2.5.MySQL到Kafka的数据变更通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../2/2.6_oracle_mysql.html">
+            
+                <a href="../2/2.6_oracle_mysql.html">
+            
+                    
+                    2.6.Oracle到MySQL的数据同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../2/2.7_multi_node.html">
+            
+                <a href="../2/2.7_multi_node.html">
+            
+                    
+                    2.7.多nomad server部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    3.功能说明
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="3.0_function_scenario_mapping.html">
+            
+                <a href="3.0_function_scenario_mapping.html">
+            
+                    
+                    3.0.功能/场景的映射列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="3.1_limitation.html">
+            
+                <a href="3.1_limitation.html">
+            
+                    
+                    3.1.使用限制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="3.2_ports.html">
+            
+                <a href="3.2_ports.html">
+            
+                    
+                    3.2.端口使用说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="3.3_impact_on_dest.html">
+            
+                <a href="3.3_impact_on_dest.html">
+            
+                    
+                    3.3.对目标端数据库的影响(gtid_executed表)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="3.4_metrics.html">
+            
+                <a href="3.4_metrics.html">
+            
+                    
+                    3.4.监控项说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="3.4.1_delay_alert.html">
+            
+                <a href="3.4.1_delay_alert.html">
+            
+                    
+                    3.4.1.延迟监控告警
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="3.4.2_monitor.html">
+            
+                <a href="3.4.2_monitor.html">
+            
+                    
+                    3.4.2.搭建监控系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="3.5_deployment.html">
+            
+                <a href="3.5_deployment.html">
+            
+                    
+                    3.5.部署结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.9" data-path="3.6_DDL.html">
+            
+                <a href="3.6_DDL.html">
+            
+                    
+                    3.6.DDL支持度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="3.7_DCL.html">
+            
+                <a href="3.7_DCL.html">
+            
+                    
+                    3.7.DCL支持度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="3.8_dtle_mapping.html">
+            
+                <a href="3.8_dtle_mapping.html">
+            
+                    
+                    3.8.dtle mapping支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="3.9_binlog_relay.html">
+            
+                <a href="3.9_binlog_relay.html">
+            
+                    
+                    3.9.Binlog Relay (中继)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13" data-path="3.10_consul.html">
+            
+                <a href="3.10_consul.html">
+            
+                    
+                    3.10.consul 上的 job 数据管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14" data-path="3.11_oracle_mysql.html">
+            
+                <a href="3.11_oracle_mysql.html">
+            
+                    
+                    3.11.Oracle MySQL同步支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    4.安装/配置说明
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../4/4.0_installation.html">
+            
+                <a href="../4/4.0_installation.html">
+            
+                    
+                    4.0.安装步骤
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../4/4.1_node_configuration.html">
+            
+                <a href="../4/4.1_node_configuration.html">
+            
+                    
+                    4.1.节点配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../4/4.2_command.html">
+            
+                <a href="../4/4.2_command.html">
+            
+                    
+                    4.2.命令说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../4/4.3_job_configuration.html">
+            
+                <a href="../4/4.3_job_configuration.html">
+            
+                    
+                    4.3.作业(job)配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../4/4.3.1_tuning.html">
+            
+                <a href="../4/4.3.1_tuning.html">
+            
+                    
+                    4.3.1.性能调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../4/4.3.2_job_sample.html">
+            
+                <a href="../4/4.3.2_job_sample.html">
+            
+                    
+                    4.3.2.Job示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../4/4.4_http_api.html">
+            
+                <a href="../4/4.4_http_api.html">
+            
+                    
+                    4.4.HTTP API说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../4/4.4.1_dtle_http_api.html">
+            
+                <a href="../4/4.4.1_dtle_http_api.html">
+            
+                    
+                    4.4.1.dtle 3.x HTTP API说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../4/4.5_mysql_user_privileges.html">
+            
+                <a href="../4/4.5_mysql_user_privileges.html">
+            
+                    
+                    4.5.MySQL 用户权限说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../4/4.6_dtle_2to3.html">
+            
+                <a href="../4/4.6_dtle_2to3.html">
+            
+                    
+                    4.6.dtle 2升级到3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="../4/4.7_diagnosing.html">
+            
+                <a href="../4/4.7_diagnosing.html">
+            
+                    
+                    4.7.问题诊断 FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    5.设计说明
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../5/5.1_resource_estimation.html">
+            
+                <a href="../5/5.1_resource_estimation.html">
+            
+                    
+                    5.1.时间/资源估算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../5/5.2_architecture.html">
+            
+                <a href="../5/5.2_architecture.html">
+            
+                    
+                    5.2 基本架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../5/5.3_kafka_message_format.html">
+            
+                <a href="../5/5.3_kafka_message_format.html">
+            
+                    
+                    5.3 Kafka 消息格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../5/5.4_columns_mapping.html">
+            
+                <a href="../5/5.4_columns_mapping.html">
+            
+                    
+                    5.4 Oracle MySQL 字段映射
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../6/howto_contribute.html">
+            
+                <a href="../6/howto_contribute.html">
+            
+                    
+                    6.如何参与
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../7/7_roadmap.html">
+            
+                <a href="../7/7_roadmap.html">
+            
+                    
+                    7.路线图
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >3.6.DDL支持度</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="ddl&#x652F;&#x6301;&#x5EA6;">DDL&#x652F;&#x6301;&#x5EA6;</h1>
+<h2 id="&#x4EE5;database&#x4E3A;&#x5BF9;&#x8C61;&#x7684;ddl">&#x4EE5;DATABASE&#x4E3A;&#x5BF9;&#x8C61;&#x7684;DDL</h2>
+<table>
+    <tr>
+        <td>DDL&#x7C7B;&#x578B;</td>
+        <td></td>
+        <td>DDL&#x8BED;&#x53E5;&#x793A;&#x4F8B;</td>
+        <td>&#x5168;&#x91CF;</td>
+        <td>&#x589E;&#x91CF;</td>
+        <td>&#x5907;&#x6CE8;</td>
+    </tr>
+    <tr>
+        <td rowspan="2">CREATE DATABASE</td>
+        <td>basic</td>
+        <td>CREATE DATABASE db_name;<br><br>
+        CREATE DATABASE IF NOT EXISTS db_name;<br><br>
+        CREATE SCHEMA db_name;<br><br>
+        CREATE SCHEMA IF NOT EXISTS db_name;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>1. &#x652F;&#x6301;server&#x7EA7;&#x9ED8;&#x8BA4;&#x5B57;&#x7B26;&#x96C6;&#x4E0D;&#x4E00;&#x81F4;&#x60C5;&#x5F62;</td>
+    </tr>
+    <tr>
+        <td>character set and collate</td>
+        <td>CREATE SCHEMA db_name CHARACTER SET utf8 COLLATE utf8_general_ci;<br><br>
+        CREATE SCHEMA db_name DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_general_ci;<br><br>
+        CREATE SCHEMA db_name CHARACTER SET=latin1 COLLATE=latin1_swedish_ci;<br><br>
+        CREATE DATABASE db_name COLLATE latin2_general_ci;<br><br>
+        CREATE DATABASE db_name CHARACTER SET binary;<br><br>
+        CREATE DATABASE db_name DEFAULT CHARACTER SET=gbk DEFAULT COLLATE=gbk_chinese_ci;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>1. &#x652F;&#x6301;&#x5B57;&#x7B26;&#x96C6;latin1&#x3001;latin2&#x3001;gbk&#x3001;utf8&#x3001;utf8mb4&#x3001;binary</td>
+    </tr>
+    <tr>
+        <td>ALTER DATABASE</td>
+        <td></td>
+        <td>ALTER DATABASE db_name CHARACTER SET utf8 COLLATE utf8_general_ci</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td> &#x652F;&#x6301;&#x5B57;&#x7B26;&#x96C6;latin1&#x3001;latin2&#x3001;gbk&#x3001;utf8&#x3001;utf8mb4&#x3001;binary</td>
+    </tr>
+    <tr>
+        <td>DROP DATABASE</td>
+        <td></td>
+        <td>DROP DATABASE db_name;<br><br>
+        DROP DATABASE IF EXISTS db_name;<br><br>
+        DROP SCHEMA db_name;<br><br>
+        DROP SCHEMA IF EXISTS db_name;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+</table>
+
+
+<h2 id="&#x4EE5;table&#x4E3A;&#x5BF9;&#x8C61;&#x7684;ddl">&#x4EE5;TABLE&#x4E3A;&#x5BF9;&#x8C61;&#x7684;DDL</h2>
+<table>
+    <tr>
+        <td>DDL&#x7C7B;&#x578B;</td>
+        <td></td>
+        <td></td>
+        <td>DDL&#x8BED;&#x53E5;&#x793A;&#x4F8B;</td>
+        <td>&#x5168;&#x91CF;</td>
+        <td>&#x589E;&#x91CF;</td>
+        <td>&#x5907;&#x6CE8;</td>
+    </tr>
+    <tr>
+        <td valign="top" rowspan="32">CREATE TABLE</td>
+        <td valign="top" rowspan="8">column data types and attributes</td>
+        <td>basic</td>
+        <td>CREATE TABLE [IF NOT EXISTS] tbl_name (col_name column_definition);</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>character set</td>
+        <td>CREATE TABLE [IF NOT EXISTS] tbl_name (col_name column_definition CHARACTER SET utf8 COLLATE utf8_bin);</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>null</td>
+        <td>CREATE TABLE [IF NOT EXISTS] tbl_name (col_name column_definition NULL);</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>not null</td>
+        <td>CREATE TABLE [IF NOT EXISTS] tbl_name (col_name column_definition NOT NULL);</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>default</td>
+        <td>CREATE TABLE [IF NOT EXISTS] tbl_name (c CHAR(20) DEFAULT &apos;&apos;);</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>auto_increment</td>
+        <td>CREATE TABLE [IF NOT EXISTS] tbl_name (id INT(11) AUTO_INCREMENT PRIMARY KEY);</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>comment</td>
+        <td>CREATE TABLE [IF NOT EXISTS] tbl_name (id INT(11) COMMENT &apos;&apos;);</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>generated always</td>
+        <td>CREATE TABLE [IF NOT EXISTS] tbl_name (sidea DOUBLE,sideb DOUBLE,sidec DOUBLE GENERATED ALWAYS AS (SQRT(sidea * sidea + sideb * sideb)));</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x5EFA;&#x8868;&#x8BED;&#x53E5;&#x652F;&#x6301;&#xFF0C;&#x4F46;&#x662F;&#x6570;&#x636E;&#x590D;&#x5236;&#x6709;&#x7F3A;&#x9677;<br>
+        https://github.com/actiontech/dtle/issues/787</td>
+    </tr>
+    <tr>
+        <td valign="top" rowspan="7">indexes and foreign keys</td>
+        <td>check</td>
+        <td>CREATE TABLE [IF NOT EXISTS] tbl_name (id INT(11) CHECK(expr));</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>primary key</td>
+        <td>CREATE TABLE [IF NOT EXISTS] tbl_name (id INT(11) AUTO_INCREMENT PRIMARY KEY);<br><br>
+        CREATE TABLE [IF NOT EXISTS] tbl_name (id INT(11) AUTO_INCREMENT, PRIMARY KEY (id));<br><br>
+        CREATE TABLE [IF NOT EXISTS] tbl_name (id INT(11) AUTO_INCREMENT, c CHAR(20), PRIMARY KEY(id, c));</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>key</td>
+        <td>CREATE TABLE [IF NOT EXISTS] tbl_name (id INT(11) AUTO_INCREMENT KEY);<br><br>
+        CREATE TABLE [IF NOT EXISTS] tbl_name (id INT(11) AUTO_INCREMENT, KEY index_name (key_part));<br><br>
+        CREATE TABLE [IF NOT EXISTS] tbl_name (id INT(11) AUTO_INCREMENT, c CHAR(20)  DEFAULT &apos;t7&apos;, KEY (key_part, key_part));</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>index</td>
+        <td>CREATE TABLE [IF NOT EXISTS] tbl_name (id INT(11) AUTO_INCREMENT, INDEX index_name (key_part));<br><br>
+        CREATE TABLE [IF NOT EXISTS] tbl_name (id INT(11) AUTO_INCREMENT, c CHAR(20)  DEFAULT &apos;t10&apos;, INDEX(key_part, key_part));</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>unique</td>
+        <td>CREATE TABLE [IF NOT EXISTS] tbl_name (id INT(11) AUTO_INCREMENT UNIQUE KEY);<br><br>
+        CREATE TABLE [IF NOT EXISTS] tbl_name (id INT(11) AUTO_INCREMENT, UNIQUE KEY index_name (key_part));<br><br>
+        CREATE TABLE [IF NOT EXISTS] tbl_name (c CHAR(20), UNIQUE INDEX (key_part(prefix value)));<br><br>
+        CREATE TABLE [IF NOT EXISTS] tbl_name (id INT(11) AUTO_INCREMENT, c CHAR(20)  DEFAULT &apos;t10&apos;, CONSTRAINT UNIQUE INDEX (key_part, key_part));&quot;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>fulltext</td>
+        <td>CREATE TABLE [IF NOT EXISTS] tbl_name (c_varchar_1 varchar(255), c_varchar_2 varchar(255), FULLTEXT KEY index_name (key_part, key_part));</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>foreign key</td>
+        <td>CREATE TABLE [IF NOT EXISTS] tbl_name (id INT, parent_id INT, CONSTRAINT symbol FOREIGN KEY (col_name) REFERENCES tbl_name(key_part) ON DELETE reference_option ON UPDATE reference_option);<br><br>
+        CREATE TABLE [IF NOT EXISTS] tbl_name (id INT, parent_id INT, CONSTRAINT symbol FOREIGN KEY (col_name) REFERENCES tbl_name(key_part) ON DELETE reference_option ON UPDATE reference_option);<br><br>
+        CREATE TABLE [IF NOT EXISTS] tbl_name (id INT, parent_id INT, FOREIGN KEY index_name (col_name) REFERENCES tbl_name(key_part) ON DELETE reference_option ON UPDATE reference_option);<br><br>
+        CREATE TABLE [IF NOT EXISTS] tbl_name (id INT, parent_id INT, FOREIGN KEY (col_name) REFERENCES tbl_name(key_part) ON DELETE reference_option  ON UPDATE reference_option);</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x5E94;&#x6EE1;&#x8DB3;&#x4E00;&#x4E0B;&#x914D;&#x7F6E;&#xFF0C;&#x5426;&#x5219;&#x5728;&#x5F00;&#x542F;MTS&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x4E0D;&#x80FD;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x4E00;&#x81F4;&#x6027;<br><br>
+        1.&#x76EE;&#x6807;&#x7AEF;&#x6570;&#x636E;&#x5E93;@@foreign_key_checks = 1 &#xFF08;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;1&#xFF09;<br><br>
+        2.dtle job &#x4E2D;ForeignKeyChecks = true &#xFF08;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;true&#xFF09;</td>
+    </tr>
+    <tr>
+        <td valign="top" rowspan="7">table options</td>
+        <td>engine</td>
+        <td>CREATE TABLE [IF NOT EXISTS] tbl_name (c CHAR(20)) ENGINE=InnoDB;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>auto_increment</td>
+        <td>CREATE TABLE [IF NOT EXISTS] tbl_name (id INT(11) AUTO_INCREMENT PRIMARY KEY) AUTO_INCREMENT=100;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>character set</td>
+        <td>CREATE TABLE [IF NOT EXISTS] tbl_name (c CHAR(20)) CHARACTER SET=utf8;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>collate</td>
+        <td>CREATE TABLE [IF NOT EXISTS] tbl_name (c CHAR(20)) DEFAULT COLLATE=utf8_general_ci;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>checksum</td>
+        <td>CREATE TABLE [IF NOT EXISTS] tbl_name (c CHAR(20)) CHECKSUM=1;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>comment</td>
+        <td>CREATE TABLE [IF NOT EXISTS] tbl_name (id INT(11) AUTO_INCREMENT PRIMARY KEY) COMMENT=&apos;&apos;;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>compression</td>
+        <td>CREATE TABLE [IF NOT EXISTS] tbl_name (id INT(11) AUTO_INCREMENT PRIMARY KEY) COMPRESSION=&apos;ZLIB&apos;;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td valign="top" rowspan="6">table partitioning</td>
+        <td>hash</td>
+        <td>CREATE TABLE [IF NOT EXISTS] tbl_name (col1 INT, col2 CHAR(5)) PARTITION BY HASH(col1);<br><br>
+        CREATE TABLE [IF NOT EXISTS] tbl_name (col1 INT, col2 CHAR(5), col3 DATETIME) PARTITION BY HASH ( YEAR(col3) );</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>key</td>
+        <td>CREATE TABLE [IF NOT EXISTS] tbl_name (col1 INT, col2 CHAR(5), col3 DATE) PARTITION BY KEY(col3) PARTITIONS 4;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>linear key</td>
+        <td>CREATE TABLE [IF NOT EXISTS] tbl_name (col1 INT, col2 CHAR(5), col3 DATE) PARTITION BY LINEAR KEY(col3) PARTITIONS 5;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>range</td>
+        <td>CREATE TABLE [IF NOT EXISTS] tbl_name (year_col  INT, some_data INT) PARTITION BY RANGE (year_col) (PARTITION p0 VALUES LESS THAN (1991), PARTITION p1 VALUES LESS THAN (2020), PARTITION p5 VALUES LESS THAN MAXVALUE);</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>range columns</td>
+        <td>CREATE TABLE [IF NOT EXISTS] tbl_name (a INT NOT NULL, b INT NOT NULL) PARTITION BY RANGE COLUMNS(a,b) (PARTITION p1 VALUES LESS THAN (20,10), PARTITION p2 VALUES LESS THAN (50,MAXVALUE), PARTITION p3 VALUES LESS THAN (65,MAXVALUE), PARTITION p4 VALUES LESS THAN (MAXVALUE,MAXVALUE));</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>list</td>
+        <td>CREATE TABLE [IF NOT EXISTS] tbl_name (id INT, name VARCHAR(35)) PARTITION BY LIST (id) (PARTITION r0 VALUES IN (1, 5, 9, 13, 17, 21), PARTITION r1 VALUES IN (2, 6, 10, 14, 18, 22), PARTITION r2 VALUES IN (3, 7, 11, 15, 19, 23), PARTITION r3 VALUES IN (4, 8, 12, 16, 20, 24));</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td valign="top" rowspan="4">like statement</td>
+        <td>tracked to tracked</td>
+        <td>CREATE TABLE new_1 LIKE old_1;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x65B0;&#x8868;&#x5728;&#x76EE;&#x6807;&#x7AEF;&#x521B;&#x5EFA;&#xFF0C;&#x540E;&#x7EED;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x6B63;&#x5E38;<br>
+        {<br>
+          &quot;replicate_do_db&quot;: [<br>
+            {<br>
+              &quot;table_schema&quot;: &quot;action_db_1&quot;,<br>
+              &quot;tables&quot;: [<br>
+                {<br>
+                  &quot;table_name&quot;: &quot;old_1&quot;<br>
+                }&#xFF0C;<br>
+                {<br>
+                  &quot;table_name&quot;: &quot;new_1&quot;<br>
+                }<br>
+              ]<br>
+            }<br>
+          ]<br>
+        }</td>
+    </tr>
+    <tr>
+        <td>tracked to not tracked</td>
+        <td>CREATE TABLE new_2 LIKE old_2;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x65B0;&#x8868;&#x4E0D;&#x4F1A;&#x5728;&#x76EE;&#x6807;&#x7AEF;&#x521B;&#x5EFA;<br><br>
+        {<br>
+          &quot;replicate_do_db&quot;: [<br>
+            {<br>
+              &quot;table_schema&quot;: &quot;action_db_1&quot;,<br>
+              &quot;tables&quot;: [<br>
+                {<br>
+                  &quot;table_name&quot;: &quot;old_2&quot;<br>
+                }<br>
+              ]<br>
+            }<br>
+          ]<br>
+        }</td>
+    </tr>
+    <tr>
+        <td>not tracked to tracked</td>
+        <td>CREATE TABLE new_3 LIKE old_3;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x65B0;&#x8868;&#x4E0D;&#x4F1A;&#x5728;&#x76EE;&#x6807;&#x7AEF;&#x521B;&#x5EFA;&#xFF0C;DTLE&#x4F1A;&#x62A5;&#x9519;&#x91CD;&#x542F;<br>
+        old_3&#x4E0D;&#x5728;&#x76EE;&#x6807;&#x7AEF;&#xFF0C;&#x65E0;&#x6CD5;&#x6267;&#x884C;&#x8BE5;&#x8BED;&#x53E5;<br><br>
+        {<br>
+          &quot;replicate_do_db&quot;: [<br>
+            {<br>
+              &quot;table_schema&quot;: &quot;action_db_1&quot;,<br>
+              &quot;tables&quot;: [<br>
+                {<br>
+                  &quot;table_name&quot;: &quot;new_3&quot;<br>
+                }<br>
+              ]<br>
+            }<br>
+          ]<br>
+        }</td>
+    </tr>
+    <tr>
+        <td>not tracked to not tracked</td>
+        <td>CREATE TABLE new_4 LIKE old_4;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x65B0;&#x8868;&#x4E0D;&#x4F1A;&#x5728;&#x76EE;&#x6807;&#x7AEF;&#x521B;&#x5EFA;<br><br>
+        {<br>
+          &quot;replicate_do_db&quot;: [<br>
+            {<br>
+              &quot;table_schema&quot;: &quot;action_db_1&quot;,<br>
+              &quot;tables&quot;&quot;: [<br>
+                {<br>
+                  &quot;table_name&quot;: &quot;old_1&quot;<br>
+                }<br>
+              ]<br>
+            }<br>
+          ]<br>
+        }</td>
+    </tr>
+    <tr>
+        <td valign="top" rowspan="37">alter table</td>
+        <td valign="top" rowspan="7">table options</td>
+        <td>engine</td>
+        <td>ALTER TABLE tbl_name ENGINE=InnoDB;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>auto_increment</td>
+        <td>ALTER TABLE tbl_name AUTO_INCREMENT=100;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>character set</td>
+        <td>ALTER TABLE tbl_name CHARACTER SET=utf8;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>collate</td>
+        <td>ALTER TABLE tbl_name COLLATE=utf8_general_ci;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>checksum</td>
+        <td>ALTER TABLE tbl_name CHECKSUM=1;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>comment</td>
+        <td>ALTER TABLE tbl_name COMMENT=&apos;&apos;;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>compression</td>
+        <td>ALTER TABLE tbl_name COMPRESSION=&apos;ZLIB&apos;;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td valign="top" rowspan="6">adding and dropping columns</td>
+        <td>add</td>
+        <td>ALTER TABLE tbl_name ADD d CHAR(20);</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>add after</td>
+        <td>ALTER TABLE tbl_name ADD d CHAR(20) AFTER b;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>add first</td>
+        <td>ALTER TABLE tbl_name ADD d CHAR(20) FIRST;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>drop</td>
+        <td>ALTER TABLE tbl_name DROP b;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>add multiple</td>
+        <td>ALTER TABLE tbl_name ADD (d CHAR(20), e INT(11));</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>drop multiple</td>
+        <td>ALTER TABLE tbl_name DROP b, DROP COLUMN c;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td valign="top" rowspan="6">renaming, redefining, and reordering columns</td>
+        <td>change name</td>
+        <td>ALTER TABLE tbl_name CHANGE COLUMN b d INT(11) DEFAULT NULL;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>change type</td>
+        <td>ALTER TABLE tbl_name CHANGE b b BIGINT DEFAULT NULL;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>modify type</td>
+        <td>ALTER TABLE tbl_name MODIFY COLUMN b BIGINT DEFAULT NULL;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>chang multiple</td>
+        <td>ALTER TABLE tbl_name CHANGE b d INT(11) DEFAULT NULL, CHANGE c e BIGINT DEFAULT NULL;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>modify multiple</td>
+        <td>ALTER TABLE tbl_name MODIFY b BIGINT DEFAULT NULL, MODIFY c BIGINT DEFAULT NULL;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>modify character set</td>
+        <td>ALTER TABLE tbl_name MODIFY b TEXT CHARACTER SET utf8;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td valign="top" rowspan="6">primary keys and indexes</td>
+        <td>add primary key</td>
+        <td>ALTER TABLE tbl_name ADD CONSTRAINT PRIMARY KEY (key_part);<br><br>
+        ALTER TABLE tbl_name ADD PRIMARY KEY (key_part, key_part);</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>drop primary key</td>
+        <td>ALTER TABLE tbl_name DROP PRIMARY KEY;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>add key</td>
+        <td>ALTER TABLE tbl_name ADD KEY (key_part);<br><br>
+        ALTER TABLE tbl_name ADD INDEX index_name (key_part, key_part);</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>drop key</td>
+        <td>ALTER TABLE tbl_name DROP PRIMARY KEY;<br><br>
+        ALTER TABLE tbl_name DROP INDEX index_name;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>add unique key</td>
+        <td>ALTER TABLE tbl_name ADD UNIQUE INDEX (key_part);<br><br>
+        ALTER TABLE tbl_name ADD CONSTRAINT UNIQUE KEY index_name (key_part, key_part);</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>drop unique key</td>
+        <td>ALTER TABLE tbl_name DROP KEY id;<br><br>
+        ALTER TABLE tbl_name DROP INDEX index_name;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td valign="top" rowspan="2">foreign keys</td>
+        <td>add foreign key</td>
+        <td>ALTER TABLE tbl_name ADD CONSTRAINT symbol FOREIGN KEY (col_name) REFERENCES tbl_name(key_part) ON DELETE reference_option ON UPDATE reference_option;<br><br>
+        ALTER TABLE tbl_name ADD CONSTRAINT symbol FOREIGN KEY (col_name) REFERENCES tbl_name(key_part) ON DELETE reference_option ON UPDATE reference_option;<br><br>
+        ALTER TABLE tbl_name ADD CONSTRAINT FOREIGN KEY index_name (col_name) REFERENCES tbl_name(key_part) ON DELETE reference_option ON UPDATE reference_option;<br><br>
+        ALTER TABLE tbl_name ADD FOREIGN KEY (col_name) REFERENCES tbl_name(key_part) ON DELETE reference_option ON UPDATE reference_option;<br><br>
+        ALTER TABLE tbl_name ADD FOREIGN KEY (col_name) REFERENCES tbl_name(key_part);</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x5E94;&#x6EE1;&#x8DB3;&#x4E00;&#x4E0B;&#x914D;&#x7F6E;&#xFF0C;&#x5426;&#x5219;&#x5728;&#x5F00;&#x542F;MTS&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x4E0D;&#x80FD;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x4E00;&#x81F4;&#x6027;<br>
+        1.&#x76EE;&#x6807;&#x7AEF;&#x6570;&#x636E;&#x5E93;@@foreign_key_checks = 1 &#xFF08;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;1&#xFF09;<br>
+        2.dtle job &#x4E2D;ForeignKeyChecks = true &#xFF08;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;true&#xFF09;</td>
+    </tr>
+    <tr>
+        <td>drop foreign key</td>
+        <td>ALTER TABLE tbl_name DROP FOREIGN KEY fk_child_5_1; </td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x65E0;&#x6CD5;&#x548C;MTS&#x540C;&#x65F6;&#x4F7F;&#x7528;&#xFF1A;<br>
+        https://github.com/actiontech/dtle/issues/795#issuecomment-961786003</td>
+    </tr>
+    <tr>
+        <td valign="top" rowspan="2">changing the character set</td>
+        <td>modify character set</td>
+        <td>ALTER TABLE tbl_name MODIFY b TEXT CHARACTER SET utf8;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>convert to</td>
+        <td>ALTER TABLE tbl_name CONVERT TO CHARACTER SET utf8;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td valign="top" rowspan="6">rename</td>
+        <td>rename index</td>
+        <td>ALTER TABLE tbl_name RENAME INDEX index_name_old to index_name_new;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>rename key</td>
+        <td>ALTER TABLE tbl_name RENAME KEY index_name_old  toindex_name_new;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>tracked to tracked</td>
+        <td>ALTER TABLE old_1 RENAME TO new_1;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x91CD;&#x547D;&#x540D;&#x6210;&#x529F;&#xFF0C;&#x540E;&#x7EED;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x6B63;&#x5E38;<br><br>
+        {<br>
+          &quot;replicate_do_db&quot;: [<br>
+            {<br>
+              &quot;table_schema&quot;: &quot;action_db_1&quot;,<br>
+              &quot;tables&quot;: [<br>
+                {<br>
+                  &quot;table_name&quot;: &quot;old_1&quot;<br>
+                }&#xFF0C;<br>
+                {<br>
+                  &quot;table_name&quot;: &quot;new_1&quot;<br>
+                }<br>
+              ]<br>
+            }<br>
+          ]<br>
+        }</td>
+    </tr>
+    <tr>
+        <td>tracked to not tracked</td>
+        <td>ALTER TABLE old_2 RENAME AS new_2;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x91CD;&#x547D;&#x540D;&#x6210;&#x529F;&#xFF0C;&#x540E;&#x7EED;&#x6570;&#x4E0D;&#x5E94;&#x636E;&#x4F20;&#x5230;&#x76EE;&#x6807;&#x7AEF;<br><br>
+        {<br>
+          &quot;replicate_do_db&quot;: [<br>
+            {<br>
+              &quot;table_schema&quot;: &quot;action_db_1&quot;,<br>
+              &quot;tables&quot;: [<br>
+                {<br>
+                  &quot;table_name&quot;: &quot;old_2&quot;<br>
+                }<br>
+              ]<br>
+            }<br>
+          ]<br>
+        }</td>
+    </tr>
+    <tr>
+        <td>not tracked to tracked</td>
+        <td>ALTER TABLE old_3 RENAME AS new_3;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x56E0;&#x76EE;&#x6807;&#x7AEF;&#x6CA1;&#x6709;&#x6539;&#x540D;&#x524D;&#x7684;&#x8868;&#xFF0C;&#x4F1A;&#x6709;ERROR log<br>
+        old_3&#x4E0D;&#x5728;&#x76EE;&#x6807;&#x7AEF;&#xFF0C;&#x65E0;&#x6CD5;&#x6267;&#x884C;&#x8BE5;&#x8BED;&#x53E5;<br><br>
+        {<br>
+          &quot;replicate_do_db&quot;: [<br>
+            {<br>
+              &quot;table_schema&quot;: &quot;action_db_1&quot;,<br>
+              &quot;tables&quot;: [<br>
+                {<br>
+                  &quot;table_name&quot;: &quot;new_3&quot;<br>
+                }<br>
+              ]<br>
+            }<br>
+          ]<br>
+        }</td>
+    </tr>
+    <tr>
+        <td>not tracked to not tracked</td>
+        <td>ALTER TABLE old_4 RENAME TO new_4;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x76EE;&#x6807;&#x7AEF;&#x4E0D;&#x4F1A;&#x6709;&#x91CD;&#x547D;&#x540D;&#x540E;&#x7684;&#x8868;<br><br>
+        {<br>
+          &quot;replicate_do_db&quot;: [<br>
+            {<br>
+              &quot;table_schema&quot;: &quot;action_db_1&quot;,<br>
+              &quot;tables&quot;: [<br>
+                {<br>
+                  &quot;table_name&quot;: &quot;old_1&quot;<br>
+                }<br>
+              ]<br>
+            }<br>
+          ]<br>
+        }</td>
+    </tr>
+    <tr>
+        <td valign="top" rowspan="2">table partitioning</td>
+        <td>ADD PARTITION</td>
+        <td>ALTER TABLE tbl_name PARTITION BY HASH(expr) PARTITIONS num;<br><br>
+        ALTER TABLE tbl_name ADD PARTITION (PARTITION partition_names VALUES LESS THAN (MAXVALUE));</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>DROP PARTITION</td>
+        <td>ALTER TABLE tbl_name DROP PARTITION partition_names;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td valign="top" rowspan="3">drop table</td>
+        <td rowspan="3"></td>
+        <td>basic</td>
+        <td>DROP TABLE tbl_name;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>if exists</td>
+        <td>DROP TABLE IF EXISTS tbl_name RESTRICT;<br><br>
+        DROP TABLE IF EXISTS not_exists_tbl_name CASCADE;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>drop multiple</td>
+        <td>DROP TABLE IF EXISTS not_exists_tbl_name CASCADE;<br><br>
+        DROP TABLE IF EXISTS tbl_name_1, tbl_name_2, not_exists_tbl_name;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+</table>
+## &#x4EE5;INDEX&#x4E3A;&#x5BF9;&#x8C61;&#x7684;DDL
+
+<table>
+    <tr>
+        <td>DDL&#x7C7B;&#x578B;</td>
+        <td></td>
+        <td>DDL&#x8BED;&#x53E5;&#x793A;&#x4F8B;</td>
+        <td>&#x5168;&#x91CF;</td>
+        <td>&#x589E;&#x91CF;</td>
+        <td>&#x5907;&#x6CE8;</td>
+    </tr>
+    <tr>
+        <td valign="top" rowspan="8">CREATE INDEX</td>
+        <td>basic</td>
+        <td>CREATE INDEX key_t1_1 ON t1 (id);</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>prefix key</td>
+        <td>CREATE INDEX key_t2_1 ON t2 (a(2));<br><br>
+        CREATE UNIQUE INDEX key_t3_1 ON t3 (a(3));</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>unique</td>
+        <td>CREATE UNIQUE INDEX key_t4_1 ON t4 (id);</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>unique not null</td>
+        <td>CREATE UNIQUE INDEX key_t5_1 ON t5 (id);</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>unique multiple</td>
+        <td>CREATE UNIQUE INDEX key_t6_1 ON t6 (a, b);</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>fulltext</td>
+        <td>CREATE FULLTEXT INDEX full_t7_1 ON t7 (a);</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>index_type</td>
+        <td>CREATE INDEX key_t8_1 ON t8 (id) USING BTREE;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>comment</td>
+        <td>CREATE INDEX key_t9_1 ON t9 (id) COMMENT &apos;test comment&apos;;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>DROP INDEX</td>
+        <td></td>
+        <td>DROP INDEX key_t1_1 ON t1;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+</table>
+
+<h2 id="&#x5176;&#x4ED6;&#x5BF9;&#x8C61;ddl">&#x5176;&#x4ED6;&#x5BF9;&#x8C61;DDL</h2>
+<table>
+    <tr>
+        <td>DDL&#x7C7B;&#x578B;</td>
+        <td></td>
+        <td>DDL&#x8BED;&#x53E5;&#x793A;&#x4F8B;</td>
+        <td>&#x5168;&#x91CF;</td>
+        <td>&#x589E;&#x91CF;</td>
+        <td>&#x5907;&#x6CE8;</td>
+    </tr>
+    <tr>
+        <td valign="top" rowspan="4">RENAME</td>
+        <td>tracked to tracked</td>
+        <td>RENAME TABLE old_1 to new_1;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x91CD;&#x547D;&#x540D;&#x6210;&#x529F;&#xFF0C;&#x540E;&#x7EED;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x6B63;&#x5E38;<br><br>
+        {<br>
+          &quot;replicate_do_db&quot;: [<br>
+            {<br>
+              &quot;table_schema&quot;: &quot;action_db_1&quot;,<br>
+              &quot;tables&quot;: [<br>
+                {<br>
+                  &quot;table_name&quot;: &quot;old_1&quot;<br>
+                }&#xFF0C;<br>
+                {<br>
+                  &quot;table_name&quot;: &quot;new_1&quot;<br>
+                }<br>
+              ]<br>
+            }<br>
+          ]<br>
+        }&quot;</td>
+    </tr>
+    <tr>
+        <td>tracked to not tracked</td>
+        <td>RENAME TABLE old_2 to new_2;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x91CD;&#x547D;&#x540D;&#x6210;&#x529F;&#xFF0C;&#x540E;&#x7EED;&#x6570;&#x4E0D;&#x5E94;&#x636E;&#x4F20;&#x5230;&#x76EE;&#x6807;&#x7AEF;<br><br>
+        {<br>
+          &quot;replicate_do_db&quot;: [<br>
+            {<br>
+              &quot;table_schema&quot;: &quot;action_db_1&quot;,<br>
+              &quot;tables&quot;: [<br>
+                {<br>
+                  &quot;table_name&quot;: &quot;old_2&quot;<br>
+                }<br>
+              ]<br>
+            }<br>
+          ]<br>
+        }</td>
+    </tr>
+    <tr>
+        <td>not tracked to tracked</td>
+        <td>RENAME TABLE old_3 to new_3;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x56E0;&#x76EE;&#x6807;&#x7AEF;&#x6CA1;&#x6709;&#x6539;&#x540D;&#x524D;&#x7684;&#x8868;&#xFF0C;&#x4F1A;&#x6709;ERROR log<br>
+        old_3&#x4E0D;&#x5728;&#x76EE;&#x6807;&#x7AEF;&#xFF0C;&#x65E0;&#x6CD5;&#x6267;&#x884C;&#x8BE5;&#x8BED;&#x53E5;<br><br>
+        {<br>
+          &quot;replicate_do_db&quot;: [<br>
+            {<br>
+              &quot;table_schema&quot;: &quot;action_db_1&quot;,<br>
+              &quot;tables&quot;: [<br>
+                {<br>
+                  &quot;table_name&quot;: &quot;new_3&quot;<br>
+                }<br>
+              ]<br>
+            }<br>
+          ]<br>
+        }</td>
+    </tr>
+    <tr>
+        <td>not tracked to not tracked</td>
+        <td>RENAME TABLE old_4 to new_4;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td>&#x76EE;&#x6807;&#x7AEF;&#x4E0D;&#x4F1A;&#x6709;&#x91CD;&#x547D;&#x540D;&#x540E;&#x7684;&#x8868;<br><br>
+        {<br>
+          &quot;&quot;replicate_do_db&quot;&quot;: [<br>
+            {<br>
+              &quot;&quot;table_schema&quot;&quot;: &quot;&quot;action_db_1&quot;&quot;,<br>
+              &quot;&quot;tables&quot;&quot;: [<br>
+                {<br>
+                  &quot;&quot;table_name&quot;&quot;: &quot;&quot;old_1&quot;&quot;<br>
+                }<br>
+              ]<br>
+            }<br>
+          ]<br>
+        }</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>rename multiple</td>
+        <td>RENAME TABLE old_5 to new_5, old_6 to new_6;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>TRUNCATE</td>
+        <td></td>
+        <td>TRUNCATE tbl_name;<br><br>
+        TRUNCATE TABLE tbl_name;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td valign="top" rowspan="3">VIEW</td>
+        <td>CREATE VIEW</td>
+        <td>CREATE VIEW view_name AS select_statement;<br><br>
+        CREATE OR REPLACE VIEW view_name AS select_statement;&quot;</td>
+        <td>&#x4E0D;&#x652F;&#x6301;</td>
+        <td>&#x4E0D;&#x652F;&#x6301;</td>
+        <td rowspan="3"></td>
+    </tr>
+    <tr>
+        <td>ALTER VIEW</td>
+        <td>ALTER VIEW view_name (column_list) AS select_statement;</td>
+        <td>/</td>
+        <td>&#x4E0D;&#x652F;&#x6301;</td>
+    </tr>
+    <tr>
+        <td>DROP VIEW</td>
+        <td>DROP VIEW view_name RESTRICT;<br><br>
+        DROP VIEW IF EXISTS view_name RESTRICT;<br><br>
+        DROP VIEW IF EXISTS view_name CASCADE;<br><br>
+        DROP VIEW view_name_1, view_name_2;</td>
+        <td>/</td>
+        <td>&#x4E0D;&#x652F;&#x6301;</td>
+    </tr>
+    <tr>
+        <td valign="top" rowspan="3">FUNCTION</td>
+        <td>CREATE FUNCTION</td>
+        <td>CREATE FUNCTION sp_name() RETURNS type characteristic routine_body;<br><br>
+        CREATE FUNCTION sp_name(func_parameters) RETURNS type characteristic RETURN routine_body;</td>
+        <td>&#x4E0D;&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td rowspan="3">1. [MySQL 5]&#x76EE;&#x6807;&#x7AEF;&#x8D26;&#x6237;&#x9700;&#x8981;CREATE ROUTINE, SUPER&#x6743;&#x9650;<br>
+        2. [MySQL 8] &#x76EE;&#x6807;&#x7AEF;&#x8D26;&#x6237;&#x9700;&#x8981;CREATE ROUTINE, SET_USER_ID, SYSTEM_USER&#x6743;&#x9650;, SET GLOBAL log_bin_trust_function_creators = ON;<br>
+        3. job&#x914D;&#x7F6E;ExpandSyntaxSupport=true<br>
+        4. &#x5168;&#x91CF;&#x4E0D;&#x590D;&#x5236;function</td>
+    </tr>
+    <tr>
+        <td>ALTER FUNCTION</td>
+        <td>ALTER FUNCTION sp_name SQL SECURITY DEFINER;<br><br>
+        ALTER FUNCTION sp_name COMMENT &apos;&apos;;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+    </tr>
+    <tr>
+        <td>DROP FUNCTION</td>
+        <td>DROP FUNCTION sp_name;<br><br>
+        DROP FUNCTION IF EXISTS sp_name;<br><br>
+        DROP FUNCTION IF EXISTS not_exists_sp_name;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+    </tr>
+    <tr>
+        <td valign="top" rowspan="3">PROCEDURE</td>
+        <td>CREATE PROCEDURE</td>
+        <td>CREATE PROCEDURE sp_name() characteristic routine_body;<br><br>
+        CREATE PROCEDURE sp_name(proc_parameters) characteristic routine_body;</td>
+        <td>&#x4E0D;&#x652F;&#x6301;</td>
+        <td>&#x652F;&#x6301;</td>
+        <td rowspan="3">1. [MySQL 5]&#x76EE;&#x6807;&#x7AEF;&#x8D26;&#x6237;&#x9700;&#x8981;CREATE ROUTINE, SUPER&#x6743;&#x9650;<br>
+        2. [MySQL 8] &#x76EE;&#x6807;&#x7AEF;&#x8D26;&#x6237;&#x9700;&#x8981;CREATE ROUTINE, SET_USER_ID, SYSTEM_USER&#x6743;&#x9650;, SET GLOBAL log_bin_trust_function_creators = ON;<br>
+        3. job&#x914D;&#x7F6E;ExpandSyntaxSupport=true<br>
+        4. &#x5168;&#x91CF;&#x4E0D;&#x590D;&#x5236;&#x521B;&#x5EFA;procedure</td>
+    </tr>
+    <tr>
+        <td>ALTER PROCEDURE</td>
+        <td>ALTER PROCEDURE sp_name SQL SECURITY DEFINER;<br><br>
+        ALTER PROCEDURE sp_name COMMENT &apos;&apos;;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+    </tr>
+    <tr>
+        <td>DROP PROCEDURE</td>
+        <td>DROP PROCEDURE sp_name;<br><br>
+        DROP PROCEDURE IF EXISTS sp_name;<br><br>
+        DROP PROCEDURE IF EXISTS not_exists_sp_name;</td>
+        <td>/</td>
+        <td>&#x652F;&#x6301;</td>
+    </tr>
+    <tr>
+        <td valign="top" rowspan="3">EVENT</td>
+        <td>CREATE EVENT</td>
+        <td>CREATE EVENT event_name ON SCHEDULE schedule COMMENT &apos;&apos; DO event_body;</td>
+        <td>&#x4E0D;&#x652F;&#x6301;</td>
+        <td>&#x4E0D;&#x652F;&#x6301;</td>
+        <td rowspan="3">1.&#x4E0D;&#x652F;&#x6301;&#x590D;&#x5236;event<br>
+        2.&#x6E90;&#x7AEF;event&#x4EA7;&#x751F;&#x7684;&#x6570;&#x636E;&#x4F1A;&#x590D;&#x5236;&#x5230;&#x76EE;&#x6807;&#x7AEF;</td>
+    </tr>
+    <tr>
+        <td>ALTER EVENT</td>
+        <td>ALTER EVENT event_name RENAME TO event_name_new;</td>
+        <td>/</td>
+        <td>&#x4E0D;&#x652F;&#x6301;</td>
+    </tr>
+    <tr>
+        <td>DROP EVENT</td>
+        <td>DROP EVENT IF EXISTS not_exists_event_name;<br><br>
+        DROP EVENT IF EXISTS event_name;<br><br>
+        DROP EVENT event_name;</td>
+        <td>/</td>
+        <td>&#x4E0D;&#x652F;&#x6301;</td>
+    </tr>
+    <tr>
+        <td valign="top" rowspan="2">TRIGGER</td>
+        <td>CREATE TRIGGER</td>
+        <td>CREATE TRIGGER trigger_name BEFORE INSERT on old FOR EACH ROW trigger_body;<br><br>
+        CREATE TRIGGER trigger_name AFTER INSERT on old FOR EACH ROW trigger_body;<br><br>
+        CREATE TRIGGER trigger_name BEFORE UPDATE on old FOR EACH ROW trigger_body;<br><br>
+        CREATE TRIGGER trigger_name AFTER UPDATE on old FOR EACH ROW trigger_body;<br><br>
+        CREATE TRIGGER trigger_name BEFORE DELETE on old FOR EACH ROW trigger_body;<br><br>
+        CREATE TRIGGER trigger_name AFTER DELETE on old FOR EACH ROW trigger_body;</td>
+        <td>&#x4E0D;&#x652F;&#x6301;</td>
+        <td>&#x4E0D;&#x652F;&#x6301;</td>
+        <td rowspan="2">1.&#x4E0D;&#x652F;&#x6301;&#x590D;&#x5236;trigger<br>
+        2. &#x6E90;&#x7AEF;trigger&#x4EA7;&#x751F;&#x7684;&#x6570;&#x636E;&#x4F1A;&#x590D;&#x5236;&#x5230;&#x76EE;&#x6807;&#x7AEF;</td>
+    </tr>
+    <tr>
+        <td>DROP TRIGGER</td>
+        <td>DROP TRIGGER trigger_name;<br><br>
+        DROP TRIGGER IF EXISTS trigger_name;<br><br>
+        DROP TRIGGER schema_name.trigger_name;</td>
+        <td>/</td>
+        <td>&#x4E0D;&#x652F;&#x6301;</td>
+    </tr>
+</table>
+
+<h3 id="&#x5173;&#x4E8E;&#x4E0D;&#x652F;&#x6301;-trigger&#x3001;event">&#x5173;&#x4E8E;&#x4E0D;&#x652F;&#x6301; Trigger&#x3001;Event</h3>
+<p>&#x7531;&#x4E8E;Trigger&#x6216;Event&#x53EF;&#x80FD;&#x4F1A;&#x66F4;&#x6539;&#x8868;&#x6570;&#x636E;&#xFF0C;&#x76EE;&#x6807;&#x7AEF;&#x5B58;&#x5728;Trigger&#x6216;Event&#x65F6;&#xFF0C;&#x5B58;&#x5728;&#x4E8C;&#x6B21;&#x89E6;&#x53D1;&#x7684;&#x95EE;&#x9898;&#xFF08;&#x6E90;&#x7AEF;&#x5DF2;&#x7ECF;&#x89E6;&#x53D1;&#x8FC7;&#x4E00;&#x6B21;&#xFF09;&#xFF0C;&#x4F1A;&#x5F15;&#x8D77;&#x6570;&#x636E;&#x4E0D;&#x4E00;&#x81F4;&#xFF0C;&#x6545;dtle&#x4E0D;&#x590D;&#x5236;Trigger&#x548C;Event&#x3002;&#x6E90;&#x7AEF;Trigger/Event&#x53D8;&#x66F4;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4F1A;&#x88AB;&#x5199;&#x8FDB;binlog&#xFF0C;&#x5E76;&#x7531;dtle&#x590D;&#x5236;&#x5230;&#x76EE;&#x6807;&#x7AEF;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="3.5_deployment.html" class="navigation navigation-prev " aria-label="Previous page: 3.5.部署结构">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="3.7_DCL.html" class="navigation navigation-next " aria-label="Next page: 3.7.DCL支持度">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3.6.DDL支持度","level":"1.5.9","depth":2,"next":{"title":"3.7.DCL支持度","level":"1.5.10","depth":2,"path":"3/3.7_DCL.md","ref":"3/3.7_DCL.md","articles":[]},"previous":{"title":"3.5.部署结构","level":"1.5.8","depth":2,"path":"3/3.5_deployment.md","ref":"3/3.5_deployment.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"3/3.6_DDL.md","mtime":"2024-04-19T03:05:49.289Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-04-19T03:08:46.514Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

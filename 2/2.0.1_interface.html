@@ -1,0 +1,961 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2.0.1.HTTP API、nomad 命令行工具 和 Web界面 · dtle manual</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="ActionTech">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2.1_mysql_replication_n_1.html" />
+    
+    
+    <link rel="prev" href="2.0_mysql_replication_1_1.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../0/0_overview.html">
+            
+                <a href="../0/0_overview.html">
+            
+                    
+                    0.概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    1.适用场景
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../1/1.0_mysql_replication.html">
+            
+                <a href="../1/1.0_mysql_replication.html">
+            
+                    
+                    1.0.MySQL的单向复制/聚合/分散
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../1/1.1_bidirectional_replication.html">
+            
+                <a href="../1/1.1_bidirectional_replication.html">
+            
+                    
+                    1.1.跨数据中心的双向复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../1/1.2_sync_between_cloud.html">
+            
+                <a href="../1/1.2_sync_between_cloud.html">
+            
+                    
+                    1.2.公有云间的数据同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../1/1.3_mysql_kafka.html">
+            
+                <a href="../1/1.3_mysql_kafka.html">
+            
+                    
+                    1.3.MySQL到Kafka的数据变更通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../1/1.4_oracle_mysql.html">
+            
+                <a href="../1/1.4_oracle_mysql.html">
+            
+                    
+                    1.4.Oracle到MySQL的数据同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    2.快速开始
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="2.0_mysql_replication_1_1.html">
+            
+                <a href="2.0_mysql_replication_1_1.html">
+            
+                    
+                    2.0.MySQL的单向复制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.4.1.1" data-path="2.0.1_interface.html">
+            
+                <a href="2.0.1_interface.html">
+            
+                    
+                    2.0.1.HTTP API、nomad 命令行工具 和 Web界面
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="2.1_mysql_replication_n_1.html">
+            
+                <a href="2.1_mysql_replication_n_1.html">
+            
+                    
+                    2.1.MySQL的聚合复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="2.2_mysql_replication_1_n.html">
+            
+                <a href="2.2_mysql_replication_1_n.html">
+            
+                    
+                    2.2.MySQL的数据分散
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="2.3_dc_to_dc_bidirectional.html">
+            
+                <a href="2.3_dc_to_dc_bidirectional.html">
+            
+                    
+                    2.3.MySQL的跨数据中心的双向复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="2.4_ali_to_jd.html">
+            
+                <a href="2.4_ali_to_jd.html">
+            
+                    
+                    2.4.阿里云到京东云的MySQL复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="2.5_mysql_kafka.html">
+            
+                <a href="2.5_mysql_kafka.html">
+            
+                    
+                    2.5.MySQL到Kafka的数据变更通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="2.6_oracle_mysql.html">
+            
+                <a href="2.6_oracle_mysql.html">
+            
+                    
+                    2.6.Oracle到MySQL的数据同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="2.7_multi_node.html">
+            
+                <a href="2.7_multi_node.html">
+            
+                    
+                    2.7.多nomad server部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    3.功能说明
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../3/3.0_function_scenario_mapping.html">
+            
+                <a href="../3/3.0_function_scenario_mapping.html">
+            
+                    
+                    3.0.功能/场景的映射列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../3/3.1_limitation.html">
+            
+                <a href="../3/3.1_limitation.html">
+            
+                    
+                    3.1.使用限制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../3/3.2_ports.html">
+            
+                <a href="../3/3.2_ports.html">
+            
+                    
+                    3.2.端口使用说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../3/3.3_impact_on_dest.html">
+            
+                <a href="../3/3.3_impact_on_dest.html">
+            
+                    
+                    3.3.对目标端数据库的影响(gtid_executed表)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../3/3.4_metrics.html">
+            
+                <a href="../3/3.4_metrics.html">
+            
+                    
+                    3.4.监控项说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../3/3.4.1_delay_alert.html">
+            
+                <a href="../3/3.4.1_delay_alert.html">
+            
+                    
+                    3.4.1.延迟监控告警
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../3/3.4.2_monitor.html">
+            
+                <a href="../3/3.4.2_monitor.html">
+            
+                    
+                    3.4.2.搭建监控系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../3/3.5_deployment.html">
+            
+                <a href="../3/3.5_deployment.html">
+            
+                    
+                    3.5.部署结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../3/3.6_DDL.html">
+            
+                <a href="../3/3.6_DDL.html">
+            
+                    
+                    3.6.DDL支持度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../3/3.7_DCL.html">
+            
+                <a href="../3/3.7_DCL.html">
+            
+                    
+                    3.7.DCL支持度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="../3/3.8_dtle_mapping.html">
+            
+                <a href="../3/3.8_dtle_mapping.html">
+            
+                    
+                    3.8.dtle mapping支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="../3/3.9_binlog_relay.html">
+            
+                <a href="../3/3.9_binlog_relay.html">
+            
+                    
+                    3.9.Binlog Relay (中继)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13" data-path="../3/3.10_consul.html">
+            
+                <a href="../3/3.10_consul.html">
+            
+                    
+                    3.10.consul 上的 job 数据管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14" data-path="../3/3.11_oracle_mysql.html">
+            
+                <a href="../3/3.11_oracle_mysql.html">
+            
+                    
+                    3.11.Oracle MySQL同步支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    4.安装/配置说明
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../4/4.0_installation.html">
+            
+                <a href="../4/4.0_installation.html">
+            
+                    
+                    4.0.安装步骤
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../4/4.1_node_configuration.html">
+            
+                <a href="../4/4.1_node_configuration.html">
+            
+                    
+                    4.1.节点配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../4/4.2_command.html">
+            
+                <a href="../4/4.2_command.html">
+            
+                    
+                    4.2.命令说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../4/4.3_job_configuration.html">
+            
+                <a href="../4/4.3_job_configuration.html">
+            
+                    
+                    4.3.作业(job)配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../4/4.3.1_tuning.html">
+            
+                <a href="../4/4.3.1_tuning.html">
+            
+                    
+                    4.3.1.性能调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../4/4.3.2_job_sample.html">
+            
+                <a href="../4/4.3.2_job_sample.html">
+            
+                    
+                    4.3.2.Job示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../4/4.4_http_api.html">
+            
+                <a href="../4/4.4_http_api.html">
+            
+                    
+                    4.4.HTTP API说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../4/4.4.1_dtle_http_api.html">
+            
+                <a href="../4/4.4.1_dtle_http_api.html">
+            
+                    
+                    4.4.1.dtle 3.x HTTP API说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../4/4.5_mysql_user_privileges.html">
+            
+                <a href="../4/4.5_mysql_user_privileges.html">
+            
+                    
+                    4.5.MySQL 用户权限说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../4/4.6_dtle_2to3.html">
+            
+                <a href="../4/4.6_dtle_2to3.html">
+            
+                    
+                    4.6.dtle 2升级到3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="../4/4.7_diagnosing.html">
+            
+                <a href="../4/4.7_diagnosing.html">
+            
+                    
+                    4.7.问题诊断 FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    5.设计说明
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../5/5.1_resource_estimation.html">
+            
+                <a href="../5/5.1_resource_estimation.html">
+            
+                    
+                    5.1.时间/资源估算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../5/5.2_architecture.html">
+            
+                <a href="../5/5.2_architecture.html">
+            
+                    
+                    5.2 基本架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../5/5.3_kafka_message_format.html">
+            
+                <a href="../5/5.3_kafka_message_format.html">
+            
+                    
+                    5.3 Kafka 消息格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../5/5.4_columns_mapping.html">
+            
+                <a href="../5/5.4_columns_mapping.html">
+            
+                    
+                    5.4 Oracle MySQL 字段映射
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../6/howto_contribute.html">
+            
+                <a href="../6/howto_contribute.html">
+            
+                    
+                    6.如何参与
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../7/7_roadmap.html">
+            
+                <a href="../7/7_roadmap.html">
+            
+                    
+                    7.路线图
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >2.0.1.HTTP API、nomad 命令行工具 和 Web界面</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="http-api&#x3001;nomad-&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;-&#x548C;-web&#x754C;&#x9762;">HTTP API&#x3001;nomad &#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177; &#x548C; Web&#x754C;&#x9762;</h1>
+<h2 id="http-api">HTTP API</h2>
+<p>curl&#x547D;&#x4EE4;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x8C03;&#x7528;nomad agent&#x7AEF;&#x7684;HTTP&#x63A5;&#x53E3;&#xFF0C;&#x5C06;&#x672C;&#x5730;&#x7684;job.json&#x63D0;&#x4EA4;&#x5230;nomad agent&#x7AEF;&#x3002;</p>
+<pre><code>curl -XPOST &quot;http://127.0.0.1:4646/v1/jobs&quot; -d @job.json -s | jq
+</code></pre><p>dtle rpm&#x5B89;&#x88C5;&#x5305;&#x63D0;&#x4F9B;&#x4E86;json&#x548C;hcl&#x683C;&#x5F0F;&#x7684;job&#x6837;&#x4F8B;&#x3002;</p>
+<h3 id="jq">jq</h3>
+<p>jq&#x662F;&#x4E00;&#x6B3E;&#x683C;&#x5F0F;&#x5316;&#x3001;&#x63D0;&#x53D6;json&#x5185;&#x5BB9;&#x7684;&#x5DE5;&#x5177;&#x3002;&#x4E00;&#x822C;&#x9700;&#x4F7F;&#x7528;Linux&#x5305;&#x7BA1;&#x7406;&#x5668;&#x5B89;&#x88C5;&#x3002;</p>
+<p>&#x5178;&#x578B;&#x7528;&#x6CD5;</p>
+<pre><code># &#x683C;&#x5F0F;&#x5316;json&#x5185;&#x5BB9;&#xFF1A;
+some_command_print_json | jq
+
+# &#x63D0;&#x53D6;&#x5B57;&#x6BB5;&#xFF08;Status&#xFF09;&#xFF1A;
+some_command_print_json | jq &apos;.Status&apos;
+</code></pre><p>&#x5177;&#x4F53;&#x53C2;&#x8003; <a href="https://stedolan.github.io/jq/tutorial/" target="_blank">https://stedolan.github.io/jq/tutorial/</a></p>
+<h2 id="nomad-&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;">nomad &#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;</h2>
+<p>&#x6B64;&#x5916;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;nomad&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#x3002;nomad&#x5C06;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#x548C;agent&#x7AEF;&#x653E;&#x5728;&#x4E86;&#x540C;&#x4E00;&#x4E2A;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x4E2D;&#x3002;</p>
+<p>&#x4F7F;&#x7528; nomad &#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#x8FD0;&#x884C;job, &#x4F7F;&#x7528;hcl&#x683C;&#x5F0F;:</p>
+<pre><code>nomad job run -address=&quot;http://192.168.1.1:4646&quot; job1.hcl
+# &#x6216;
+export NOMAD_ADDR=&quot;http://192.168.1.1:4646&quot;
+nomad job run job1.hcl
+</code></pre><p>&#x8BE5;&#x7528;&#x6CD5;&#x672C;&#x8D28;&#x4E0A;&#x662F;&#x5BF9;HTTP API&#x7684;&#x5C01;&#x88C5;&#x3002;</p>
+<h2 id="nomad-web-&#x754C;&#x9762;">nomad Web &#x754C;&#x9762;</h2>
+<p>&#x6D4F;&#x89C8;&#x5668;&#x8BBF;&#x95EE; <a href="http://127.0.0.1:4646" target="_blank">http://127.0.0.1:4646</a>, &#x4E3A; nomad Web &#x754C;&#x9762;&#x3002;&#x53EF;&#x67E5;&#x770B;Jobs&#x3001;Servers&#x548C;Clients&#x3002;</p>
+<p>&#x5728;Jobs&#x754C;&#x9762;&#xFF0C;&#x70B9;&#x51FB;Run Job&#xFF0C;&#x53EF;&#x8FD0;&#x884C;HCL&#x6216;JSON&#x683C;&#x5F0F;&#x7684;job&#x3002;</p>
+<h2 id="consul">consul</h2>
+<ul>
+<li>nomad &#x672C;&#x4F53;&#x4F7F;&#x7528;consul&#x8FDB;&#x884C;&#x591A;&#x8282;&#x70B9;&#x6CE8;&#x518C;&#x548C;&#x53D1;&#x73B0;</li>
+<li>dtle nomad &#x63D2;&#x4EF6;&#x4F7F;&#x7528;consul&#x8FDB;&#x884C;&#x4EFB;&#x52A1;&#x5143;&#x6570;&#x636E;&#x50A8;&#x5B58;</li>
+</ul>
+<p>&#x6D4F;&#x89C8;&#x5668;&#x8BBF;&#x95EE; <a href="http://127.0.0.1:4646&#xFF0C;&#x4E3A;" target="_blank">http://127.0.0.1:4646&#xFF0C;&#x4E3A;</a> consul Web &#x754C;&#x9762;&#x3002;&#x53EF;&#x67E5;&#x770B;KV&#x4E2D;&#x7684;Job&#x8FDB;&#x5EA6;&#xFF08;Gtid&#xFF09;&#x3002;</p>
+<p>&#x6216;</p>
+<pre><code>curl -XGET &quot;127.0.0.1:8500/v1/kv/dtle/aa/Gtid?raw
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2.0_mysql_replication_1_1.html" class="navigation navigation-prev " aria-label="Previous page: 2.0.MySQL的单向复制">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="2.1_mysql_replication_n_1.html" class="navigation navigation-next " aria-label="Next page: 2.1.MySQL的聚合复制">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.0.1.HTTP API、nomad 命令行工具 和 Web界面","level":"1.4.1.1","depth":3,"next":{"title":"2.1.MySQL的聚合复制","level":"1.4.2","depth":2,"path":"2/2.1_mysql_replication_n_1.md","ref":"2/2.1_mysql_replication_n_1.md","articles":[]},"previous":{"title":"2.0.MySQL的单向复制","level":"1.4.1","depth":2,"path":"2/2.0_mysql_replication_1_1.md","ref":"2/2.0_mysql_replication_1_1.md","articles":[{"title":"2.0.1.HTTP API、nomad 命令行工具 和 Web界面","level":"1.4.1.1","depth":3,"path":"2/2.0.1_interface.md","ref":"2/2.0.1_interface.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"2/2.0.1_interface.md","mtime":"2024-04-19T03:05:49.289Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-04-19T03:08:46.514Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

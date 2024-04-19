@@ -1,0 +1,1145 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3.4.2.搭建监控系统 · dtle manual</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="ActionTech">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="3.5_deployment.html" />
+    
+    
+    <link rel="prev" href="3.4.1_delay_alert.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../0/0_overview.html">
+            
+                <a href="../0/0_overview.html">
+            
+                    
+                    0.概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    1.适用场景
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../1/1.0_mysql_replication.html">
+            
+                <a href="../1/1.0_mysql_replication.html">
+            
+                    
+                    1.0.MySQL的单向复制/聚合/分散
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../1/1.1_bidirectional_replication.html">
+            
+                <a href="../1/1.1_bidirectional_replication.html">
+            
+                    
+                    1.1.跨数据中心的双向复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../1/1.2_sync_between_cloud.html">
+            
+                <a href="../1/1.2_sync_between_cloud.html">
+            
+                    
+                    1.2.公有云间的数据同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../1/1.3_mysql_kafka.html">
+            
+                <a href="../1/1.3_mysql_kafka.html">
+            
+                    
+                    1.3.MySQL到Kafka的数据变更通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../1/1.4_oracle_mysql.html">
+            
+                <a href="../1/1.4_oracle_mysql.html">
+            
+                    
+                    1.4.Oracle到MySQL的数据同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    2.快速开始
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../2/2.0_mysql_replication_1_1.html">
+            
+                <a href="../2/2.0_mysql_replication_1_1.html">
+            
+                    
+                    2.0.MySQL的单向复制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../2/2.0.1_interface.html">
+            
+                <a href="../2/2.0.1_interface.html">
+            
+                    
+                    2.0.1.HTTP API、nomad 命令行工具 和 Web界面
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../2/2.1_mysql_replication_n_1.html">
+            
+                <a href="../2/2.1_mysql_replication_n_1.html">
+            
+                    
+                    2.1.MySQL的聚合复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../2/2.2_mysql_replication_1_n.html">
+            
+                <a href="../2/2.2_mysql_replication_1_n.html">
+            
+                    
+                    2.2.MySQL的数据分散
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../2/2.3_dc_to_dc_bidirectional.html">
+            
+                <a href="../2/2.3_dc_to_dc_bidirectional.html">
+            
+                    
+                    2.3.MySQL的跨数据中心的双向复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../2/2.4_ali_to_jd.html">
+            
+                <a href="../2/2.4_ali_to_jd.html">
+            
+                    
+                    2.4.阿里云到京东云的MySQL复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../2/2.5_mysql_kafka.html">
+            
+                <a href="../2/2.5_mysql_kafka.html">
+            
+                    
+                    2.5.MySQL到Kafka的数据变更通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../2/2.6_oracle_mysql.html">
+            
+                <a href="../2/2.6_oracle_mysql.html">
+            
+                    
+                    2.6.Oracle到MySQL的数据同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../2/2.7_multi_node.html">
+            
+                <a href="../2/2.7_multi_node.html">
+            
+                    
+                    2.7.多nomad server部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    3.功能说明
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="3.0_function_scenario_mapping.html">
+            
+                <a href="3.0_function_scenario_mapping.html">
+            
+                    
+                    3.0.功能/场景的映射列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="3.1_limitation.html">
+            
+                <a href="3.1_limitation.html">
+            
+                    
+                    3.1.使用限制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="3.2_ports.html">
+            
+                <a href="3.2_ports.html">
+            
+                    
+                    3.2.端口使用说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="3.3_impact_on_dest.html">
+            
+                <a href="3.3_impact_on_dest.html">
+            
+                    
+                    3.3.对目标端数据库的影响(gtid_executed表)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="3.4_metrics.html">
+            
+                <a href="3.4_metrics.html">
+            
+                    
+                    3.4.监控项说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="3.4.1_delay_alert.html">
+            
+                <a href="3.4.1_delay_alert.html">
+            
+                    
+                    3.4.1.延迟监控告警
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.7" data-path="3.4.2_monitor.html">
+            
+                <a href="3.4.2_monitor.html">
+            
+                    
+                    3.4.2.搭建监控系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="3.5_deployment.html">
+            
+                <a href="3.5_deployment.html">
+            
+                    
+                    3.5.部署结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="3.6_DDL.html">
+            
+                <a href="3.6_DDL.html">
+            
+                    
+                    3.6.DDL支持度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="3.7_DCL.html">
+            
+                <a href="3.7_DCL.html">
+            
+                    
+                    3.7.DCL支持度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="3.8_dtle_mapping.html">
+            
+                <a href="3.8_dtle_mapping.html">
+            
+                    
+                    3.8.dtle mapping支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="3.9_binlog_relay.html">
+            
+                <a href="3.9_binlog_relay.html">
+            
+                    
+                    3.9.Binlog Relay (中继)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13" data-path="3.10_consul.html">
+            
+                <a href="3.10_consul.html">
+            
+                    
+                    3.10.consul 上的 job 数据管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14" data-path="3.11_oracle_mysql.html">
+            
+                <a href="3.11_oracle_mysql.html">
+            
+                    
+                    3.11.Oracle MySQL同步支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    4.安装/配置说明
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../4/4.0_installation.html">
+            
+                <a href="../4/4.0_installation.html">
+            
+                    
+                    4.0.安装步骤
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../4/4.1_node_configuration.html">
+            
+                <a href="../4/4.1_node_configuration.html">
+            
+                    
+                    4.1.节点配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../4/4.2_command.html">
+            
+                <a href="../4/4.2_command.html">
+            
+                    
+                    4.2.命令说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../4/4.3_job_configuration.html">
+            
+                <a href="../4/4.3_job_configuration.html">
+            
+                    
+                    4.3.作业(job)配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../4/4.3.1_tuning.html">
+            
+                <a href="../4/4.3.1_tuning.html">
+            
+                    
+                    4.3.1.性能调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../4/4.3.2_job_sample.html">
+            
+                <a href="../4/4.3.2_job_sample.html">
+            
+                    
+                    4.3.2.Job示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../4/4.4_http_api.html">
+            
+                <a href="../4/4.4_http_api.html">
+            
+                    
+                    4.4.HTTP API说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../4/4.4.1_dtle_http_api.html">
+            
+                <a href="../4/4.4.1_dtle_http_api.html">
+            
+                    
+                    4.4.1.dtle 3.x HTTP API说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../4/4.5_mysql_user_privileges.html">
+            
+                <a href="../4/4.5_mysql_user_privileges.html">
+            
+                    
+                    4.5.MySQL 用户权限说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../4/4.6_dtle_2to3.html">
+            
+                <a href="../4/4.6_dtle_2to3.html">
+            
+                    
+                    4.6.dtle 2升级到3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="../4/4.7_diagnosing.html">
+            
+                <a href="../4/4.7_diagnosing.html">
+            
+                    
+                    4.7.问题诊断 FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    5.设计说明
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../5/5.1_resource_estimation.html">
+            
+                <a href="../5/5.1_resource_estimation.html">
+            
+                    
+                    5.1.时间/资源估算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../5/5.2_architecture.html">
+            
+                <a href="../5/5.2_architecture.html">
+            
+                    
+                    5.2 基本架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../5/5.3_kafka_message_format.html">
+            
+                <a href="../5/5.3_kafka_message_format.html">
+            
+                    
+                    5.3 Kafka 消息格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../5/5.4_columns_mapping.html">
+            
+                <a href="../5/5.4_columns_mapping.html">
+            
+                    
+                    5.4 Oracle MySQL 字段映射
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../6/howto_contribute.html">
+            
+                <a href="../6/howto_contribute.html">
+            
+                    
+                    6.如何参与
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../7/7_roadmap.html">
+            
+                <a href="../7/7_roadmap.html">
+            
+                    
+                    7.路线图
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >3.4.2.搭建监控系统</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5982;&#x4F55;&#x642D;&#x5EFA;dtle&#x7684;&#x76D1;&#x63A7;&#x7CFB;&#x7EDF;">&#x5982;&#x4F55;&#x642D;&#x5EFA;DTLE&#x7684;&#x76D1;&#x63A7;&#x7CFB;&#x7EDF;</h1>
+<h2 id="&#x80CC;&#x666F;&#xFF1A;">&#x80CC;&#x666F;&#xFF1A;</h2>
+<p>&#x867D;&#x7136;&#x5728;DTLE&#x7684;&#x6587;&#x6863;&#x91CC;&#x63D0;&#x4F9B;&#x5404;&#x79CD;&#x76D1;&#x63A7;&#x9879;&#x7684;&#x4ECB;&#x7ECD;&#xFF0C;&#x4F46;&#x662F;&#x5BF9;&#x4E8E;&#x4E0D;&#x719F;&#x6089;prometheus&#x548C;grafana&#x914D;&#x7F6E;&#x7684;&#x540C;&#x5B66;&#x6765;&#x8BF4;&#x4E0A;&#x624B;&#x8FD8;&#x662F;&#x6709;&#x4E9B;&#x96BE;&#x5EA6;&#x7684;&#x3002;&#x4ECA;&#x5929;&#x6211;&#x5C31;&#x6765;DTLE 3.21.07.0&#x6765;&#x642D;&#x5EFA;&#x4E00;&#x4E2A;DTLE&#x7684;&#x76D1;&#x63A7;&#x7CFB;&#x7EDF;&#x3002;</p>
+<h2 id="&#x4E00;&#x3001;&#x642D;&#x5EFA;dtle&#x8FD0;&#x884C;&#x73AF;&#x5883;">&#x4E00;&#x3001;&#x642D;&#x5EFA;DTLE&#x8FD0;&#x884C;&#x73AF;&#x5883;</h2>
+<ul>
+<li>&#x914D;&#x7F6E;&#x4E24;&#x4E2A;&#x8282;&#x70B9;&#x7684;DTLE&#x96C6;&#x7FA4;&#x6765;&#x6F14;&#x793A;,&#x5176;&#x62D3;&#x6251;&#x5982;&#x4E0B;:</li>
+</ul>
+<p><img src="images/3.4.2_topu.png" alt="topu"></p>
+<p>&#x5728;&#x4FEE;&#x6539;DTLE&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x65F6;&#x5019;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x4EE5;&#x4E0B;&#x4E24;&#x70B9;&#xFF1A;</p>
+<ol>
+<li>&#x5F00;&#x542F;DTLE&#x7684;&#x76D1;&#x63A7;&#xFF0C;&#x786E;&#x4FDD;publish_metrics&#x7684;&#x503C;&#x4E3A;ture</li>
+<li>&#x5F00;&#x542F;nomad&#x7684;&#x76D1;&#x63A7;&#xFF0C;&#x786E;&#x4FDD;&#x6B63;&#x786E;&#x914D;&#x7F6E;<a href="https://www.nomadproject.io/docs/configuration/telemetry" target="_blank">telemetry</a></li>
+</ol>
+<p>&#x8FD9;&#x91CC;&#x4EE5;dtle-src-1&#x7684;&#x914D;&#x7F6E;&#x4E3A;&#x4F8B;&#xFF0C;&#x5177;&#x4F53;&#x914D;&#x7F6E;&#x53C2;&#x8003;<a href="https://github.com/actiontech/dtle-docs-cn/blob/master/4/4.1_node_configuration.md" target="_blank">&#x8282;&#x70B9;&#x914D;&#x7F6E;</a>:</p>
+<pre><code># DTLE 3.21.07.0&#x4E2D;nomad&#x5347;&#x7EA7;&#x4E3A;1.1.2&#xFF0C;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x5982;&#x4E0B;&#x914D;&#x7F6E;&#x4F7F;nomad&#x63D0;&#x4F9B;&#x76D1;&#x63A7;&#x6570;&#x636E;
+# &#x4E4B;&#x524D;&#x7248;&#x672C;&#x7684;DTLE&#x65E0;&#x9700;&#x6DFB;&#x52A0;&#x6B64;&#x914D;&#x7F6E;
+telemetry {
+  prometheus_metrics         = true
+  collection_interval        = &quot;15s&quot;
+}
+
+plugin &quot;dtle&quot; {
+  config {
+    data_dir = &quot;/opt/dtle/var/lib/nomad&quot;
+    nats_bind = &quot;10.186.63.20:8193&quot;
+    nats_advertise = &quot;10.186.63.20:8193&quot;
+    # Repeat the consul address above.
+    consul = &quot;10.186.63.76:8500&quot;
+
+    # By default, API compatibility layer is disabled.
+    api_addr = &quot;10.186.63.20:8190&quot;   # for compatibility API
+    nomad_addr = &quot;10.186.63.20:4646&quot; # compatibility API need to access a nomad server
+
+    publish_metrics = true
+    stats_collection_interval = 15
+  }
+}
+</code></pre><ul>
+<li><p>&#x6DFB;&#x52A0;&#x4E24;&#x4E2A;job&#x6A21;&#x62DF;&#x4E24;&#x4E2A;MySQL&#x5B9E;&#x4F8B;&#x4E4B;&#x95F4;&#x4F20;&#x8F93;&#x6570;&#x636E;</p>
+<p><img src="images/3.4.2_job_sample.png" alt="job_sample"></p>
+</li>
+</ul>
+<h2 id="&#x4E8C;&#x3001;&#x90E8;&#x7F72;prometheus">&#x4E8C;&#x3001;&#x90E8;&#x7F72;prometheus</h2>
+<ul>
+<li>&#x51C6;&#x5907;prometheus&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x540C;&#x65F6;&#x63A5;&#x6536;nomad&#x548C;DTLE&#x7684;metrics</li>
+<li>DTLE&#x76D1;&#x63A7;labels:instance&#x7684;&#x503C;&#x5EFA;&#x8BAE;&#x8BBE;&#x7F6E;&#x4E3A;DTLE&#x670D;&#x52A1;&#x5668;&#x7684;hostname</li>
+</ul>
+<pre><code class="lang-yaml">shell&gt; cat /path/to/prometheus.yml
+<span class="hljs-attr">global:</span>
+<span class="hljs-attr">  scrape_interval:</span>     <span class="hljs-number">15</span>s <span class="hljs-comment"># Set the scrape interval to every 15 seconds. Default is every 1 minute.</span>
+<span class="hljs-attr">  evaluation_interval:</span> <span class="hljs-number">15</span>s <span class="hljs-comment"># Evaluate rules every 15 seconds. The default is every 1 minute.</span>
+
+<span class="hljs-attr">scrape_configs:</span>
+<span class="hljs-attr">  - job_name:</span> <span class="hljs-string">&apos;nomad&apos;</span>
+<span class="hljs-attr">    scrape_interval:</span> <span class="hljs-number">15</span>s
+<span class="hljs-attr">    metrics_path:</span> <span class="hljs-string">&apos;/v1/metrics&apos;</span>
+<span class="hljs-attr">    params:</span>
+<span class="hljs-attr">      format:</span> [<span class="hljs-string">&apos;prometheus&apos;</span>]
+<span class="hljs-attr">    static_configs:</span>
+<span class="hljs-attr">      - targets:</span> [<span class="hljs-string">&apos;10.186.63.20:4646&apos;</span>]
+<span class="hljs-attr">        labels:</span>
+<span class="hljs-attr">          instance:</span> nomad-src<span class="hljs-bullet">-1</span>
+<span class="hljs-attr">      - targets:</span> [<span class="hljs-string">&apos;10.186.63.76:4646&apos;</span>]
+<span class="hljs-attr">        labels:</span>
+<span class="hljs-attr">          instance:</span> nomad-dest<span class="hljs-bullet">-1</span>
+
+<span class="hljs-attr">  - job_name:</span> <span class="hljs-string">&apos;dtle&apos;</span>
+<span class="hljs-attr">    scrape_interval:</span> <span class="hljs-number">15</span>s
+<span class="hljs-attr">    metrics_path:</span> <span class="hljs-string">&apos;/metrics&apos;</span>
+<span class="hljs-attr">    static_configs:</span>
+<span class="hljs-attr">      - targets:</span> [<span class="hljs-string">&apos;10.186.63.20:8190&apos;</span>]
+<span class="hljs-attr">        labels:</span>
+<span class="hljs-attr">          instance:</span> dtle-src<span class="hljs-bullet">-1</span>
+<span class="hljs-attr">      - targets:</span> [<span class="hljs-string">&apos;10.186.63.76:8190&apos;</span>]
+<span class="hljs-attr">        labels:</span>
+<span class="hljs-attr">          instance:</span> dtle-dest<span class="hljs-bullet">-1</span>
+</code></pre>
+<ul>
+<li><p>&#x5229;&#x7528;docker&#x90E8;&#x7F72;prometheus&#x670D;&#x52A1;</p>
+<pre><code>shell&gt; docker run -itd -p 9090:9090 --name=prometheus --hostname=prometheus --restart=always -v /path/to/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
+</code></pre></li>
+<li><p>&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E0A;&#x8BBF;&#x95EE;prometheus&#x7684;&#x9875;&#x9762; <a href="http://${prometheus_server_ip}:9090/targets" target="_blank">http://${prometheus_server_ip}:9090/targets</a> &#x9A8C;&#x8BC1;&#x914D;&#x7F6E;&#x751F;&#x6548;</p>
+<p><img src="images/3.4.2_prometheus_targets.png" alt="prometheus targets"></p>
+</li>
+</ul>
+<h2 id="&#x4E09;&#x3001;&#x90E8;&#x7F72;grafana">&#x4E09;&#x3001;&#x90E8;&#x7F72;grafana</h2>
+<ul>
+<li><p>&#x5229;&#x7528;docker&#x90E8;&#x7F72;grafana&#x670D;&#x52A1;</p>
+<pre><code>shell&gt; docker run -d --name=grafana -p 3000:3000 grafana/grafana
+</code></pre></li>
+<li><p>&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E0A;&#x8BBF;&#x95EE;grafana&#x7684;&#x9875;&#x9762; <a href="http://${grafana_server_ip}:3000" target="_blank">http://${grafana_server_ip}:3000</a> &#xFF0C;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x7528;&#x6237; admin/admin&#x767B;&#x5F55;</p>
+</li>
+<li><p>&#x914D;&#x7F6E;&#x6DFB;&#x52A0;&#x6570;&#x636E;&#x6E90;</p>
+<p><img src="images/3.4.2_add_data_source.png" alt="add_data_source"></p>
+<ul>
+<li><p>&#x9009;&#x62E9;&#x6DFB;&#x52A0;promethues</p>
+<p><img src="images/3.4.2_choose_prometheus.png" alt="choose_prometheus"></p>
+</li>
+<li><p>&#x53EA;&#x9700;&#x5C06;promethues&#x7684;&#x8BBF;&#x95EE;&#x5730;&#x5740;&#x6DFB;&#x52A0;&#x5230;URL&#x4E2D;&#xFF0C;&#x70B9;&#x51FB;&#x201C;sava &amp; test&#x201D;&#x6309;&#x94AE;</p>
+</li>
+</ul>
+<p><img src="images/3.4.2_add_prometheus_url.png" alt="add_prometheus_url"></p>
+</li>
+<li><p>&#x6DFB;&#x52A0;panel</p>
+<p><img src="images/3.4.2_add_panel.png" alt="add_panel"></p>
+</li>
+<li><p>&#x4EE5;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;CPU&#x4F7F;&#x7528;&#x7387;&#x76D1;&#x63A7;&#x4E3A;&#x4F8B;&#x914D;&#x7F6E;&#x4E00;&#x4E2A;panel</p>
+<p><img src="images/3.4.2_add_cpu_panel.png" alt="add_cpu_panel"></p>
+</li>
+</ul>
+<p><img src="images/3.4.2_set_unit.png" alt="set_unit"></p>
+<h2 id="&#x56DB;&#x3001;&#x5E38;&#x7528;&#x7684;&#x76D1;&#x63A7;&#x9879;">&#x56DB;&#x3001;&#x5E38;&#x7528;&#x7684;&#x76D1;&#x63A7;&#x9879;</h2>
+<p>nomad&#x6240;&#x6709;&#x76D1;&#x63A7;&#x9879;&#xFF1A; <a href="https://www.nomadproject.io/docs/operations/metrics" target="_blank">https://www.nomadproject.io/docs/operations/metrics</a></p>
+<p>DTLE&#x6240;&#x6709;&#x76D1;&#x63A7;&#x9879;&#xFF1A;<a href="https://actiontech.github.io/dtle-docs-cn/3/3.4_metrics.html" target="_blank">https://actiontech.github.io/dtle-docs-cn/3/3.4_metrics.html</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x8BF4;&#x660E;</th>
+<th>&#x516C;&#x5F0F;&#x793A;&#x4F8B;</th>
+<th style="text-align:center">&#x5355;&#x4F4D;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">CPU&#x4F7F;&#x7528;&#x7387;(&#x603B;&#x8BA1;)</td>
+<td><code>sum(rate(process_cpu_seconds_total{instance=~&quot;nomad-src-1 | dtle-src-1&quot;}[60s])) * 100</code></td>
+<td style="text-align:center">Misc / Percent(0-100)</td>
+</tr>
+<tr>
+<td style="text-align:center">CPU&#x4F7F;&#x7528;&#x7387;(DTLE )</td>
+<td><code>rate(process_cpu_seconds_total{instance=&quot;dtle-src-1&quot;}[60s]) * 100</code></td>
+<td style="text-align:center">Misc / Percent(0-100)</td>
+</tr>
+<tr>
+<td style="text-align:center">CPU&#x4F7F;&#x7528;&#x7387;(nomad)</td>
+<td><code>rate(process_cpu_seconds_total{instance=&quot;dtle-src-1&quot;}[60s]) * 100</code></td>
+<td style="text-align:center">Misc /Percent(0-100)</td>
+</tr>
+<tr>
+<td style="text-align:center">&#x5185;&#x5B58;&#x4F7F;&#x7528;(&#x603B;&#x8BA1;)</td>
+<td><code>sum(process_resident_memory_bytes{instance=~&quot;nomad-src-1 | dtle-src-1&quot;}) /1024 /1024</code></td>
+<td style="text-align:center">Data / mebibyte</td>
+</tr>
+<tr>
+<td style="text-align:center">&#x5185;&#x5B58;&#x4F7F;&#x7528;(DTLE )</td>
+<td><code>process_resident_memory_bytes{instance=&quot;dtle-src-1&quot;} /1024 /1024</code></td>
+<td style="text-align:center">Data / mebibyte</td>
+</tr>
+<tr>
+<td style="text-align:center">&#x5185;&#x5B58;&#x4F7F;&#x7528;(nomad)</td>
+<td><code>process_resident_memory_bytes{instance=&quot;nomad-src-1&quot;} /1024 /1024</code></td>
+<td style="text-align:center">Data / mebibyte</td>
+</tr>
+<tr>
+<td style="text-align:center">&#x5E26;&#x5BBD;(&#x603B;&#x8BA1; - &#x6E90;&#x7AEF;&#x53D1;&#x9001;)</td>
+<td><code>sum(increase(dtle_network_out_bytes{host=&quot;dtle-src-1&quot;}[30s]) /30 /1024) * 8</code></td>
+<td style="text-align:center">Data rate / kibibits/sec</td>
+</tr>
+<tr>
+<td style="text-align:center">&#x5E26;&#x5BBD;(&#x6309;task&#x5206;&#x7EC4; - &#x6E90;&#x7AEF;&#x53D1;&#x9001;)</td>
+<td><code>increase(dtle_network_out_bytes{host=&quot;dtle-src-1&quot;}[30s]) /30 /1024 * 8</code></td>
+<td style="text-align:center">Data rate / kibibits/sec</td>
+</tr>
+<tr>
+<td style="text-align:center">&#x5E26;&#x5BBD;(&#x603B;&#x8BA1; - &#x76EE;&#x6807;&#x7AEF;&#x63A5;&#x6536;)</td>
+<td><code>sum(increase(dtle_network_in_bytes{host=&quot;dtle-dest-1&quot;}[30s]) /30 /1024) * 8</code></td>
+<td style="text-align:center">Data rate / kibibits/sec</td>
+</tr>
+<tr>
+<td style="text-align:center">&#x5E26;&#x5BBD;(&#x6309;task&#x5206;&#x7EC4; - &#x76EE;&#x6807;&#x7AEF;&#x63A5;&#x6536;)</td>
+<td><code>increase(dtle_network_in_bytes{host=&quot;dtle-dest-1&quot;}[30s]) /30 /1024 * 8</code></td>
+<td style="text-align:center">Data rate / kibibits/sec</td>
+</tr>
+<tr>
+<td style="text-align:center">&#x6570;&#x636E;&#x5EF6;&#x8FDF;(&#x6E90;&#x7AEF;)</td>
+<td><code>dtle_delay_time{host=&quot;dtle-src-1&quot;}</code></td>
+<td style="text-align:center">Time / seconds(s)</td>
+</tr>
+<tr>
+<td style="text-align:center">&#x6570;&#x636E;&#x5EF6;&#x8FDF;(&#x76EE;&#x6807;&#x7AEF;)</td>
+<td><code>dtle_delay_time{host=&quot;dtle-dest-1&quot;}</code></td>
+<td style="text-align:center">Time / seconds(s)</td>
+</tr>
+<tr>
+<td style="text-align:center">TPS(&#x6E90;&#x7AEF;)</td>
+<td><code>irate(dtle_src_extracted_incr_tx_count[30s])</code></td>
+<td style="text-align:center">Misc / none</td>
+</tr>
+<tr>
+<td style="text-align:center">TPS(&#x76EE;&#x6807;&#x7AEF;)</td>
+<td><code>irate(dtle_dest_applied_incr_tx_count[30s])</code></td>
+<td style="text-align:center">Misc / none</td>
+</tr>
+<tr>
+<td style="text-align:center">QPS(&#x6E90;&#x7AEF;)</td>
+<td><code>irate(dtle_src_extracted_incr_query_count[30s])</code></td>
+<td style="text-align:center">Misc / none</td>
+</tr>
+<tr>
+<td style="text-align:center">QPS(&#x76EE;&#x6807;&#x7AEF;)</td>
+<td><code>irate(dtle_dest_applied_incr_query_count[30s])</code></td>
+<td style="text-align:center">Misc / none</td>
+</tr>
+<tr>
+<td style="text-align:center">Buffer(&#x6E90;&#x7AEF;)</td>
+<td><code>dtle_buffer_src_queue_size</code></td>
+<td style="text-align:center">Misc / none</td>
+</tr>
+<tr>
+<td style="text-align:center">Buffer(&#x76EE;&#x6807;&#x7AEF;)</td>
+<td><code>dtle_buffer_dest_queue_size</code></td>
+<td style="text-align:center">Misc / none</td>
+</tr>
+</tbody>
+</table>
+<h2 id="&#x4E94;&#x3001;&#x6700;&#x540E;&#x521B;&#x5EFA;&#x591A;&#x4E2A;panel&#x540C;&#x65F6;&#x5C55;&#x793A;">&#x4E94;&#x3001;&#x6700;&#x540E;&#x521B;&#x5EFA;&#x591A;&#x4E2A;panel&#x540C;&#x65F6;&#x5C55;&#x793A;</h2>
+<p><img src="images/3.4.2_all_panel.png" alt="all_panel"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="3.4.1_delay_alert.html" class="navigation navigation-prev " aria-label="Previous page: 3.4.1.延迟监控告警">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="3.5_deployment.html" class="navigation navigation-next " aria-label="Next page: 3.5.部署结构">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3.4.2.搭建监控系统","level":"1.5.7","depth":2,"next":{"title":"3.5.部署结构","level":"1.5.8","depth":2,"path":"3/3.5_deployment.md","ref":"3/3.5_deployment.md","articles":[]},"previous":{"title":"3.4.1.延迟监控告警","level":"1.5.6","depth":2,"path":"3/3.4.1_delay_alert.md","ref":"3/3.4.1_delay_alert.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"3/3.4.2_monitor.md","mtime":"2024-04-19T03:05:49.289Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-04-19T03:08:46.514Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

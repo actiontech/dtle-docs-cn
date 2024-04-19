@@ -1,0 +1,7217 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>4.4.1.dtle 3.x HTTP API说明 · dtle manual</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="ActionTech">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="4.5_mysql_user_privileges.html" />
+    
+    
+    <link rel="prev" href="4.4_http_api.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../0/0_overview.html">
+            
+                <a href="../0/0_overview.html">
+            
+                    
+                    0.概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    1.适用场景
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../1/1.0_mysql_replication.html">
+            
+                <a href="../1/1.0_mysql_replication.html">
+            
+                    
+                    1.0.MySQL的单向复制/聚合/分散
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../1/1.1_bidirectional_replication.html">
+            
+                <a href="../1/1.1_bidirectional_replication.html">
+            
+                    
+                    1.1.跨数据中心的双向复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../1/1.2_sync_between_cloud.html">
+            
+                <a href="../1/1.2_sync_between_cloud.html">
+            
+                    
+                    1.2.公有云间的数据同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../1/1.3_mysql_kafka.html">
+            
+                <a href="../1/1.3_mysql_kafka.html">
+            
+                    
+                    1.3.MySQL到Kafka的数据变更通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../1/1.4_oracle_mysql.html">
+            
+                <a href="../1/1.4_oracle_mysql.html">
+            
+                    
+                    1.4.Oracle到MySQL的数据同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    2.快速开始
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../2/2.0_mysql_replication_1_1.html">
+            
+                <a href="../2/2.0_mysql_replication_1_1.html">
+            
+                    
+                    2.0.MySQL的单向复制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../2/2.0.1_interface.html">
+            
+                <a href="../2/2.0.1_interface.html">
+            
+                    
+                    2.0.1.HTTP API、nomad 命令行工具 和 Web界面
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../2/2.1_mysql_replication_n_1.html">
+            
+                <a href="../2/2.1_mysql_replication_n_1.html">
+            
+                    
+                    2.1.MySQL的聚合复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../2/2.2_mysql_replication_1_n.html">
+            
+                <a href="../2/2.2_mysql_replication_1_n.html">
+            
+                    
+                    2.2.MySQL的数据分散
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../2/2.3_dc_to_dc_bidirectional.html">
+            
+                <a href="../2/2.3_dc_to_dc_bidirectional.html">
+            
+                    
+                    2.3.MySQL的跨数据中心的双向复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../2/2.4_ali_to_jd.html">
+            
+                <a href="../2/2.4_ali_to_jd.html">
+            
+                    
+                    2.4.阿里云到京东云的MySQL复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../2/2.5_mysql_kafka.html">
+            
+                <a href="../2/2.5_mysql_kafka.html">
+            
+                    
+                    2.5.MySQL到Kafka的数据变更通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../2/2.6_oracle_mysql.html">
+            
+                <a href="../2/2.6_oracle_mysql.html">
+            
+                    
+                    2.6.Oracle到MySQL的数据同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../2/2.7_multi_node.html">
+            
+                <a href="../2/2.7_multi_node.html">
+            
+                    
+                    2.7.多nomad server部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    3.功能说明
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../3/3.0_function_scenario_mapping.html">
+            
+                <a href="../3/3.0_function_scenario_mapping.html">
+            
+                    
+                    3.0.功能/场景的映射列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../3/3.1_limitation.html">
+            
+                <a href="../3/3.1_limitation.html">
+            
+                    
+                    3.1.使用限制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../3/3.2_ports.html">
+            
+                <a href="../3/3.2_ports.html">
+            
+                    
+                    3.2.端口使用说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../3/3.3_impact_on_dest.html">
+            
+                <a href="../3/3.3_impact_on_dest.html">
+            
+                    
+                    3.3.对目标端数据库的影响(gtid_executed表)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../3/3.4_metrics.html">
+            
+                <a href="../3/3.4_metrics.html">
+            
+                    
+                    3.4.监控项说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../3/3.4.1_delay_alert.html">
+            
+                <a href="../3/3.4.1_delay_alert.html">
+            
+                    
+                    3.4.1.延迟监控告警
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../3/3.4.2_monitor.html">
+            
+                <a href="../3/3.4.2_monitor.html">
+            
+                    
+                    3.4.2.搭建监控系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../3/3.5_deployment.html">
+            
+                <a href="../3/3.5_deployment.html">
+            
+                    
+                    3.5.部署结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../3/3.6_DDL.html">
+            
+                <a href="../3/3.6_DDL.html">
+            
+                    
+                    3.6.DDL支持度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../3/3.7_DCL.html">
+            
+                <a href="../3/3.7_DCL.html">
+            
+                    
+                    3.7.DCL支持度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="../3/3.8_dtle_mapping.html">
+            
+                <a href="../3/3.8_dtle_mapping.html">
+            
+                    
+                    3.8.dtle mapping支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="../3/3.9_binlog_relay.html">
+            
+                <a href="../3/3.9_binlog_relay.html">
+            
+                    
+                    3.9.Binlog Relay (中继)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13" data-path="../3/3.10_consul.html">
+            
+                <a href="../3/3.10_consul.html">
+            
+                    
+                    3.10.consul 上的 job 数据管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14" data-path="../3/3.11_oracle_mysql.html">
+            
+                <a href="../3/3.11_oracle_mysql.html">
+            
+                    
+                    3.11.Oracle MySQL同步支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    4.安装/配置说明
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="4.0_installation.html">
+            
+                <a href="4.0_installation.html">
+            
+                    
+                    4.0.安装步骤
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="4.1_node_configuration.html">
+            
+                <a href="4.1_node_configuration.html">
+            
+                    
+                    4.1.节点配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="4.2_command.html">
+            
+                <a href="4.2_command.html">
+            
+                    
+                    4.2.命令说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="4.3_job_configuration.html">
+            
+                <a href="4.3_job_configuration.html">
+            
+                    
+                    4.3.作业(job)配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="4.3.1_tuning.html">
+            
+                <a href="4.3.1_tuning.html">
+            
+                    
+                    4.3.1.性能调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="4.3.2_job_sample.html">
+            
+                <a href="4.3.2_job_sample.html">
+            
+                    
+                    4.3.2.Job示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="4.4_http_api.html">
+            
+                <a href="4.4_http_api.html">
+            
+                    
+                    4.4.HTTP API说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.8" data-path="4.4.1_dtle_http_api.html">
+            
+                <a href="4.4.1_dtle_http_api.html">
+            
+                    
+                    4.4.1.dtle 3.x HTTP API说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="4.5_mysql_user_privileges.html">
+            
+                <a href="4.5_mysql_user_privileges.html">
+            
+                    
+                    4.5.MySQL 用户权限说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="4.6_dtle_2to3.html">
+            
+                <a href="4.6_dtle_2to3.html">
+            
+                    
+                    4.6.dtle 2升级到3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="4.7_diagnosing.html">
+            
+                <a href="4.7_diagnosing.html">
+            
+                    
+                    4.7.问题诊断 FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    5.设计说明
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../5/5.1_resource_estimation.html">
+            
+                <a href="../5/5.1_resource_estimation.html">
+            
+                    
+                    5.1.时间/资源估算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../5/5.2_architecture.html">
+            
+                <a href="../5/5.2_architecture.html">
+            
+                    
+                    5.2 基本架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../5/5.3_kafka_message_format.html">
+            
+                <a href="../5/5.3_kafka_message_format.html">
+            
+                    
+                    5.3 Kafka 消息格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../5/5.4_columns_mapping.html">
+            
+                <a href="../5/5.4_columns_mapping.html">
+            
+                    
+                    5.4 Oracle MySQL 字段映射
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../6/howto_contribute.html">
+            
+                <a href="../6/howto_contribute.html">
+            
+                    
+                    6.如何参与
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../7/7_roadmap.html">
+            
+                <a href="../7/7_roadmap.html">
+            
+                    
+                    7.路线图
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >4.4.1.dtle 3.x HTTP API说明</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="dtle-3x-http-api-&#x8BF4;&#x660E;">dtle 3.x HTTP API &#x8BF4;&#x660E;</h1>
+<p>dtle 3.x &#x6839;&#x636E;&#x4E1A;&#x52A1;&#x529F;&#x80FD;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x5957;HTTP API&#xFF08;&#x5F00;&#x542F;&#x65B9;&#x5F0F;&#x89C1;<a href="4.1_node_configuration.html">&quot;&#x8282;&#x70B9;&#x914D;&#x7F6E;&quot;</a>&#xFF0C;api_addr&#xFF09;&#xFF0C;&#x53EF;&#x4E0E;dtle UI&#x914D;&#x5957;&#x4F7F;&#x7528;&#x3002;  </p>
+<p>&#x672C;&#x8282;API&#x793A;&#x4F8B;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;swagger UI&#x8C03;&#x7528;&#x3002;</p>
+<h2 id="&#x901A;&#x8FC7;swagger-ui&#x67E5;&#x770B;&#x63A5;&#x53E3;&#x6587;&#x6863;">&#x901A;&#x8FC7;swagger UI&#x67E5;&#x770B;&#x63A5;&#x53E3;&#x6587;&#x6863;</h2>
+<p>&#x8BBF;&#x95EE;<code>http://{dtle ip}:8190/swagger/index.html</code>&#x901A;&#x8FC7;swagger UI&#x67E5;&#x770B;&#x63A5;&#x53E3;&#x6587;&#x6863;&#xFF0C;&#x6253;&#x5F00;&#x754C;&#x9762;&#x5982;&#x4E0B;&#xFF1A;  </p>
+<p><img src="images/4.4.1_swagger_ui.png" alt=""></p>
+<h2 id="&#x901A;&#x8FC7;swagger-ui&#x8C03;&#x7528;api">&#x901A;&#x8FC7;swagger UI&#x8C03;&#x7528;API</h2>
+<p>&#x9664;&#x4E86;&#x4F7F;&#x7528;curl&#x547D;&#x4EE4;&#x5916;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;swagger UI&#x754C;&#x9762;&#x8C03;&#x7528;API&#xFF0C;&#x5177;&#x4F53;&#x6B65;&#x9AA4;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>1 &#x70B9;&#x51FB;&quot;Try it out&quot;&#xFF0C;&#x8FDB;&#x5165;&#x8C03;&#x8BD5;&#x6A21;&#x5F0F;</p>
+<p><img src="images/4.4.1_try_it_out.png" alt=""></p>
+<p>2 &#x586B;&#x5199;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x540E;&#x70B9;&#x51FB;&quot;Execute&quot;&#x8C03;&#x7528;API</p>
+<p><img src="images/4.4.1_execute.png" alt=""></p>
+<p>3 &#x67E5;&#x770B;&#x54CD;&#x5E94;&#xFF1A;</p>
+<p><img src="images/4.4.1_response.png" alt=""></p>
+<p>4 &#x7531;&#x4E8E;&#x7528;&#x6237;&#x6821;&#x9A8C;&#x529F;&#x80FD;&#x9650;&#x5236;&#xFF0C;&#x5927;&#x591A;&#x6570;&#x63A5;&#x53E3;&#x8C03;&#x7528;&#x9700;&#x8981;&#x5728;header&#x4E2D;&#x643A;&#x5E26;&#x767B;&#x5F55;&#x6210;&#x529F;&#x8FD4;&#x56DE;&#x7684;token&#xFF0C;&#x5728;swagger&#x9875;&#x9762;&#x53EF;&#x70B9;&#x51FB;swagger&#x9875;&#x9762;&#x9876;&#x90E8;&#x7684;Authorize&#x6309;&#x94AE;&#xFF0C;&#x5C06;token&#x586B;&#x5165;Value&#x7684;&#x6587;&#x672C;&#x6846;&#x4E2D;&#xFF0C;swagger&#x9875;&#x9762;&#x4E2D;&#x5176;&#x4ED6;&#x63A5;&#x53E3;&#x5373;&#x53EF;&#x6B63;&#x5E38;&#x4F7F;&#x7528;</p>
+<p><img src="images/4.4.1_login.png" alt=""></p>
+<h1 id="dtle-api-docs">dtle API Docs</h1>
+<p>This is a sample server for dev.</p>
+<h2 id="version-20">Version: 2.0</h2>
+<h3 id="security">Security</h3>
+<p><strong>ApiKeyAuth</strong>  </p>
+<table>
+<thead>
+<tr>
+<th>apiKey</th>
+<th><em>API Key</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>In</td>
+<td>header</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>Authorization</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2databasecolumns">/v2/database/columns</h3>
+<h4 id="get">GET</h4>
+<h5 id="description">Description:</h5>
+<p>list columns of database source instance.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>host</td>
+<td>query</td>
+<td>database host</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>port</td>
+<td>query</td>
+<td>database port</td>
+<td>Yes</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>user</td>
+<td>query</td>
+<td>database user</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>password</td>
+<td>query</td>
+<td>database password</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>database_type</td>
+<td>query</td>
+<td>database_type</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>service_name</td>
+<td>query</td>
+<td>database service_name</td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>schema</td>
+<td>query</td>
+<td>database schema</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>table</td>
+<td>query</td>
+<td>database table</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>character_set</td>
+<td>query</td>
+<td>database character set</td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>is_password_encrypted</td>
+<td>query</td>
+<td>indecate that database password is encrypted or not</td>
+<td>No</td>
+<td>boolean</td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.ListColumnsRespV2">models.ListColumnsRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2databaseinstanceconnection">/v2/database/instance_connection</h3>
+<h4 id="get">GET</h4>
+<h5 id="description">Description:</h5>
+<p>connect to  database instance.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>host</td>
+<td>query</td>
+<td>database host</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>port</td>
+<td>query</td>
+<td>database port</td>
+<td>Yes</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>user</td>
+<td>query</td>
+<td>database user</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>password</td>
+<td>query</td>
+<td>database password</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>database_type</td>
+<td>query</td>
+<td>database_type</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>service_name</td>
+<td>query</td>
+<td>database service_name</td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>is_password_encrypted</td>
+<td>query</td>
+<td>indecate that database password is encrypted or not</td>
+<td>No</td>
+<td>boolean</td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.ConnectionRespV2">models.ConnectionRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2databaseschemas">/v2/database/schemas</h3>
+<h4 id="get">GET</h4>
+<h5 id="description">Description:</h5>
+<p>list schemas of database source instance.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>database_type</td>
+<td>query</td>
+<td>database_type</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>host</td>
+<td>query</td>
+<td>database host</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>port</td>
+<td>query</td>
+<td>database port</td>
+<td>Yes</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>user</td>
+<td>query</td>
+<td>database user</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>password</td>
+<td>query</td>
+<td>database password</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>service_name</td>
+<td>query</td>
+<td>database service_name</td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>character_set</td>
+<td>query</td>
+<td>database character set</td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>is_password_encrypted</td>
+<td>query</td>
+<td>indecate that database password is encrypted or not</td>
+<td>No</td>
+<td>boolean</td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.ListSchemasRespV2">models.ListSchemasRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2jobgtid">/v2/job/gtid</h3>
+<h4 id="get">GET</h4>
+<h5 id="description">Description:</h5>
+<p>get src task current gtid.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>job_id</td>
+<td>query</td>
+<td>job id</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.JobGtidResp">models.JobGtidResp</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2jobmigrationcreate">/v2/job/migration/create</h3>
+<h4 id="post">POST</h4>
+<h5 id="description">Description:</h5>
+<p>create migration job.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>migration_job_config</td>
+<td>body</td>
+<td>migration job config</td>
+<td>Yes</td>
+<td><a href="#models.CreateOrUpdateMysqlToMysqlJobParamV2">models.CreateOrUpdateMysqlToMysqlJobParamV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.CreateOrUpdateMysqlToMysqlJobRespV2">models.CreateOrUpdateMysqlToMysqlJobRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2jobmigrationdelete">/v2/job/migration/delete</h3>
+<h4 id="post">POST</h4>
+<h5 id="description">Description:</h5>
+<p>delete migration job.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>job_id</td>
+<td>formData</td>
+<td>job id</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.DeleteJobRespV2">models.DeleteJobRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2jobmigrationdetail">/v2/job/migration/detail</h3>
+<h4 id="get">GET</h4>
+<h5 id="description">Description:</h5>
+<p>get migration job detail.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>job_id</td>
+<td>query</td>
+<td>job id</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.MysqlToMysqlJobDetailRespV2">models.MysqlToMysqlJobDetailRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2jobmigrationpause">/v2/job/migration/pause</h3>
+<h4 id="post">POST</h4>
+<h5 id="description">Description:</h5>
+<p>pause migration job.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>job_id</td>
+<td>formData</td>
+<td>job id</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.PauseJobRespV2">models.PauseJobRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2jobmigrationresume">/v2/job/migration/resume</h3>
+<h4 id="post">POST</h4>
+<h5 id="description">Description:</h5>
+<p>resume migration job.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>job_id</td>
+<td>formData</td>
+<td>job id</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.ResumeJobRespV2">models.ResumeJobRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2jobmigrationreverse">/v2/job/migration/reverse</h3>
+<h4 id="post">POST</h4>
+<h5 id="description">Description:</h5>
+<p>reverse migration Job</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>reverse_config</td>
+<td>body</td>
+<td>reverse config config</td>
+<td>Yes</td>
+<td><a href="#models.ReverseJobReq">models.ReverseJobReq</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.ReverseJobResp">models.ReverseJobResp</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2jobmigrationreversestart">/v2/job/migration/reverse_start</h3>
+<h4 id="post">POST</h4>
+<h5 id="summary">Summary:</h5>
+<p>start reverse-init job</p>
+<h5 id="description">Description:</h5>
+<p>Start Reverse Job.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>job_id</td>
+<td>formData</td>
+<td>job id</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.ReverseStartRespV2">models.ReverseStartRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2jobmigrationupdate">/v2/job/migration/update</h3>
+<h4 id="post">POST</h4>
+<h5 id="description">Description:</h5>
+<p>update migration job.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>migration_job_config</td>
+<td>body</td>
+<td>migration job config</td>
+<td>Yes</td>
+<td><a href="#models.CreateOrUpdateMysqlToMysqlJobParamV2">models.CreateOrUpdateMysqlToMysqlJobParamV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.CreateOrUpdateMysqlToMysqlJobRespV2">models.CreateOrUpdateMysqlToMysqlJobRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2jobreversestart">/v2/job/reverse_start</h3>
+<h4 id="post">POST</h4>
+<h5 id="summary">Summary:</h5>
+<p>start reverse-init job</p>
+<h5 id="description">Description:</h5>
+<p>Finish Job.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>job_id</td>
+<td>formData</td>
+<td>job id</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.ReverseStartRespV2">models.ReverseStartRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2jobsubscriptioncreate">/v2/job/subscription/create</h3>
+<h4 id="post">POST</h4>
+<h5 id="description">Description:</h5>
+<p>create subscription job.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>subscription_job_config</td>
+<td>body</td>
+<td>subscription job config</td>
+<td>Yes</td>
+<td><a href="#models.CreateOrUpdateMysqlToKafkaJobParamV2">models.CreateOrUpdateMysqlToKafkaJobParamV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.CreateOrUpdateMysqlToKafkaJobRespV2">models.CreateOrUpdateMysqlToKafkaJobRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2jobsubscriptiondelete">/v2/job/subscription/delete</h3>
+<h4 id="post">POST</h4>
+<h5 id="description">Description:</h5>
+<p>delete subscription job.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>job_id</td>
+<td>formData</td>
+<td>job id</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.DeleteJobRespV2">models.DeleteJobRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2jobsubscriptiondetail">/v2/job/subscription/detail</h3>
+<h4 id="get">GET</h4>
+<h5 id="description">Description:</h5>
+<p>get subscription job detail.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>job_id</td>
+<td>query</td>
+<td>job id</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.MysqlToKafkaJobDetailRespV2">models.MysqlToKafkaJobDetailRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2jobsubscriptionpause">/v2/job/subscription/pause</h3>
+<h4 id="post">POST</h4>
+<h5 id="description">Description:</h5>
+<p>pause subscription job.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>job_id</td>
+<td>formData</td>
+<td>job id</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.PauseJobRespV2">models.PauseJobRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2jobsubscriptionresume">/v2/job/subscription/resume</h3>
+<h4 id="post">POST</h4>
+<h5 id="description">Description:</h5>
+<p>resume subscription job.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>job_id</td>
+<td>formData</td>
+<td>job id</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.ResumeJobRespV2">models.ResumeJobRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2jobsubscriptionupdate">/v2/job/subscription/update</h3>
+<h4 id="post">POST</h4>
+<h5 id="description">Description:</h5>
+<p>update subscription job.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>subscription_job_config</td>
+<td>body</td>
+<td>subscription job config</td>
+<td>Yes</td>
+<td><a href="#models.CreateOrUpdateMysqlToKafkaJobParamV2">models.CreateOrUpdateMysqlToKafkaJobParamV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.CreateOrUpdateMysqlToKafkaJobRespV2">models.CreateOrUpdateMysqlToKafkaJobRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2jobsynccreate">/v2/job/sync/create</h3>
+<h4 id="post">POST</h4>
+<h5 id="description">Description:</h5>
+<p>create sync job.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sync_job_config</td>
+<td>body</td>
+<td>sync job config</td>
+<td>Yes</td>
+<td><a href="#models.CreateOrUpdateMysqlToMysqlJobParamV2">models.CreateOrUpdateMysqlToMysqlJobParamV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.CreateOrUpdateMysqlToMysqlJobRespV2">models.CreateOrUpdateMysqlToMysqlJobRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2jobsyncdelete">/v2/job/sync/delete</h3>
+<h4 id="post">POST</h4>
+<h5 id="description">Description:</h5>
+<p>delete sync job.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>job_id</td>
+<td>formData</td>
+<td>job id</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.DeleteJobRespV2">models.DeleteJobRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2jobsyncdetail">/v2/job/sync/detail</h3>
+<h4 id="get">GET</h4>
+<h5 id="description">Description:</h5>
+<p>get sync job detail.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>job_id</td>
+<td>query</td>
+<td>job id</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.MysqlToMysqlJobDetailRespV2">models.MysqlToMysqlJobDetailRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2jobsyncpause">/v2/job/sync/pause</h3>
+<h4 id="post">POST</h4>
+<h5 id="description">Description:</h5>
+<p>pause sync job.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>job_id</td>
+<td>formData</td>
+<td>job id</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.PauseJobRespV2">models.PauseJobRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2jobsyncresume">/v2/job/sync/resume</h3>
+<h4 id="post">POST</h4>
+<h5 id="description">Description:</h5>
+<p>resume sync job.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>job_id</td>
+<td>formData</td>
+<td>job id</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.ResumeJobRespV2">models.ResumeJobRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2jobsyncreverse">/v2/job/sync/reverse</h3>
+<h4 id="post">POST</h4>
+<h5 id="description">Description:</h5>
+<p>reverse sync Job</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>reverse_config</td>
+<td>body</td>
+<td>reverse config config</td>
+<td>Yes</td>
+<td><a href="#models.ReverseJobReq">models.ReverseJobReq</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.ReverseJobResp">models.ReverseJobResp</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2jobsyncreversestart">/v2/job/sync/reverse_start</h3>
+<h4 id="post">POST</h4>
+<h5 id="summary">Summary:</h5>
+<p>start reverse-init job</p>
+<h5 id="description">Description:</h5>
+<p>Start Reverse Job.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>job_id</td>
+<td>formData</td>
+<td>job id</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.ReverseStartRespV2">models.ReverseStartRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2jobsyncupdate">/v2/job/sync/update</h3>
+<h4 id="post">POST</h4>
+<h5 id="description">Description:</h5>
+<p>update sync job.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sync_job_config</td>
+<td>body</td>
+<td>sync job config</td>
+<td>Yes</td>
+<td><a href="#models.CreateOrUpdateMysqlToMysqlJobParamV2">models.CreateOrUpdateMysqlToMysqlJobParamV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.CreateOrUpdateMysqlToMysqlJobRespV2">models.CreateOrUpdateMysqlToMysqlJobRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2jobsmigration">/v2/jobs/migration</h3>
+<h4 id="get">GET</h4>
+<h5 id="description">Description:</h5>
+<p>get job list.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>filter_job_id</td>
+<td>query</td>
+<td>filter job id</td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>filter_job_src_ip</td>
+<td>query</td>
+<td>filter job src ip</td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>filter_job_src_port</td>
+<td>query</td>
+<td>filter job src port</td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>filter_job_dest_ip</td>
+<td>query</td>
+<td>filter job dest ip</td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>filter_job_dest_port</td>
+<td>query</td>
+<td>filter job dest port</td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>filter_job_status</td>
+<td>query</td>
+<td>filter job status</td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>order_by</td>
+<td>query</td>
+<td>order by</td>
+<td>No</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.JobListRespV2">models.JobListRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2jobssubscription">/v2/jobs/subscription</h3>
+<h4 id="get">GET</h4>
+<h5 id="description">Description:</h5>
+<p>get subscription job list.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>filter_job_id</td>
+<td>query</td>
+<td>filter job id</td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>filter_job_src_ip</td>
+<td>query</td>
+<td>filter job src ip</td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>filter_job_src_port</td>
+<td>query</td>
+<td>filter job src port</td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>filter_job_dest_ip</td>
+<td>query</td>
+<td>filter job dest ip</td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>filter_job_dest_port</td>
+<td>query</td>
+<td>filter job dest port</td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>filter_job_status</td>
+<td>query</td>
+<td>filter job status</td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>order_by</td>
+<td>query</td>
+<td>order by</td>
+<td>No</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.JobListRespV2">models.JobListRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2jobssync">/v2/jobs/sync</h3>
+<h4 id="get">GET</h4>
+<h5 id="description">Description:</h5>
+<p>get sync job list.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>filter_job_id</td>
+<td>query</td>
+<td>filter job id</td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>filter_job_src_ip</td>
+<td>query</td>
+<td>filter job src ip</td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>filter_job_src_port</td>
+<td>query</td>
+<td>filter job src port</td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>filter_job_dest_ip</td>
+<td>query</td>
+<td>filter job dest ip</td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>filter_job_dest_port</td>
+<td>query</td>
+<td>filter job dest port</td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>filter_job_status</td>
+<td>query</td>
+<td>filter job status</td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>order_by</td>
+<td>query</td>
+<td>order by</td>
+<td>No</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.JobListRespV2">models.JobListRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2loglevel">/v2/log/level</h3>
+<h4 id="post">POST</h4>
+<h5 id="description">Description:</h5>
+<p>reload log level dynamically.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dtle_log_level</td>
+<td>formData</td>
+<td>dtle log level</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.UpdataLogLevelRespV2">models.UpdataLogLevelRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2login">/v2/login</h3>
+<h4 id="post">POST</h4>
+<h5 id="summary">Summary:</h5>
+<p>user loginV2</p>
+<h5 id="description">Description:</h5>
+<p>user login</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user</td>
+<td>body</td>
+<td>user login request</td>
+<td>Yes</td>
+<td><a href="#models.UserLoginReqV2">models.UserLoginReqV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.GetUserLoginResV2">models.GetUserLoginResV2</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2logincaptcha">/v2/login/captcha</h3>
+<h4 id="post">POST</h4>
+<h5 id="summary">Summary:</h5>
+<p>create base64Captcha</p>
+<h5 id="description">Description:</h5>
+<p>create base64Captcha</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>captcha_type</td>
+<td>formData</td>
+<td>captcha type</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.CaptchaRespV2">models.CaptchaRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2loginwithoutverifycode">/v2/loginWithoutVerifyCode</h3>
+<h4 id="post">POST</h4>
+<h5 id="summary">Summary:</h5>
+<p>user LoginWithoutVerifyCodeV2</p>
+<h5 id="description">Description:</h5>
+<p>user login Without Verify Code</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user</td>
+<td>body</td>
+<td>user login request</td>
+<td>Yes</td>
+<td><a href="#models.LoginWithoutVerifyCodeReqV2">models.LoginWithoutVerifyCodeReqV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.GetUserLoginResV2">models.GetUserLoginResV2</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2monitortask">/v2/monitor/task</h3>
+<h4 id="get">GET</h4>
+<h5 id="description">Description:</h5>
+<p>get progress of tasks within an allocation.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>allocation_id</td>
+<td>query</td>
+<td>allocation id</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>task_name</td>
+<td>query</td>
+<td>task name</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>nomad_http_address</td>
+<td>query</td>
+<td>nomad_http_address is the http address of the nomad that the target dtle is running with. ignore it if you are not sure what to provide</td>
+<td>No</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.GetTaskProgressRespV2">models.GetTaskProgressRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2mysqlcolumns">/v2/mysql/columns</h3>
+<h4 id="get">GET</h4>
+<h5 id="description">Description:</h5>
+<p>list columns of mysql source instance.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mysql_host</td>
+<td>query</td>
+<td>mysql host</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>mysql_port</td>
+<td>query</td>
+<td>mysql port</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>mysql_user</td>
+<td>query</td>
+<td>mysql user</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>mysql_password</td>
+<td>query</td>
+<td>mysql password</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>mysql_schema</td>
+<td>query</td>
+<td>mysql schema</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>mysql_table</td>
+<td>query</td>
+<td>mysql table</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>mysql_character_set</td>
+<td>query</td>
+<td>mysql character set</td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>is_mysql_password_encrypted</td>
+<td>query</td>
+<td>indecate that mysql password is encrypted or not</td>
+<td>No</td>
+<td>boolean</td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.ListColumnsRespV2">models.ListColumnsRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2mysqlinstanceconnection">/v2/mysql/instance_connection</h3>
+<h4 id="get">GET</h4>
+<h5 id="description">Description:</h5>
+<p>connect to  mysql instance.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mysql_host</td>
+<td>query</td>
+<td>mysql host</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>mysql_port</td>
+<td>query</td>
+<td>mysql port</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>mysql_user</td>
+<td>query</td>
+<td>mysql user</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>mysql_password</td>
+<td>query</td>
+<td>mysql password</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>is_mysql_password_encrypted</td>
+<td>query</td>
+<td>indecate that mysql password is encrypted or not</td>
+<td>No</td>
+<td>boolean</td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.ConnectionRespV2">models.ConnectionRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2mysqlschemas">/v2/mysql/schemas</h3>
+<h4 id="get">GET</h4>
+<h5 id="description">Description:</h5>
+<p>list schemas of mysql source instance.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mysql_host</td>
+<td>query</td>
+<td>mysql host</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>mysql_port</td>
+<td>query</td>
+<td>mysql port</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>mysql_user</td>
+<td>query</td>
+<td>mysql user</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>mysql_password</td>
+<td>query</td>
+<td>mysql password</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>mysql_character_set</td>
+<td>query</td>
+<td>mysql character set</td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>is_mysql_password_encrypted</td>
+<td>query</td>
+<td>indecate that mysql password is encrypted or not</td>
+<td>No</td>
+<td>boolean</td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.ListSchemasRespV2">models.ListSchemasRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2nodes">/v2/nodes</h3>
+<h4 id="get">GET</h4>
+<h5 id="description">Description:</h5>
+<p>get node list.</p>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.NodeListRespV2">models.NodeListRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2rolecreate">/v2/role/create</h3>
+<h4 id="post">POST</h4>
+<h5 id="description">Description:</h5>
+<p>create Role.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Role</td>
+<td>body</td>
+<td>Role info</td>
+<td>Yes</td>
+<td><a href="#models.CreateRoleReqV2">models.CreateRoleReqV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.CreateRoleRespV2">models.CreateRoleRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2roledelete">/v2/role/delete</h3>
+<h4 id="post">POST</h4>
+<h5 id="description">Description:</h5>
+<p>delete Role.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tenant</td>
+<td>formData</td>
+<td>tenant</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>name</td>
+<td>formData</td>
+<td>role name</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.DeleteRoleRespV2">models.DeleteRoleRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2rolelist">/v2/role/list</h3>
+<h4 id="get">GET</h4>
+<h5 id="description">Description:</h5>
+<p>get role list.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>filter_tenant</td>
+<td>query</td>
+<td>filter tenant</td>
+<td>No</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.RoleListResp">models.RoleListResp</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2roleupdate">/v2/role/update</h3>
+<h4 id="post">POST</h4>
+<h5 id="description">Description:</h5>
+<p>update Role info.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Role</td>
+<td>body</td>
+<td>Role info</td>
+<td>Yes</td>
+<td><a href="#models.UpdateRoleReqV2">models.UpdateRoleReqV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.UpdateRoleRespV2">models.UpdateRoleRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2tenantlist">/v2/tenant/list</h3>
+<h4 id="get">GET</h4>
+<h5 id="description">Description:</h5>
+<p>get tenant list.</p>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.TenantListResp">models.TenantListResp</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2usercreate">/v2/user/create</h3>
+<h4 id="post">POST</h4>
+<h5 id="description">Description:</h5>
+<p>create user.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user</td>
+<td>body</td>
+<td>user info</td>
+<td>Yes</td>
+<td><a href="#models.CreateUserReqV2">models.CreateUserReqV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.CreateUserRespV2">models.CreateUserRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2usercurrentuser">/v2/user/current_user</h3>
+<h4 id="get">GET</h4>
+<h5 id="description">Description:</h5>
+<p>get current user.</p>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.CurrentUserResp">models.CurrentUserResp</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2userdelete">/v2/user/delete</h3>
+<h4 id="post">POST</h4>
+<h5 id="description">Description:</h5>
+<p>delete user.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tenant</td>
+<td>formData</td>
+<td>tenant</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>username</td>
+<td>formData</td>
+<td>user name</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.DeleteUserRespV2">models.DeleteUserRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2userlist">/v2/user/list</h3>
+<h4 id="get">GET</h4>
+<h5 id="description">Description:</h5>
+<p>get user list.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>filter_username</td>
+<td>query</td>
+<td>filter user name</td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>filter_tenant</td>
+<td>query</td>
+<td>filter tenant</td>
+<td>No</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.UserListResp">models.UserListResp</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2userlistaction">/v2/user/list_action</h3>
+<h4 id="get">GET</h4>
+<h5 id="description">Description:</h5>
+<p>list user action.</p>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.ListActionRespV2">models.ListActionRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2userresetpassword">/v2/user/reset_password</h3>
+<h4 id="post">POST</h4>
+<h5 id="description">Description:</h5>
+<p>reset user password.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user</td>
+<td>body</td>
+<td>reset user password</td>
+<td>Yes</td>
+<td><a href="#models.ResetPasswordReqV2">models.ResetPasswordReqV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.ResetPasswordRespV2">models.ResetPasswordRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2userupdate">/v2/user/update</h3>
+<h4 id="post">POST</h4>
+<h5 id="description">Description:</h5>
+<p>update user info.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user</td>
+<td>body</td>
+<td>user info</td>
+<td>Yes</td>
+<td><a href="#models.UpdateUserReqV2">models.UpdateUserReqV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.UpdateUserRespV2">models.UpdateUserRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v2validationjob">/v2/validation/job</h3>
+<h4 id="post">POST</h4>
+<h5 id="description">Description:</h5>
+<p>validate job config.</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>job_config</td>
+<td>body</td>
+<td>validate job config</td>
+<td>Yes</td>
+<td><a href="#models.ValidateJobReqV2">models.ValidateJobReqV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="responses">Responses</h5>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#models.ValidateJobRespV2">models.ValidateJobRespV2</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="security">Security</h5>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ApiKeyAuth</td>
+</tr>
+</tbody>
+</table>
+<h3 id="models">Models</h3>
+<h4 id="commonjoblistitemv2">common.JobListItemV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dst_addr_list</td>
+<td>[ string ]</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>dst_database_type</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>job_create_time</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>job_id</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>job_status</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>job_steps</td>
+<td>[ <a href="#common.JobStep">common.JobStep</a> ]</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>src_addr_list</td>
+<td>[ string ]</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>src_database_type</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>topic</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>user</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="commonjobstep">common.JobStep</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>job_create_time</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>step_name</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>step_schedule</td>
+<td>number</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>step_status</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="commonrole">common.Role</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>authority</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>object_type</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>object_users</td>
+<td>[ string ]</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>tenant</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="commonuser">common.User</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>create_time</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>password</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>remark</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>role</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>tenant</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>username</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsbasictaskprofile">models.BasicTaskProfile</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>configuration</td>
+<td><a href="#models.Configuration">models.Configuration</a></td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>connection_info</td>
+<td><a href="#models.ConnectionInfo">models.ConnectionInfo</a></td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>dtle_node_infos</td>
+<td>[ <a href="#models.DtleNodeInfo">models.DtleNodeInfo</a> ]</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>job_base_info</td>
+<td><a href="#models.JobBaseInfo">models.JobBaseInfo</a></td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>replicate_do_db</td>
+<td>[ <a href="#models.DataSourceConfig">models.DataSourceConfig</a> ]</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>replicate_ignore_db</td>
+<td>[ <a href="#models.DataSourceConfig">models.DataSourceConfig</a> ]</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsbinlogvalidation">models.BinlogValidation</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>error</td>
+<td>string</td>
+<td>Error is a string version of any error that may have occured</td>
+<td>No</td>
+</tr>
+<tr>
+<td>validated</td>
+<td>boolean</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsbufferstat">models.BufferStat</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>applier_tx_queue_size</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>binlog_event_queue_size</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>extractor_tx_queue_size</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>send_by_size_full</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>send_by_timeout</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsbuttonitem">models.ButtonItem</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>action</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>text_cn</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>text_en</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>uri</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelscaptcharespv2">models.CaptchaRespV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data_scheme</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>id</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsconfiguration">models.Configuration</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dst_config</td>
+<td><a href="#models.DstConfig">models.DstConfig</a></td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>fail_over</td>
+<td>boolean</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>retry_times</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>src_config</td>
+<td><a href="#models.SrcConfig">models.SrcConfig</a></td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsconnectioninfo">models.ConnectionInfo</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dst_data_base</td>
+<td><a href="#models.DatabaseConnectionConfig">models.DatabaseConnectionConfig</a></td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>dst_kafka</td>
+<td><a href="#models.KafkaDestTaskConfig">models.KafkaDestTaskConfig</a></td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>src_data_base</td>
+<td><a href="#models.DatabaseConnectionConfig">models.DatabaseConnectionConfig</a></td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsconnectionrespv2">models.ConnectionRespV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsconnectionvalidation">models.ConnectionValidation</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>error</td>
+<td>string</td>
+<td>Error is a string version of any error that may have occured</td>
+<td>No</td>
+</tr>
+<tr>
+<td>validated</td>
+<td>boolean</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelscreateorupdatemysqltokafkajobparamv2">models.CreateOrUpdateMysqlToKafkaJobParamV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dest_task</td>
+<td><a href="#models.KafkaDestTaskConfig">models.KafkaDestTaskConfig</a></td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>failover</td>
+<td>boolean</td>
+<td>failover default:true</td>
+<td>No</td>
+</tr>
+<tr>
+<td>is_password_encrypted</td>
+<td>boolean</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>job_id</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>retry</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>src_task</td>
+<td><a href="#models.SrcTaskConfig">models.SrcTaskConfig</a></td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>task_step_name</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelscreateorupdatemysqltokafkajobrespv2">models.CreateOrUpdateMysqlToKafkaJobRespV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dest_task</td>
+<td><a href="#models.KafkaDestTaskConfig">models.KafkaDestTaskConfig</a></td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>eval_create_index</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>failover</td>
+<td>boolean</td>
+<td>failover default:true</td>
+<td>No</td>
+</tr>
+<tr>
+<td>is_password_encrypted</td>
+<td>boolean</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>job_id</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>job_modify_index</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>retry</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>src_task</td>
+<td><a href="#models.SrcTaskConfig">models.SrcTaskConfig</a></td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>task_step_name</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelscreateorupdatemysqltomysqljobparamv2">models.CreateOrUpdateMysqlToMysqlJobParamV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dest_task</td>
+<td><a href="#models.DestTaskConfig">models.DestTaskConfig</a></td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>failover</td>
+<td>boolean</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>is_password_encrypted</td>
+<td>boolean</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>job_id</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>retry</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>reverse</td>
+<td>boolean</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>src_task</td>
+<td><a href="#models.SrcTaskConfig">models.SrcTaskConfig</a></td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>task_step_name</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelscreateorupdatemysqltomysqljobrespv2">models.CreateOrUpdateMysqlToMysqlJobRespV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dest_task</td>
+<td><a href="#models.DestTaskConfig">models.DestTaskConfig</a></td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>eval_create_index</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>failover</td>
+<td>boolean</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>is_password_encrypted</td>
+<td>boolean</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>job_id</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>job_modify_index</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>retry</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>reverse</td>
+<td>boolean</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>src_task</td>
+<td><a href="#models.SrcTaskConfig">models.SrcTaskConfig</a></td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>task_step_name</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelscreaterolereqv2">models.CreateRoleReqV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>authority</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>operation_object_type</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>operation_users</td>
+<td>[ string ]</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>tenant</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelscreaterolerespv2">models.CreateRoleRespV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelscreateuserreqv2">models.CreateUserReqV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pass_word</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>remark</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>role</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>tenant</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>username</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelscreateuserrespv2">models.CreateUserRespV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelscurrentcoordinates">models.CurrentCoordinates</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>file</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>gtid_set</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>position</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>read_master_log_pos</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>relay_master_log_file</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>retrieved_gtid_set</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelscurrentuserresp">models.CurrentUserResp</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>current_user</td>
+<td><a href="#common.User">common.User</a></td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsdatasourceconfig">models.DataSourceConfig</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>table_schema</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>table_schema_regex</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>table_schema_rename</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>tables</td>
+<td>[ <a href="#models.TableConfig">models.TableConfig</a> ]</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsdatabaseconnectionconfig">models.DatabaseConnectionConfig</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>database_type</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>host</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>password</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>port</td>
+<td>integer</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>service_name</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>user</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsdelaycount">models.DelayCount</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>num</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>time</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsdeletejobrespv2">models.DeleteJobRespV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsdeleterolerespv2">models.DeleteRoleRespV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsdeleteuserrespv2">models.DeleteUserRespV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsdesttaskconfig">models.DestTaskConfig</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>connection_config</td>
+<td><a href="#models.DatabaseConnectionConfig">models.DatabaseConnectionConfig</a></td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>database_type</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>mysql_dest_task_config</td>
+<td><a href="#models.MysqlDestTaskConfig">models.MysqlDestTaskConfig</a></td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>node_id</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>task_name</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsdstconfig">models.DstConfig</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mysql_dest_task_config</td>
+<td><a href="#models.MysqlDestTaskConfig">models.MysqlDestTaskConfig</a></td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsdtlenodeinfo">models.DtleNodeInfo</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data_source</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>node_addr</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>node_id</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>source</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsgettaskprogressrespv2">models.GetTaskProgressRespV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>tasks_status</td>
+<td><a href="#models.TaskProgress">models.TaskProgress</a></td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsgetuserloginresv2">models.GetUserLoginResV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data</td>
+<td><a href="#models.UserLoginResV2">models.UserLoginResV2</a></td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsgtidmodevalidation">models.GtidModeValidation</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>error</td>
+<td>string</td>
+<td>Error is a string version of any error that may have occured</td>
+<td>No</td>
+</tr>
+<tr>
+<td>validated</td>
+<td>boolean</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsjobbaseinfo">models.JobBaseInfo</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>delay</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>job_create_time</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>job_id</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>job_status</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>job_steps</td>
+<td>[ <a href="#common.JobStep">common.JobStep</a> ]</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>subscription_topic</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsjobgtidresp">models.JobGtidResp</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gtid</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsjoblistrespv2">models.JobListRespV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>jobs</td>
+<td>[ <a href="#common.JobListItemV2">common.JobListItemV2</a> ]</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelskafkadesttaskconfig">models.KafkaDestTaskConfig</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kafka_broker_addrs</td>
+<td>[ string ]</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>kafka_topic</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>message_group_max_size</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>message_group_timeout</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>node_id</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>task_name</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelslistactionrespv2">models.ListActionRespV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>authority</td>
+<td>[ <a href="#models.MenuItem">models.MenuItem</a> ]</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelslistcolumnsrespv2">models.ListColumnsRespV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>columns</td>
+<td>[ string ]</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelslistschemasrespv2">models.ListSchemasRespV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>schemas</td>
+<td>[ <a href="#models.SchemaItem">models.SchemaItem</a> ]</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsloginwithoutverifycodereqv2">models.LoginWithoutVerifyCodeReqV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>password</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>tenant</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>username</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsmenuitem">models.MenuItem</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>admin_only</td>
+<td>boolean</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>menu_level</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>menu_url</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>operations</td>
+<td>[ <a href="#models.ButtonItem">models.ButtonItem</a> ]</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>parent_id</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>text_cn</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>text_en</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsmysqldesttaskconfig">models.MysqlDestTaskConfig</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dependency_history_size</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>parallel_workers</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>use_my_sql_dependency</td>
+<td>boolean</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsmysqlsrctaskconfig">models.MysqlSrcTaskConfig</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>auto_gtid</td>
+<td>boolean</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>binlog_relay</td>
+<td>boolean</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>expand_syntax_support</td>
+<td>boolean</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>gtid</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>wait_on_job</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsmysqltaskvalidationreport">models.MysqlTaskValidationReport</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>binlog_validation</td>
+<td><a href="#models.BinlogValidation">models.BinlogValidation</a></td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>connection_validation</td>
+<td><a href="#models.ConnectionValidation">models.ConnectionValidation</a></td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>gtid_mode_validation</td>
+<td><a href="#models.GtidModeValidation">models.GtidModeValidation</a></td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>privileges_validation</td>
+<td><a href="#models.PrivilegesValidation">models.PrivilegesValidation</a></td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>server_id_validation</td>
+<td><a href="#models.ServerIDValidation">models.ServerIDValidation</a></td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>task_name</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsmysqltokafkajobdetailrespv2">models.MysqlToKafkaJobDetailRespV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>basic_task_profile</td>
+<td><a href="#models.BasicTaskProfile">models.BasicTaskProfile</a></td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>task_logs</td>
+<td>[ <a href="#models.TaskLog">models.TaskLog</a> ]</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsmysqltomysqljobdetailrespv2">models.MysqlToMysqlJobDetailRespV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>basic_task_profile</td>
+<td><a href="#models.BasicTaskProfile">models.BasicTaskProfile</a></td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>task_logs</td>
+<td>[ <a href="#models.TaskLog">models.TaskLog</a> ]</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsnatsmessagestatistics">models.NatsMessageStatistics</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>in_bytes</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>in_messages</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>out_bytes</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>out_messages</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>reconnects</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsnodelistitemv2">models.NodeListItemV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>datacenter</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>dtle_version</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>leader</td>
+<td>boolean</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>member</td>
+<td>boolean</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>node_address</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>node_id</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>node_name</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>node_status</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>node_status_description</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>nomad_version</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsnodelistrespv2">models.NodeListRespV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>nodes</td>
+<td>[ <a href="#models.NodeListItemV2">models.NodeListItemV2</a> ]</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsoraclesrctaskconfig">models.OracleSrcTaskConfig</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>scn</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelspausejobrespv2">models.PauseJobRespV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsprivilegesvalidation">models.PrivilegesValidation</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>error</td>
+<td>string</td>
+<td>Error is a string version of any error that may have occured</td>
+<td>No</td>
+</tr>
+<tr>
+<td>validated</td>
+<td>boolean</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsresetpasswordreqv2">models.ResetPasswordReqV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>current_user_password</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>password</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>tenant</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>username</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsresetpasswordrespv2">models.ResetPasswordRespV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsresumejobrespv2">models.ResumeJobRespV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsreverseconfig">models.ReverseConfig</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dest_user</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>dst_pwd</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>is_mysql_password_encrypted</td>
+<td>boolean</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>src_pwd</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>src_user</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsreversejobreq">models.ReverseJobReq</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>job_id</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>reverse_config</td>
+<td><a href="#models.ReverseConfig">models.ReverseConfig</a></td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsreversejobresp">models.ReverseJobResp</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsreversestartrespv2">models.ReverseStartRespV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsrolelistresp">models.RoleListResp</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>role_list</td>
+<td>[ <a href="#common.Role">common.Role</a> ]</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsschemaitem">models.SchemaItem</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>schema_name</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>tables</td>
+<td>[ <a href="#models.TableItem">models.TableItem</a> ]</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsserveridvalidation">models.ServerIDValidation</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>error</td>
+<td>string</td>
+<td>Error is a string version of any error that may have occured</td>
+<td>No</td>
+</tr>
+<tr>
+<td>validated</td>
+<td>boolean</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelssrcconfig">models.SrcConfig</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>chunk_size</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>drop_table_if_exists</td>
+<td>boolean</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>group_max_size</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>group_timeout</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>mysql_src_task_config</td>
+<td><a href="#models.MysqlSrcTaskConfig">models.MysqlSrcTaskConfig</a></td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>oracle_src_task_config</td>
+<td><a href="#models.OracleSrcTaskConfig">models.OracleSrcTaskConfig</a></td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>repl_chan_buffer_size</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>skip_create_db_table</td>
+<td>boolean</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelssrctaskconfig">models.SrcTaskConfig</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>chunk_size</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>connection_config</td>
+<td><a href="#models.DatabaseConnectionConfig">models.DatabaseConnectionConfig</a></td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>drop_table_if_exists</td>
+<td>boolean</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>group_max_size</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>group_timeout</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>mysql_src_task_config</td>
+<td><a href="#models.MysqlSrcTaskConfig">models.MysqlSrcTaskConfig</a></td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>node_id</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>oracle_src_task_config</td>
+<td><a href="#models.OracleSrcTaskConfig">models.OracleSrcTaskConfig</a></td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>repl_chan_buffer_size</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>replicate_do_db</td>
+<td>[ <a href="#models.DataSourceConfig">models.DataSourceConfig</a> ]</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>replicate_ignore_db</td>
+<td>[ <a href="#models.DataSourceConfig">models.DataSourceConfig</a> ]</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>skip_create_db_table</td>
+<td>boolean</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>task_name</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelstableconfig">models.TableConfig</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>column_map_from</td>
+<td>[ string ]</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>table_name</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>table_regex</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>table_rename</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>where</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelstableitem">models.TableItem</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>table_name</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelstaskevent">models.TaskEvent</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>event_type</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>setup_error</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>time</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelstasklog">models.TaskLog</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>address</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>allocation_id</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>node_id</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>target</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>task_events</td>
+<td>[ <a href="#models.TaskEvent">models.TaskEvent</a> ]</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelstaskprogress">models.TaskProgress</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ETA</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>backlog</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>buffer_status</td>
+<td><a href="#models.BufferStat">models.BufferStat</a></td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>current_coordinates</td>
+<td><a href="#models.CurrentCoordinates">models.CurrentCoordinates</a></td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>delay_count</td>
+<td><a href="#models.DelayCount">models.DelayCount</a></td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>exec_master_row_count</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>exec_master_tx_count</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>nats_message_status</td>
+<td><a href="#models.NatsMessageStatistics">models.NatsMessageStatistics</a></td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>progress_PCT</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>read_master_row_count</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>read_master_tx_count</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>stage</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>throughput_status</td>
+<td><a href="#models.ThroughputStat">models.ThroughputStat</a></td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelstenantlistresp">models.TenantListResp</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>tenant_list</td>
+<td>[ string ]</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsthroughputstat">models.ThroughputStat</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>num</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>time</td>
+<td>integer</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsupdataloglevelrespv2">models.UpdataLogLevelRespV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dtle_log_level</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsupdaterolereqv2">models.UpdateRoleReqV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>authority</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>operation_object_type</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>operation_users</td>
+<td>[ string ]</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>tenant</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsupdaterolerespv2">models.UpdateRoleRespV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsupdateuserreqv2">models.UpdateUserReqV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>remark</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>role</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>tenant</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>username</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsupdateuserrespv2">models.UpdateUserRespV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsuserlistresp">models.UserListResp</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>user_list</td>
+<td>[ <a href="#common.User">common.User</a> ]</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsuserloginreqv2">models.UserLoginReqV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>captcha</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>captcha_id</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>password</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>tenant</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>username</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsuserloginresv2">models.UserLoginResV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>token</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsvalidatejobreqv2">models.ValidateJobReqV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dest_task</td>
+<td><a href="#models.DestTaskConfig">models.DestTaskConfig</a></td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>is_password_encrypted</td>
+<td>boolean</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>job_id</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>src_task</td>
+<td><a href="#models.SrcTaskConfig">models.SrcTaskConfig</a></td>
+<td></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modelsvalidatejobrespv2">models.ValidateJobRespV2</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>driver_config_validated</td>
+<td>boolean</td>
+<td>DriverConfigValidated indicates whether the agent validated the driver</td>
+<td>No</td>
+</tr>
+<tr>
+<td>job_validation_error</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>job_validation_warning</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>mysql_task_validation_report</td>
+<td>[ <a href="#models.MysqlTaskValidationReport">models.MysqlTaskValidationReport</a> ]</td>
+<td>config</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="4.4_http_api.html" class="navigation navigation-prev " aria-label="Previous page: 4.4.HTTP API说明">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="4.5_mysql_user_privileges.html" class="navigation navigation-next " aria-label="Next page: 4.5.MySQL 用户权限说明">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4.4.1.dtle 3.x HTTP API说明","level":"1.6.8","depth":2,"next":{"title":"4.5.MySQL 用户权限说明","level":"1.6.9","depth":2,"path":"4/4.5_mysql_user_privileges.md","ref":"4/4.5_mysql_user_privileges.md","articles":[]},"previous":{"title":"4.4.HTTP API说明","level":"1.6.7","depth":2,"path":"4/4.4_http_api.md","ref":"4/4.4_http_api.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"website.css"},"pluginsConfig":{"fontsettings":{"theme":"sepia","family":"sans","size":2},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ActionTech","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"dtle manual","gitbook":"*"},"file":{"path":"4/4.4.1_dtle_http_api.md","mtime":"2024-04-19T03:05:49.297Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-04-19T03:08:46.514Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
